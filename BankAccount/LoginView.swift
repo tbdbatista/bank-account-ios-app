@@ -12,10 +12,11 @@ class LoginView: UIView {
     lazy var loginStackView = UIStackView()
     lazy var usernameTextField = UITextField()
     lazy var passwordTextField = UITextField()
+    lazy var dividerView = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        style()
+        setSelfSetup()
         layout()
         setViews()
     }
@@ -25,23 +26,26 @@ class LoginView: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 200, height:   100) // <<== view size
+        return CGSize(width: 200, height: 80) // <<== view size
     }
     
-    //MARK: - View Setup
-    private func style() {
+    //MARK: - Self Setup
+    private func setSelfSetup() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = .yellow
+        self.backgroundColor = .secondarySystemBackground
         
         self.addSubview(loginStackView)
         self.loginStackView.addArrangedSubview(usernameTextField)
+        self.loginStackView.addArrangedSubview(dividerView)
         self.loginStackView.addArrangedSubview(passwordTextField)
    
         self.subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
     private func layout() {
-        
+        self.layer.cornerRadius = 5
+        self.layer.shadowRadius = 10
+        self.layer.shadowOpacity = 0.3
     }
     
     //MARK: - Elements setup
@@ -49,11 +53,12 @@ class LoginView: UIView {
         setLoginStackView()
         setUsernameInputText()
         setPasswordInputText()
+        setDividerView()
     }
     
     private func setLoginStackView() {
         self.loginStackView.axis = .vertical
-        self.loginStackView.spacing = 16
+        self.loginStackView.spacing = 8
         
         NSLayoutConstraint.activate([
             loginStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -63,29 +68,37 @@ class LoginView: UIView {
     }
     
     private func setUsernameInputText() {
-        self.usernameTextField.placeholder = "Username"
+        self.usernameTextField.placeholder = " Username"
         self.usernameTextField.delegate = self
     }
     
     private func setPasswordInputText() {
-        self.passwordTextField.placeholder = "Password"
+        self.passwordTextField.placeholder = " Password"
+        self.passwordTextField.isSecureTextEntry = true
         self.passwordTextField.delegate = self
+    }
+    
+    private func setDividerView() {
+        self.dividerView.backgroundColor = .secondarySystemFill
+        self.dividerView.heightAnchor.constraint(equalToConstant: 2).isActive = true
     }
 }
 
-//Mark: - Extensions
+//MARK: - Extensions
 extension LoginView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("textFieldShouldReturn")
+
+//        usernameTextField.endEditing(true)
+//        passwordTextField.endEditing(true)
         
-  
-        if !textField.hasText {
-            textField.placeholder = "Type here your information"
-            print("Inválid input - cannot be empty")
-            return false } else {
-                textField.resignFirstResponder()
-                print("Valid input - \(textField.text!)")
-            }
+        textField.resignFirstResponder()
+//        if !textField.hasText {
+//            textField.placeholder = "Type here your information"
+//            print("Inválid input - cannot be empty")
+//            return false } else {
+//                print("Valid input - \(textField.text!)")
+//            }
         return true
     }
     
@@ -93,7 +106,6 @@ extension LoginView: UITextFieldDelegate {
         print("textFieldShouldEndEditing")
         if textField.text?.count ?? 0 < 5 {
             print("Inválid input - too short")
-            return false
         } else {
             print("Valid input - more than 3 char")
         }
