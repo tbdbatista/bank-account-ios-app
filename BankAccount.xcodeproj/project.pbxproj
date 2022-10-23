@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */; };
 		DFE87B332902E2080088CB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B322902E2080088CB76 /* AppDelegate.swift */; };
 		DFE87B352902E2080088CB76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B342902E2080088CB76 /* SceneDelegate.swift */; };
 		DFE87B372902E2080088CB76 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B362902E2080088CB76 /* LoginViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DFE87B2F2902E2080088CB76 /* BankAccount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankAccount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE87B322902E2080088CB76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE87B342902E2080088CB76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DFAE0FB62904A5E6000D94C4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		DFE87B262902E2080088CB76 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +87,7 @@
 		DFE87B472902FEFF0088CB76 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				DFAE0FB62904A5E6000D94C4 /* ViewModel */,
 				DFE87B4A2902FF3E0088CB76 /* Views */,
 			);
 			name = Login;
@@ -164,6 +175,7 @@
 				DFE87B372902E2080088CB76 /* LoginViewController.swift in Sources */,
 				DFE87B332902E2080088CB76 /* AppDelegate.swift in Sources */,
 				DFE87B492902FF360088CB76 /* LoginView.swift in Sources */,
+				DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */,
 				DFE87B352902E2080088CB76 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

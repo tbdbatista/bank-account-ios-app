@@ -88,27 +88,12 @@ class LoginView: UIView {
 extension LoginView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("textFieldShouldReturn")
-
-//        usernameTextField.endEditing(true)
-//        passwordTextField.endEditing(true)
-        
         textField.resignFirstResponder()
-//        if !textField.hasText {
-//            textField.placeholder = "Type here your information"
-//            print("Inválid input - cannot be empty")
-//            return false } else {
-//                print("Valid input - \(textField.text!)")
-//            }
         return true
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         print("textFieldShouldEndEditing")
-        if textField.text?.count ?? 0 < 5 {
-            print("Inválid input - too short")
-        } else {
-            print("Valid input - more than 3 char")
-        }
         return true
     }
     
