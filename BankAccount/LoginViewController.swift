@@ -8,9 +8,10 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     let loginViewModel = LoginViewModel()
     
+    lazy var logoLabel = UILabel()
     lazy var stackView = UIStackView()
     lazy var loginView = LoginView()
     lazy var signInButton = UIButton()
@@ -34,6 +35,7 @@ class LoginViewController: UIViewController {
         self.setStackView()
         self.setSignInButton()
         self.setErrorWarningsLabel()
+        self.setLogoLabel()
     }
     
     //MARK: - View Setup
@@ -42,15 +44,28 @@ class LoginViewController: UIViewController {
     }
     
     private func layout() {
+        view.addSubview(logoLabel)
         view.addSubview(stackView)
         stackView.addArrangedSubview(loginView)
         stackView.addArrangedSubview(signInButton)
-        stackView.addArrangedSubview(errorWarningsLabel)
+        view.addSubview(errorWarningsLabel)
         
         self.view.subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
     //MARK: - Elements Setup
+    
+    private func setLogoLabel() {
+        self.logoLabel.text = "B.A. Bank"
+        self.logoLabel.font = UIFont.init(name: "American Typewriter", size: 40)
+        self.logoLabel.textAlignment = .center
+        
+        NSLayoutConstraint.activate([
+            logoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.topAnchor.constraint(equalToSystemSpacingBelow: logoLabel.bottomAnchor, multiplier: 6)
+        ])
+    }
+    
     private func setStackView() {
         self.stackView.spacing = 16
         self.stackView.axis = .vertical
@@ -87,6 +102,11 @@ class LoginViewController: UIViewController {
         default :
             self.errorWarningsLabel.isHidden = true
         }
+        
+        NSLayoutConstraint.activate([
+            errorWarningsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            errorWarningsLabel.topAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 2)
+        ])
     }
 
     //MARK: - Actions
@@ -122,8 +142,8 @@ class LoginViewController: UIViewController {
     }
 }
 
-//MARK: - Enums
-enum ErrorWarningState {
+    //MARK: - Enums
+    enum ErrorWarningState {
     case emptyLoginInput
     case incorrectLoginInput
 }
