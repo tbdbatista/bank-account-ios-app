@@ -55,7 +55,7 @@ class ViewController3: UIViewController {
     }
     
     private func setMainLabel() {
-        self.mainLabel.text = "Some features you must need to know about our app"
+        self.mainLabel.text = "For us safety is a priority. Your money will always be protected."
         self.mainLabel.numberOfLines = 0
         self.mainLabel.textAlignment = .center
         self.mainLabel.textColor = .primaryGreen
