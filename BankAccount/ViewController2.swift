@@ -55,7 +55,7 @@ class ViewController2: UIViewController {
     }
     
     private func setMainLabel() {
-        self.mainLabel.text = "With the B.A. you don't have to run to the nearest branch, because it's in the palm of your hand."
+        self.mainLabel.text = "With the B.A. you don't have to run to the nearest bank branch, because it's in the palm of your hand."
         self.mainLabel.numberOfLines = 0
         self.mainLabel.textAlignment = .center
         self.mainLabel.textColor = .primaryGreen
