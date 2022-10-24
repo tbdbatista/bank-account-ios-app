@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */; };
+		DFB7059B2906F35600A42A28 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */; };
+		DFB7059D2906F6E000A42A28 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7059C2906F6E000A42A28 /* ViewController1.swift */; };
+		DFB7059F2906F70200A42A28 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7059E2906F70200A42A28 /* ViewController2.swift */; };
+		DFB705A12906F70D00A42A28 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB705A02906F70D00A42A28 /* ViewController3.swift */; };
 		DFE87B332902E2080088CB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B322902E2080088CB76 /* AppDelegate.swift */; };
 		DFE87B352902E2080088CB76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B342902E2080088CB76 /* SceneDelegate.swift */; };
 		DFE87B372902E2080088CB76 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B362902E2080088CB76 /* LoginViewController.swift */; };
@@ -18,6 +22,10 @@
 
 /* Begin PBXFileReference section */
 		DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
+		DFB7059C2906F6E000A42A28 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
+		DFB7059E2906F70200A42A28 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		DFB705A02906F70D00A42A28 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		DFE87B2F2902E2080088CB76 /* BankAccount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankAccount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE87B322902E2080088CB76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE87B342902E2080088CB76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +55,17 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		DFB705992906F32200A42A28 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */,
+				DFB7059C2906F6E000A42A28 /* ViewController1.swift */,
+				DFB7059E2906F70200A42A28 /* ViewController2.swift */,
+				DFB705A02906F70D00A42A28 /* ViewController3.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
 		DFE87B262902E2080088CB76 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +85,7 @@
 		DFE87B312902E2080088CB76 /* BankAccount */ = {
 			isa = PBXGroup;
 			children = (
+				DFB705992906F32200A42A28 /* Onboarding */,
 				DFE87B472902FEFF0088CB76 /* Login */,
 				DFE87B462902FE9E0088CB76 /* GeneralFiles */,
 			);
@@ -173,8 +193,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFE87B372902E2080088CB76 /* LoginViewController.swift in Sources */,
+				DFB7059F2906F70200A42A28 /* ViewController2.swift in Sources */,
+				DFB705A12906F70D00A42A28 /* ViewController3.swift in Sources */,
+				DFB7059B2906F35600A42A28 /* OnboardingContainerViewController.swift in Sources */,
 				DFE87B332902E2080088CB76 /* AppDelegate.swift in Sources */,
 				DFE87B492902FF360088CB76 /* LoginView.swift in Sources */,
+				DFB7059D2906F6E000A42A28 /* ViewController1.swift in Sources */,
 				DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */,
 				DFE87B352902E2080088CB76 /* SceneDelegate.swift in Sources */,
 			);

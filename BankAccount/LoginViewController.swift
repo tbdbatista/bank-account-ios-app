@@ -137,7 +137,11 @@ class LoginViewController: UIViewController {
             print("Login Error")
             loginViewModel.setErrorWarningState(with: .incorrectLoginInput)
             setErrorWarningsLabel()
+            return
         }
+        
+        self.navigationController?.pushViewController(OnboardingContainerViewController(), animated: true)
+        
         
     }
 }
