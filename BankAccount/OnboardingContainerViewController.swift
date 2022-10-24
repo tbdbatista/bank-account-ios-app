@@ -18,20 +18,50 @@ class OnboardingContainerViewController: UIViewController {
         }
     }
     
+    var onboardingContent : [(String, String, Float, Float)] = [
+        (
+            "B.A. Bank \nBringing to you the most reliable and faster Bank of America. \n Since 1983",
+            "fast.svg",
+            140,
+            100
+        ),
+        (
+            "With the B.A. you don't have to run to the nearest bank branch, because it's in the palm of your hand.",
+            "fast2.svg",
+            140,
+            100
+        ),
+        (
+            "For us safety is a priority. Your money will always be protected.",
+            "fast3.svg",
+            200,
+            100
+        )
+    ]
+    
     override init(nibName: String?, bundle: Bundle?) {
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-    
-    let page1 = ViewController1()
-    let page2 = ViewController2()
-    let page3 = ViewController3()
-    
-    pages.append(page1)
-    pages.append(page2)
-    pages.append(page3)
-    
-    currentViewController = pages.first!
-    
-    super.init(nibName: nibName, bundle: bundle)
+        
+        let page1 = OnboardingViewController(withMessage: onboardingContent[0].0,
+                                             imageName: onboardingContent[0].1,
+                                             imageWidth: onboardingContent[0].2,
+                                             imageHeight: onboardingContent[0].3)
+        let page2 = OnboardingViewController(withMessage: onboardingContent[1].0,
+                                             imageName: onboardingContent[1].1,
+                                             imageWidth: onboardingContent[1].2,
+                                             imageHeight: onboardingContent[1].3)
+        let page3 = OnboardingViewController(withMessage: onboardingContent[2].0,
+                                             imageName: onboardingContent[2].1,
+                                             imageWidth: onboardingContent[2].2,
+                                             imageHeight: onboardingContent[2].3)
+        
+        pages.append(page1)
+        pages.append(page2)
+        pages.append(page3)
+        
+        currentViewController = pages.first!
+        
+        super.init(nibName: nibName, bundle: bundle)
     }
     
     required init?(coder: NSCoder) {

@@ -1,5 +1,5 @@
 //
-//  ViewController2.swift
+//  OnboardingViewController.swift
 //  BankAccount
 //
 //  Created by Beltrami Dias Batista, Thiago on 24/10/22.
@@ -7,12 +7,31 @@
 
 import UIKit
 
-class ViewController2: UIViewController {
-    
+class OnboardingViewController: UIViewController {
+
     let stackView = UIStackView()
     let imageView = UIImageView()
     let mainLabel = UILabel()
+    
+    let message: String?
+    let imageName: String?
+    let imageHeight: Float?
+    let imageWidth: Float?
+    
 
+    init(withMessage: String, imageName: String, imageWidth: Float, imageHeight: Float) {
+        self.message = withMessage
+        self.imageName = imageName
+        self.imageHeight = imageHeight
+        self.imageWidth = imageWidth
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setSelfView()
@@ -20,7 +39,7 @@ class ViewController2: UIViewController {
     }
     
     func setSelfView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .secondaryGreen
         view.addSubview(stackView)
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(mainLabel)
@@ -46,16 +65,16 @@ class ViewController2: UIViewController {
     }
     
     private func setImageView() {
-        self.imageView.image = UIImage(named: "fast2.svg")
+        self.imageView.image = UIImage(named: self.imageName ?? "")
         NSLayoutConstraint.activate([
-            self.imageView.heightAnchor.constraint(equalToConstant: 100),
-            self.imageView.widthAnchor.constraint(equalToConstant: 140)
+            self.imageView.heightAnchor.constraint(equalToConstant: CGFloat(imageHeight ?? 10)),
+            self.imageView.widthAnchor.constraint(equalToConstant: CGFloat(imageWidth ?? 10))
         ])
         
     }
     
     private func setMainLabel() {
-        self.mainLabel.text = "With the B.A. you don't have to run to the nearest bank branch, because it's in the palm of your hand."
+        self.mainLabel.text = self.message
         self.mainLabel.numberOfLines = 0
         self.mainLabel.textAlignment = .center
         self.mainLabel.textColor = .primaryGreen
