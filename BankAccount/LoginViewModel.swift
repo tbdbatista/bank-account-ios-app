@@ -39,7 +39,7 @@ class LoginViewModel {
             return
         }
         
-        if username == "Thiago" && password == "1234" {
+        if username == " " && password == " " {
             print("Login Successfully")
             setErrorWarningState(with: nil)
             delegate?.setErrorWarningsLabel()

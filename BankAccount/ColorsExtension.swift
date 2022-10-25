@@ -9,6 +9,8 @@ import UIKit
 
 extension UIColor {
     static let primaryGreen = UIColor(red: 11/255, green: 93/255, blue: 50/255, alpha: 1)
+    static let primaryGreenOpac = UIColor(red: 11/255, green: 93/255, blue: 50/255, alpha: 0.5)
     static let secondaryGreen = UIColor(red: 222/255, green: 255/255, blue: 222/255, alpha: 1)
+    static let secondaryGreenOpac = UIColor(red: 222/255, green: 255/255, blue: 222/255, alpha: 0.5)
     static let primaryYellow = UIColor(red: 211/255, green: 217/255, blue: 34/255, alpha: 1)
 }

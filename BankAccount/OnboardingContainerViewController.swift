@@ -5,40 +5,22 @@
 //  Created by Beltrami Dias Batista, Thiago on 24/10/22.
 //
 
-import Foundation
 import UIKit
 
 class OnboardingContainerViewController: UIViewController {
-    
+  
     let pageViewController: UIPageViewController
     var pages = [UIViewController]()
     var currentViewController: UIViewController
     lazy var closeButton = UIButton()
     
-    var onboardingContent : [(String, String, Float, Float)] = [
-        (
-            "B.A. Bank \nBringing to you the most reliable and faster Bank of America. \n Since 1983",
-            "fast.svg",
-            140,
-            100
-        ),
-        (
-            "With the B.A. you don't have to run to the nearest bank branch, because it's in the palm of your hand.",
-            "fast2.svg",
-            140,
-            100
-        ),
-        (
-            "For us safety is a priority. Your money will always be protected.",
-            "fast3.svg",
-            200,
-            100
-        )
-    ]
+    let onboardingContainerViewModel = OnboardingContainerViewModel()
+    
     
     override init(nibName: String?, bundle: Bundle?) {
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         
+        let onboardingContent = onboardingContainerViewModel.onboardingContent
         let page1 = OnboardingViewController(withMessage: onboardingContent[0].0,
                                              imageName: onboardingContent[0].1,
                                              imageWidth: onboardingContent[0].2,
@@ -58,7 +40,6 @@ class OnboardingContainerViewController: UIViewController {
         
         currentViewController = pages.first!
         
-        
         super.init(nibName: nibName, bundle: bundle)
     }
     
@@ -72,6 +53,7 @@ class OnboardingContainerViewController: UIViewController {
         self.setupPageViewController()
         self.setupSelfView()
         self.setupCloseButton()
+        
     }
     
     private func setupSelfView() {
@@ -112,12 +94,13 @@ class OnboardingContainerViewController: UIViewController {
 
     //MARK: - Actions
     @objc private func closeButtonTapped() {
-        dismiss(animated: true, completion: nil) // TO-DO: completion with callHome
+        dismiss(animated: true, completion: nil)
     }
     
 }
 
-//MARK: - Extensions - UIPageViewControllerDataSource
+
+//MARK: - Extension - UIPageViewControllerDataSource
 extension OnboardingContainerViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         return getPreviousViewController(from: viewController)
