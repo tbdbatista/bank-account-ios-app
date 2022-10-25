@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginViewModel.delegate = self
         setSelfView()
         layout()
         setViews()
@@ -83,8 +84,29 @@ class LoginViewController: UIViewController {
         self.signInButton.layer.cornerRadius = 5
         self.signInButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
     }
+
+    //MARK: - Actions
+    @objc private func signInButtonTapped() {
+        print("button tapped")
+        self.callLogin()
+        print("Actual state = \(String(describing: loginViewModel.getErrorWarningState()))")
+    }
     
-    private func setErrorWarningsLabel() {
+    //MARK: - Methods
+    private func callLogin() {
+        loginViewModel.login(username: username, password: password)
+    }
+}
+
+//MARK: - Extension - LoginViewlModelDelegate
+extension LoginViewController: LoginViewModelDelegate {
+    internal func didLogin() {
+        let onboardingViewController = OnboardingContainerViewController()
+        onboardingViewController.modalPresentationStyle = .fullScreen
+        present(onboardingViewController, animated: true, completion: nil)
+    }
+    
+    internal func setErrorWarningsLabel() {
         
         let errorWarningState = loginViewModel.getErrorWarningState()
         
@@ -107,42 +129,6 @@ class LoginViewController: UIViewController {
             errorWarningsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             errorWarningsLabel.topAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 2)
         ])
-    }
-
-    //MARK: - Actions
-    @objc private func signInButtonTapped() {
-        print("button tapped")
-        self.callLogin()
-        print("Actual state = \(String(describing: loginViewModel.getErrorWarningState()))")
-    }
-    
-    //MARK: - Methods
-    private func callLogin() {
-        guard let username = self.username, let password = self.password else {
-            assertionFailure("Username and password should not be nil")
-            return
-        }
-        
-        if username.isEmpty || password.isEmpty {
-            loginViewModel.setErrorWarningState(with: .emptyLoginInput)
-            setErrorWarningsLabel()
-            return
-        }
-        
-        if username == "Thiago" && password == "1234" {
-            print("Login Successfully")
-            loginViewModel.setErrorWarningState(with: nil)
-            setErrorWarningsLabel()
-        } else {
-            print("Login Error")
-            loginViewModel.setErrorWarningState(with: .incorrectLoginInput)
-            setErrorWarningsLabel()
-            return
-        }
-        
-        self.navigationController?.pushViewController(OnboardingContainerViewController(), animated: true)
-        
-        
     }
 }
 

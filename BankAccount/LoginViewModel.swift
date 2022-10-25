@@ -7,13 +7,16 @@
 
 import Foundation
 
+protocol LoginViewModelDelegate: AnyObject {
+    func didLogin()
+    func setErrorWarningsLabel()
+}
+
 class LoginViewModel {
     
-    private var errorWarningState : ErrorWarningState?
+    weak var delegate: LoginViewModelDelegate?
     
-    init() {
-        //self.errorWarningState = .emptyInput
-    }
+    private var errorWarningState : ErrorWarningState?
     
     func getErrorWarningState() -> ErrorWarningState? {
         return errorWarningState
@@ -21,6 +24,32 @@ class LoginViewModel {
     
     func setErrorWarningState(with errorWarning: ErrorWarningState?) {
         self.errorWarningState = errorWarning
+    }
+    
+    func login(username: String?, password: String?) {
+        
+        guard let username = username, let password = password else {
+            assertionFailure("Username and password should not be nil")
+            return
+        }
+        
+        if username.isEmpty || password.isEmpty {
+            setErrorWarningState(with: .emptyLoginInput)
+            delegate?.setErrorWarningsLabel()
+            return
+        }
+        
+        if username == "Thiago" && password == "1234" {
+            print("Login Successfully")
+            setErrorWarningState(with: nil)
+            delegate?.setErrorWarningsLabel()
+            delegate?.didLogin()
+        } else {
+            print("Login Error")
+            setErrorWarningState(with: .incorrectLoginInput)
+            delegate?.setErrorWarningsLabel()
+            return
+        }
     }
     
 }

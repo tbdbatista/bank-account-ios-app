@@ -112,7 +112,7 @@ class OnboardingContainerViewController: UIViewController {
 
     //MARK: - Actions
     @objc private func closeButtonTapped() {
-        print("Dismiss Onboarding yo!")
+        dismiss(animated: true, completion: nil) // TO-DO: completion with callHome
     }
     
 }
