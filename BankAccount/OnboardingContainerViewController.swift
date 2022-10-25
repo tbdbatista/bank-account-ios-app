@@ -12,11 +12,8 @@ class OnboardingContainerViewController: UIViewController {
     
     let pageViewController: UIPageViewController
     var pages = [UIViewController]()
-    var currentViewController: UIViewController {
-        didSet {
-            
-        }
-    }
+    var currentViewController: UIViewController
+    lazy var closeButton = UIButton()
     
     var onboardingContent : [(String, String, Float, Float)] = [
         (
@@ -61,24 +58,25 @@ class OnboardingContainerViewController: UIViewController {
         
         currentViewController = pages.first!
         
+        
         super.init(nibName: nibName, bundle: bundle)
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder: has not been implemented")
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .primaryGreen
-        
-        addChild(pageViewController)
-        view.addSubview(pageViewController.view)
-        pageViewController.didMove(toParent: self)
-        
-        pageViewController.dataSource = self
-        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        self.setupPageViewController()
+        self.setupSelfView()
+        self.setupCloseButton()
+    }
+    
+    private func setupSelfView() {
+        self.view.backgroundColor = .primaryGreen
+        self.view.addSubview(closeButton)
         
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: pageViewController.view.topAnchor),
@@ -87,9 +85,36 @@ class OnboardingContainerViewController: UIViewController {
             view.trailingAnchor.constraint(equalTo: pageViewController.view.trailingAnchor)
         ])
         
+        self.view.subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+    }
+    
+    private func setupPageViewController() {
+        addChild(pageViewController)
+        view.addSubview(pageViewController.view)
+        pageViewController.didMove(toParent: self)
+        
+        pageViewController.dataSource = self
         pageViewController.setViewControllers([pages.first!], direction: .forward, animated: true, completion: nil)
         currentViewController = pages.first!
     }
+    
+    private func setupCloseButton() {
+        self.closeButton.setTitle("Close", for: .normal)
+        self.closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+
+        NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2),
+            closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+        ])
+        self.closeButton.setTitleColor(.primaryGreen, for: .normal)
+
+    }
+
+    //MARK: - Actions
+    @objc private func closeButtonTapped() {
+        print("Dismiss Onboarding yo!")
+    }
+    
 }
 
 //MARK: - Extensions - UIPageViewControllerDataSource
