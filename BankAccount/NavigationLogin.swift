@@ -9,12 +9,6 @@ import UIKit
 
 class NavigationLogin {
     
-    var presenter: UIViewController
-   
-    init(presenter: UIViewController) {
-        self.presenter = presenter
-    }
-    
     class func goHome(presenter: UIViewController) {
         let homeVC = HomeViewController()
         presenter.goToViewController(navigateTo: homeVC, navigationType: .crossDissolve, animated: true)
