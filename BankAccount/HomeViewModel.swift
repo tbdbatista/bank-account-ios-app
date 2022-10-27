@@ -9,17 +9,20 @@ import Foundation
 
 protocol HomeViewModelDelegate: AnyObject {
     func didNotHaveOnboarded()
+    func didHaveOnboarded()
 }
 
 class HomeViewModel {
     
     weak var delegate: HomeViewModelDelegate?
-    var hasOnboarded: Bool = false
+    static var hasOnboarded: Bool?
     
     func callOnboarding() {
-        if hasOnboarded == false {
+        if HomeViewModel.hasOnboarded != true {
             delegate?.didNotHaveOnboarded()
-            hasOnboarded = true // TO-DO: save this state at userDefaults
+            HomeViewModel.hasOnboarded = true // TO-DO: save this state at userDefaults
+        } else {
+            delegate?.didHaveOnboarded()
         }
     }
 }

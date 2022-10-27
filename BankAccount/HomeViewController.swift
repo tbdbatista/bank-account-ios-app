@@ -76,6 +76,10 @@ class HomeViewController: UIViewController {
 
 //MARK: - Extension - HomeViewModelDelegate
 extension HomeViewController: HomeViewModelDelegate {
+    func didHaveOnboarded() {
+        NavigationLogin.goHome(presenter: self)
+    }
+    
     func didNotHaveOnboarded() {
         NavigationLogin.goOnboarding(presenter: self)
     }
