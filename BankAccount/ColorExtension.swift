@@ -1,5 +1,5 @@
 //
-//  ColorsExtension.swift
+//  ColorExtension.swift
 //  BankAccount
 //
 //  Created by Beltrami Dias Batista, Thiago on 24/10/22.

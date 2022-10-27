@@ -7,23 +7,13 @@
 
 import UIKit
 
-public enum NavigationType {
-    case push
-    case show
-    case present
-    case crossDissolve
-    case coverVertical
-    case partialCurl
-    case flipHorizontal
-}
-
 extension UIViewController {
     
     public func goToViewController(navigateTo viewController: UIViewController, navigationType: NavigationType, animated: Bool) {
         switch navigationType {
         case .push:
             guard let navigationController = self.navigationController else {
-                fatalError("Presenter does not have a navigation controller to push next view controller")
+                fatalError("Presenter does not have a navigation controller to push the next view controller")
             }
             navigationController.modalPresentationStyle = .overCurrentContext
             navigationController.pushViewController(viewController, animated: animated)
@@ -52,4 +42,14 @@ extension UIViewController {
             self.present(viewController, animated: animated, completion: nil)
         }
     }
+}
+
+public enum NavigationType {
+    case push
+    case show
+    case present
+    case crossDissolve
+    case coverVertical
+    case partialCurl
+    case flipHorizontal
 }
