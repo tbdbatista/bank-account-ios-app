@@ -14,15 +14,22 @@ protocol HomeViewModelDelegate: AnyObject {
 
 class HomeViewModel {
     
+    let userDefaults = UserDefaults.standard
     weak var delegate: HomeViewModelDelegate?
-    static var hasOnboarded: Bool?
+    static let hasOnboarded = "hasOnboarded"
     
     func callOnboarding() {
-        if HomeViewModel.hasOnboarded != true {
+        if getHasOnboarded() != true {
             delegate?.didNotHaveOnboarded()
-            HomeViewModel.hasOnboarded = true // TO-DO: save this state at userDefaults
-        } else {
-            delegate?.didHaveOnboarded()
+            setHasOnboarded(didOnboarded: true)
         }
+    }
+    
+    func setHasOnboarded(didOnboarded: Bool) {
+        userDefaults.set(didOnboarded, forKey: HomeViewModel.hasOnboarded)
+    }
+    
+    func getHasOnboarded() -> Bool {
+        return userDefaults.bool(forKey: HomeViewModel.hasOnboarded)
     }
 }

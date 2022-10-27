@@ -96,6 +96,12 @@ class LoginViewController: UIViewController {
     private func callLogin() {
         loginViewModel.login(username: username, password: password)
     }
+    
+    private func cleanInputs() {
+        loginView.usernameTextField.text = ""
+        loginView.passwordTextField.text = ""
+        loginView.usernameTextField.becomeFirstResponder()
+    }
 }
 
 //MARK: - Extension - LoginViewlModelDelegate
@@ -127,6 +133,8 @@ extension LoginViewController: LoginViewModelDelegate {
             errorWarningsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             errorWarningsLabel.topAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 2)
         ])
+        
+        self.cleanInputs()
     }
 }
 
