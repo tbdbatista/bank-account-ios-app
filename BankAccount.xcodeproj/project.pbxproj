@@ -13,7 +13,6 @@
 		DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */; };
 		DFB7059B2906F35600A42A28 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */; };
 		DFB705A82907206100A42A28 /* ColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB705A72907206100A42A28 /* ColorsExtension.swift */; };
-		DFB705AA29072BDF00A42A28 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFB705A929072BDF00A42A28 /* View.xib */; };
 		DFB705AE290730A800A42A28 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB705AD290730A800A42A28 /* OnboardingViewController.swift */; };
 		DFE87B332902E2080088CB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B322902E2080088CB76 /* AppDelegate.swift */; };
 		DFE87B352902E2080088CB76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B342902E2080088CB76 /* SceneDelegate.swift */; };
@@ -21,6 +20,8 @@
 		DFE87B3C2902E2090088CB76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE87B3B2902E2090088CB76 /* Assets.xcassets */; };
 		DFE87B3F2902E2090088CB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE87B3D2902E2090088CB76 /* LaunchScreen.storyboard */; };
 		DFE87B492902FF360088CB76 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B482902FF360088CB76 /* LoginView.swift */; };
+		DFFE9423290AC474008AC892 /* NavigationLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9422290AC474008AC892 /* NavigationLogin.swift */; };
+		DFFE9445290AD445008AC892 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9444290AD445008AC892 /* ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +31,6 @@
 		DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		DFB705A72907206100A42A28 /* ColorsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
-		DFB705A929072BDF00A42A28 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		DFB705AD290730A800A42A28 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		DFE87B2F2902E2080088CB76 /* BankAccount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankAccount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE87B322902E2080088CB76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +40,8 @@
 		DFE87B3E2902E2090088CB76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFE87B402902E2090088CB76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFE87B482902FF360088CB76 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DFFE9422290AC474008AC892 /* NavigationLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLogin.swift; sourceTree = "<group>"; };
+		DFFE9444290AD445008AC892 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				DFB705A72907206100A42A28 /* ColorsExtension.swift */,
+				DFFE9444290AD445008AC892 /* ViewControllerExtension.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -128,7 +131,7 @@
 				DFB705992906F32200A42A28 /* Onboarding */,
 				DFE87B472902FEFF0088CB76 /* Login */,
 				DFE87B462902FE9E0088CB76 /* GeneralFiles */,
-				DFB705A929072BDF00A42A28 /* View.xib */,
+				DFFE9422290AC474008AC892 /* NavigationLogin.swift */,
 			);
 			path = BankAccount;
 			sourceTree = "<group>";
@@ -222,7 +225,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFE87B3F2902E2090088CB76 /* LaunchScreen.storyboard in Resources */,
-				DFB705AA29072BDF00A42A28 /* View.xib in Resources */,
 				DFE87B3C2902E2090088CB76 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFFE9445290AD445008AC892 /* ViewControllerExtension.swift in Sources */,
 				DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */,
 				DF24AF912908665800930240 /* HomeViewModel.swift in Sources */,
 				DFE87B372902E2080088CB76 /* LoginViewController.swift in Sources */,
@@ -242,6 +245,7 @@
 				DFB705A82907206100A42A28 /* ColorsExtension.swift in Sources */,
 				DF24AF8E2908613100930240 /* HomeViewController.swift in Sources */,
 				DFE87B492902FF360088CB76 /* LoginView.swift in Sources */,
+				DFFE9423290AC474008AC892 /* NavigationLogin.swift in Sources */,
 				DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */,
 				DFB705AE290730A800A42A28 /* OnboardingViewController.swift in Sources */,
 				DFE87B352902E2080088CB76 /* SceneDelegate.swift in Sources */,

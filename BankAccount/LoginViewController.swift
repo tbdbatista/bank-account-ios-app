@@ -101,9 +101,7 @@ class LoginViewController: UIViewController {
 //MARK: - Extension - LoginViewlModelDelegate
 extension LoginViewController: LoginViewModelDelegate {
     internal func didLogin() {
-        let homeviewController = HomeViewController()
-        homeviewController.modalPresentationStyle = .fullScreen
-        present(homeviewController, animated: true, completion: nil)
+        NavigationLogin.goHome(presenter: self)
     }
     
     internal func setErrorWarningsLabel() {
