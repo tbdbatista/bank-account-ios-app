@@ -16,20 +16,19 @@ class HomeViewModel {
     
     let userDefaults = UserDefaults.standard
     weak var delegate: HomeViewModelDelegate?
-    static let hasOnboarded = "hasOnboarded"
     
     func callOnboarding() {
         if getHasOnboarded() != true {
             delegate?.didNotHaveOnboarded()
-            setHasOnboarded(didOnboarded: true)
+            setHasOnboarded(newValue: true)
         }
     }
     
-    func setHasOnboarded(didOnboarded: Bool) {
-        userDefaults.set(didOnboarded, forKey: HomeViewModel.hasOnboarded)
+    func setHasOnboarded(newValue: Bool) {
+        LocalState.hasOnboarded = newValue
     }
     
     func getHasOnboarded() -> Bool {
-        return userDefaults.bool(forKey: HomeViewModel.hasOnboarded)
+        return LocalState.hasOnboarded
     }
 }
