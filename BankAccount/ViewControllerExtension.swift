@@ -9,8 +9,8 @@ import UIKit
 
 public enum NavigationType {
     case push
-    case present
     case show
+    case present
     case crossDissolve
     case coverVertical
     case partialCurl
@@ -27,13 +27,13 @@ extension UIViewController {
             }
             navigationController.modalPresentationStyle = .overCurrentContext
             navigationController.pushViewController(viewController, animated: animated)
-        case .present:
-            viewController.modalPresentationStyle = .overCurrentContext
-            self.present(viewController, animated: animated, completion: nil)
         case .show:
             let navigationController = UINavigationController(rootViewController: viewController)
             navigationController.modalPresentationStyle = .overCurrentContext
             self.show(navigationController, sender: animated)
+        case .present:
+            viewController.modalPresentationStyle = .overCurrentContext
+            self.present(viewController, animated: animated, completion: nil)
         case .crossDissolve:
             viewController.modalPresentationStyle = .overCurrentContext
             viewController.modalTransitionStyle = .crossDissolve

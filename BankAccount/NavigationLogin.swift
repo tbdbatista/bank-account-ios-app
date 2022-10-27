@@ -9,12 +9,12 @@ import UIKit
 
 class NavigationLogin {
     
-    class func goHome(presenter: UIViewController) {
+    static func goHome(presenter: UIViewController) {
         let homeVC = HomeViewController()
         presenter.goToViewController(navigateTo: homeVC, navigationType: .crossDissolve, animated: true)
     }
     
-    class func goOnboarding(presenter: UIViewController) {
+    static func goOnboarding(presenter: UIViewController) {
         let onboardingVC = OnboardingContainerViewController()
         presenter.goToViewController(navigateTo: onboardingVC, navigationType: .flipHorizontal, animated: true)
     }
