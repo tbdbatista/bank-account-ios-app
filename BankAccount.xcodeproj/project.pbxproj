@@ -23,6 +23,7 @@
 		DFFE9423290AC474008AC892 /* NavigationLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9422290AC474008AC892 /* NavigationLogin.swift */; };
 		DFFE9445290AD445008AC892 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9444290AD445008AC892 /* ViewControllerExtension.swift */; };
 		DFFE9448290B0F03008AC892 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9447290B0F03008AC892 /* LocalState.swift */; };
+		DFFE944A290C6670008AC892 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9449290C6670008AC892 /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DFFE9422290AC474008AC892 /* NavigationLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLogin.swift; sourceTree = "<group>"; };
 		DFFE9444290AD445008AC892 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		DFFE9447290B0F03008AC892 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
+		DFFE9449290C6670008AC892 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +67,14 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
-		DF24AF8C2908612100930240 /* Home */ = {
+		DF24AF8C2908612100930240 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DFFE9449290C6670008AC892 /* MainTabBarController.swift */,
 				DF24AF8F2908664700930240 /* ViewModel */,
 				DF24AF8D2908613100930240 /* HomeViewController.swift */,
 			);
-			name = Home;
+			name = Main;
 			sourceTree = "<group>";
 		};
 		DF24AF8F2908664700930240 /* ViewModel */ = {
@@ -129,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				DFFE9446290B0EF3008AC892 /* Utils */,
-				DF24AF8C2908612100930240 /* Home */,
+				DF24AF8C2908612100930240 /* Main */,
 				DFB705A42907203600A42A28 /* Common */,
 				DFB705992906F32200A42A28 /* Onboarding */,
 				DFE87B472902FEFF0088CB76 /* Login */,
@@ -249,6 +252,7 @@
 			files = (
 				DFFE9445290AD445008AC892 /* ViewControllerExtension.swift in Sources */,
 				DFFE9448290B0F03008AC892 /* LocalState.swift in Sources */,
+				DFFE944A290C6670008AC892 /* MainTabBarController.swift in Sources */,
 				DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */,
 				DF24AF912908665800930240 /* HomeViewModel.swift in Sources */,
 				DFE87B372902E2080088CB76 /* LoginViewController.swift in Sources */,
