@@ -21,7 +21,7 @@ class LocalState {
         }
         set(newValue) {
             userDefaults.set(newValue, forKey: Keys.hasOnboarded.rawValue)
-            userDefaults.synchronize()
+            userDefaults.synchronize()  // This line is required only for iOS 12 or below
         }
     }
 }

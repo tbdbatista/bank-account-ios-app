@@ -10,8 +10,13 @@ import UIKit
 class NavigationLogin {
     
     static func goHome(presenter: UIViewController) {
-        let homeVC = HomeViewController()
-        presenter.goToViewController(navigateTo: homeVC, navigationType: .crossDissolve, animated: true)
+        let tabBarController = UITabBarController()
+        let vc1 = HomeViewController()
+        let vc2 = LoginViewController()
+        vc1.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 1)
+        tabBarController.viewControllers = [vc1, vc2]
+        presenter.goToViewController(navigateTo: tabBarController, navigationType: .present, animated: true)
     }
     
     static func goOnboarding(presenter: UIViewController) {

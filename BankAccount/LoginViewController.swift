@@ -97,10 +97,12 @@ class LoginViewController: UIViewController {
         loginViewModel.login(username: username, password: password)
     }
     
-    private func cleanInputs() {
-        loginView.usernameTextField.text = ""
+    private func cleanInputs(wrongPassword: Bool = false) {
+        if !wrongPassword {
+            loginView.usernameTextField.text = ""
+            loginView.usernameTextField.becomeFirstResponder()
+        }
         loginView.passwordTextField.text = ""
-        loginView.usernameTextField.becomeFirstResponder()
     }
 }
 
@@ -125,8 +127,10 @@ extension LoginViewController: LoginViewModelDelegate {
         case .incorrectLoginInput :
             self.errorWarningsLabel.text = "Incorret Username/Password."
             self.errorWarningsLabel.isHidden = false
+            self.cleanInputs(wrongPassword: true)
         default :
             self.errorWarningsLabel.isHidden = true
+            self.cleanInputs()
         }
         
         NSLayoutConstraint.activate([
@@ -134,7 +138,6 @@ extension LoginViewController: LoginViewModelDelegate {
             errorWarningsLabel.topAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 2)
         ])
         
-        self.cleanInputs()
     }
 }
 
