@@ -24,6 +24,8 @@
 		DFFE9445290AD445008AC892 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9444290AD445008AC892 /* ViewControllerExtension.swift */; };
 		DFFE9448290B0F03008AC892 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9447290B0F03008AC892 /* LocalState.swift */; };
 		DFFE944A290C6670008AC892 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9449290C6670008AC892 /* MainTabBarController.swift */; };
+		DFFE944C290C6CE5008AC892 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE944B290C6CE5008AC892 /* TransactionsViewController.swift */; };
+		DFFE944E290C6D14008AC892 /* MoreInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE944D290C6D14008AC892 /* MoreInformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		DFFE9444290AD445008AC892 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		DFFE9447290B0F03008AC892 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		DFFE9449290C6670008AC892 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		DFFE944B290C6CE5008AC892 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		DFFE944D290C6D14008AC892 /* MoreInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 				DFFE9449290C6670008AC892 /* MainTabBarController.swift */,
 				DF24AF8F2908664700930240 /* ViewModel */,
 				DF24AF8D2908613100930240 /* HomeViewController.swift */,
+				DFFE944B290C6CE5008AC892 /* TransactionsViewController.swift */,
+				DFFE944D290C6D14008AC892 /* MoreInformationViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -256,6 +262,8 @@
 				DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */,
 				DF24AF912908665800930240 /* HomeViewModel.swift in Sources */,
 				DFE87B372902E2080088CB76 /* LoginViewController.swift in Sources */,
+				DFFE944C290C6CE5008AC892 /* TransactionsViewController.swift in Sources */,
+				DFFE944E290C6D14008AC892 /* MoreInformationViewController.swift in Sources */,
 				DFB7059B2906F35600A42A28 /* OnboardingContainerViewController.swift in Sources */,
 				DFE87B332902E2080088CB76 /* AppDelegate.swift in Sources */,
 				DFB705A82907206100A42A28 /* ColorExtension.swift in Sources */,
