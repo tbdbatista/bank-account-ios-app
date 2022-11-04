@@ -137,13 +137,13 @@
 		DFE87B312902E2080088CB76 /* BankAccount */ = {
 			isa = PBXGroup;
 			children = (
+				DFF77CA129157EA0002A7113 /* Navigation */,
 				DFFE9446290B0EF3008AC892 /* Utils */,
 				DF24AF8C2908612100930240 /* Main */,
 				DFB705A42907203600A42A28 /* Common */,
 				DFB705992906F32200A42A28 /* Onboarding */,
 				DFE87B472902FEFF0088CB76 /* Login */,
 				DFE87B462902FE9E0088CB76 /* GeneralFiles */,
-				DFFE9422290AC474008AC892 /* NavigationLogin.swift */,
 			);
 			path = BankAccount;
 			sourceTree = "<group>";
@@ -176,6 +176,14 @@
 				DFE87B362902E2080088CB76 /* LoginViewController.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		DFF77CA129157EA0002A7113 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				DFFE9422290AC474008AC892 /* NavigationLogin.swift */,
+			);
+			name = Navigation;
 			sourceTree = "<group>";
 		};
 		DFFE9446290B0EF3008AC892 /* Utils */ = {
