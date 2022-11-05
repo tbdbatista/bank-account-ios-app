@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     let stackView = UIStackView()
     let mainLabel = UILabel()
     let logoutButton = UIButton()
-    let games = ["Pacman", "Space Invaders", "Space Patrol"]
+    let games = ["Pacman", "Space Invaders", "Space Patrol","Pacman", "Space Invaders", "Space Patrol","Pacman", "Space Invaders", "Space Patrol","Pacman", "Space Invaders", "Space Patrol"]
     var tableView = UITableView()
     
     override func viewDidLoad() {
@@ -48,6 +48,7 @@ class HomeViewController: UIViewController {
         setMainLabel()
         setLogoutButton()
         setupTableView()
+        setupHeaderTableView()
     }
     
     private func setStackView() {
@@ -84,8 +85,15 @@ class HomeViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: stackView.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: mainLabel.topAnchor)
         ])
+    }
+    
+    private func setupHeaderTableView() {
+        let header = HomeHeaderView(frame: .zero)
+        var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        size.width = UIScreen.main.bounds.width
+        header.frame.size = size
+        tableView.tableHeaderView = header
     }
     
     //MARK: - Methods
