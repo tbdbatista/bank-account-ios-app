@@ -13,6 +13,8 @@ class HomeViewController: UIViewController {
     let stackView = UIStackView()
     let mainLabel = UILabel()
     let logoutButton = UIButton()
+    let games = ["Pacman", "Space Invaders", "Space Patrol"]
+    var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,7 @@ class HomeViewController: UIViewController {
     
     private func setSelfSetup() {
         view.addSubview(stackView)
+        stackView.addArrangedSubview(tableView)
         stackView.addArrangedSubview(mainLabel)
         stackView.addArrangedSubview(logoutButton)
         view.subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
@@ -44,6 +47,7 @@ class HomeViewController: UIViewController {
         setStackView()
         setMainLabel()
         setLogoutButton()
+        setupTableView()
     }
     
     private func setStackView() {
@@ -51,14 +55,17 @@ class HomeViewController: UIViewController {
         stackView.spacing = 16
         
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
     private func setMainLabel() {
         mainLabel.text = "BA Bank"
         mainLabel.textColor = .primaryGreen
+        mainLabel.textAlignment = .center
     }
     
     private func setLogoutButton() {
@@ -66,6 +73,19 @@ class HomeViewController: UIViewController {
         logoutButton.backgroundColor = .secondaryGreen
         logoutButton.setTitleColor(.primaryGreen, for: .normal)
         logoutButton.addTarget(self, action: #selector(callLogout), for: .touchUpInside)
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: stackView.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: mainLabel.topAnchor)
+        ])
     }
     
     //MARK: - Methods
@@ -84,4 +104,24 @@ extension HomeViewController: HomeViewModelDelegate {
         NavigationLogin.goOnboarding(presenter: self)
     }
 
+}
+
+//MARK: - Extension - UITableViewDataSource
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = games[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return games.count
+    }
+}
+
+//MARK: - Extension - UITableViewDelegate
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Selected row: \(indexPath.row)")
+    }
 }
