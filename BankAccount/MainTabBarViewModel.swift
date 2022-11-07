@@ -1,21 +1,21 @@
 //
-//  HomeViewModel.swift
+//  MainTabBarViewModel.swift
 //  BankAccount
 //
-//  Created by Beltrami Dias Batista, Thiago on 25/10/22.
+//  Created by Beltrami Dias Batista, Thiago on 07/11/22.
 //
 
 import Foundation
 
-protocol HomeViewModelDelegate: AnyObject {
+protocol MainTabBarViewModelDelegate: AnyObject {
     func didNotHaveOnboarded()
     func didHaveOnboarded()
 }
 
-class HomeViewModel {
+class MainTabBarViewModel {
     
     let userDefaults = UserDefaults.standard
-    weak var delegate: HomeViewModelDelegate?
+    weak var delegate: MainTabBarViewModelDelegate?
     
     func callOnboarding() {
         if getHasOnboarded() != true {

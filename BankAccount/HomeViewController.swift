@@ -9,7 +9,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let homeViewModel = HomeViewModel()
     let stackView = UIStackView()
     let mainLabel = UILabel()
     let logoutButton = UIButton()
@@ -18,17 +17,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        homeViewModel.delegate = self
   
         setSelfSetup()
         setSelfView()
         setViews()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        homeViewModel.callOnboarding()
     }
     
     private func setSelfSetup() {
@@ -101,18 +93,6 @@ class HomeViewController: UIViewController {
     @objc private func callLogout(sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-}
-
-//MARK: - Extension - HomeViewModelDelegate
-extension HomeViewController: HomeViewModelDelegate {
-    func didHaveOnboarded() {
-        NavigationLogin.goHome(presenter: self)
-    }
-    
-    func didNotHaveOnboarded() {
-        NavigationLogin.goOnboarding(presenter: self)
-    }
-
 }
 
 //MARK: - Extension - UITableViewDataSource

@@ -10,6 +10,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
+    let mainTabBarViewModel = MainTabBarViewModel()
     let vc1 = HomeViewController()
     let vc2 = TransactionsViewController()
     let vc3 = MoreInformationViewController()
@@ -17,6 +18,8 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainTabBarViewModel.delegate = self
 
         vc1.setTabBarImage(imageName: "list.dash.header.rectangle", title: "Summary")
         vc2.setTabBarImage(imageName: "arrow.left.arrow.right", title: "Transactions")
@@ -34,4 +37,21 @@ class MainTabBarController: UITabBarController {
         
         self.viewControllers = [nc1, nc2, nc3, nc4]
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mainTabBarViewModel.callOnboarding()
+    }
+}
+
+//MARK: - Extension - MainTabBarModelDelegate
+extension MainTabBarController: MainTabBarViewModelDelegate {
+    func didHaveOnboarded() {
+        NavigationLogin.goHome(presenter: self)
+    }
+    
+    func didNotHaveOnboarded() {
+        NavigationLogin.goOnboarding(presenter: self)
+    }
+
 }
