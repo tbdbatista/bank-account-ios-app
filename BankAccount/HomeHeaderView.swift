@@ -29,7 +29,7 @@ class HomeHeaderView: UIView {
         let bundle = Bundle(for: HomeHeaderView.self)
         bundle.loadNibNamed("HomeHeaderView", owner: self, options: nil)
         addSubview(contentView)
-        contentView.backgroundColor = .orange
+        contentView.backgroundColor = .secondaryGreen
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
