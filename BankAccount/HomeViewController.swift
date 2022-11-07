@@ -17,7 +17,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+        self.navigationController?.isNavigationBarHidden = true
+
         setSelfSetup()
         setSelfView()
         setViews()
@@ -28,8 +29,7 @@ class HomeViewController: UIViewController {
         stackView.addArrangedSubview(tableView)
         stackView.addArrangedSubview(mainLabel)
         stackView.addArrangedSubview(logoutButton)
-        view.subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
-        self.navigationController?.isNavigationBarHidden = true
+        stackView.translatesAutoresizingMaskIntoConstraints = false
     }
         
     private func setSelfView() {
@@ -73,7 +73,11 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
 
+        tableView.register(HomeCell.self, forCellReuseIdentifier: HomeCell.reuseID)
+        tableView.rowHeight = 100
+        tableView.tableFooterView = UIView()
         
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: stackView.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
@@ -98,8 +102,7 @@ class HomeViewController: UIViewController {
 //MARK: - Extension - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = games[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeCell.reuseID, for: indexPath) as! HomeCell
         return cell
     }
     
