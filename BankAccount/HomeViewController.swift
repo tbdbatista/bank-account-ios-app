@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
         stackView.addArrangedSubview(mainLabel)
         stackView.addArrangedSubview(logoutButton)
         view.subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+        self.navigationController?.isNavigationBarHidden = true
     }
         
     private func setSelfView() {
