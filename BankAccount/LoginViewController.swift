@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
     
     //MARK: - View Setup
     private func setSelfView() {
-        self.view.backgroundColor = .systemBackground
+        self.view.backgroundColor = .secondaryGreen
     }
     
     private func layout() {
@@ -60,6 +60,7 @@ class LoginViewController: UIViewController {
         self.logoLabel.text = "B.A. Bank"
         self.logoLabel.font = UIFont.init(name: "American Typewriter", size: 40)
         self.logoLabel.textAlignment = .center
+        self.logoLabel.textColor = .primaryGreen
         
         NSLayoutConstraint.activate([
             logoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -80,7 +81,7 @@ class LoginViewController: UIViewController {
     
     private func setSignInButton() {
         self.signInButton.setTitle("Sign In", for: .normal)
-        self.signInButton.backgroundColor = .systemBlue
+        self.signInButton.backgroundColor = .primaryGreen
         self.signInButton.layer.cornerRadius = 5
         self.signInButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
     }

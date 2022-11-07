@@ -74,7 +74,7 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
 
         tableView.register(HomeCell.self, forCellReuseIdentifier: HomeCell.reuseID)
-        tableView.rowHeight = 100
+        tableView.rowHeight = 90
         tableView.tableFooterView = UIView()
         
         tableView.translatesAutoresizingMaskIntoConstraints = false

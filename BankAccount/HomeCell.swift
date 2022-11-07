@@ -14,6 +14,10 @@ class HomeCell: UITableViewCell {
     lazy var underLineView = UIView()
     lazy var nameLabel = UILabel()
     
+    lazy var secondStackView = UIStackView()
+    lazy var balanceLabel = UILabel()
+    lazy var balanceAmountLabel = UILabel()
+    
     static let reuseID = "HomeCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -31,16 +35,23 @@ class HomeCell: UITableViewCell {
         firstStackView.addArrangedSubview(typeLabel)
         firstStackView.addArrangedSubview(underLineView)
         firstStackView.addArrangedSubview(nameLabel)
+        
+        self.contentView.addSubview(secondStackView)
+        secondStackView.addArrangedSubview(balanceLabel)
+        secondStackView.addArrangedSubview(balanceAmountLabel)
     }
     
     private func setupViews() {
-        setupFirstStack()
+        setupFirstStackView()
         setupTypeLabel()
         setupUnderlineView()
         setupNameLabel()
+        setupSecondStackView()
+        setupBalanceLabel()
+        setupBalanceAmountLabel()
     }
     
-    private func setupFirstStack() {
+    private func setupFirstStackView() {
         firstStackView.axis = .vertical
         firstStackView.spacing = 8
         firstStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +64,7 @@ class HomeCell: UITableViewCell {
     
     private func setupTypeLabel() {
         typeLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        typeLabel.text = "Account type"
+        typeLabel.text = "Individual account"
         typeLabel.textColor = .primaryGreen
     }
     
@@ -64,7 +75,34 @@ class HomeCell: UITableViewCell {
     
     private func setupNameLabel() {
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        nameLabel.text = "Account name"
+        nameLabel.text = "Cryptocurrency"
         nameLabel.textColor = .primaryGreen
+        
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    }
+    
+    private func setupSecondStackView() {
+        secondStackView.axis = .vertical
+        secondStackView.spacing = 6
+        secondStackView.alignment = .trailing
+        secondStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            secondStackView.bottomAnchor.constraint(equalTo: firstStackView.bottomAnchor, constant: -8),
+            contentView.trailingAnchor.constraint(equalTo: secondStackView.trailingAnchor, constant: 32)
+        ])
+    }
+    
+    private func setupBalanceLabel() {
+        balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        balanceLabel.text = "Cash balance"
+        balanceLabel.textColor = .primaryGreen
+    }
+    
+    private func setupBalanceAmountLabel() {
+        balanceAmountLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        balanceAmountLabel.text = "$8,890.34"
+        balanceAmountLabel.textColor = .primaryGreen
     }
 }
