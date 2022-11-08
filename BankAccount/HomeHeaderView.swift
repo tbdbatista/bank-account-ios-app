@@ -10,6 +10,7 @@ import UIKit
 class HomeHeaderView: UIView {
     
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var mainLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,6 +31,7 @@ class HomeHeaderView: UIView {
         bundle.loadNibNamed("HomeHeaderView", owner: self, options: nil)
         addSubview(contentView)
         contentView.backgroundColor = .secondaryGreen
+        mainLabel.textColor = .primaryGreen
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
