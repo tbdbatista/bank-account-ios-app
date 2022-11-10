@@ -17,6 +17,7 @@ class HomeCell: UITableViewCell {
     lazy var secondStackView = UIStackView()
     lazy var balanceLabel = UILabel()
     lazy var balanceAmountLabel = UILabel()
+    lazy var chevronImageView = UIImageView()
     
     static let reuseID = "HomeCell"
     
@@ -30,6 +31,7 @@ class HomeCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Setup Self Cell
     private func setupSelfCell() {
         self.contentView.addSubview(firstStackView)
         firstStackView.addArrangedSubview(typeLabel)
@@ -39,8 +41,11 @@ class HomeCell: UITableViewCell {
         self.contentView.addSubview(secondStackView)
         secondStackView.addArrangedSubview(balanceLabel)
         secondStackView.addArrangedSubview(balanceAmountLabel)
+        
+        self.contentView.addSubview(chevronImageView)
     }
     
+    //MARK: - Setup Views
     private func setupViews() {
         setupFirstStackView()
         setupTypeLabel()
@@ -49,11 +54,12 @@ class HomeCell: UITableViewCell {
         setupSecondStackView()
         setupBalanceLabel()
         setupBalanceAmountLabel()
+        setupChevronImageView()
     }
     
     private func setupFirstStackView() {
         firstStackView.axis = .vertical
-        firstStackView.spacing = 8
+        firstStackView.spacing = 4
         firstStackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -79,7 +85,7 @@ class HomeCell: UITableViewCell {
         nameLabel.textColor = .primaryGreen
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: 62).isActive = true
     }
     
     private func setupSecondStackView() {
@@ -89,7 +95,7 @@ class HomeCell: UITableViewCell {
         secondStackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            secondStackView.bottomAnchor.constraint(equalTo: firstStackView.bottomAnchor, constant: -8),
+            secondStackView.topAnchor.constraint(equalTo: underLineView.bottomAnchor),
             contentView.trailingAnchor.constraint(equalTo: secondStackView.trailingAnchor, constant: 32)
         ])
     }
@@ -104,5 +110,15 @@ class HomeCell: UITableViewCell {
         balanceAmountLabel.font = UIFont.preferredFont(forTextStyle: .body)
         balanceAmountLabel.text = "$8,890.34"
         balanceAmountLabel.textColor = .primaryGreen
+    }
+    
+    private func setupChevronImageView() {
+        chevronImageView.image = UIImage(systemName: "chevron.right")?.withTintColor(.primaryGreen, renderingMode: .alwaysOriginal)
+        
+        chevronImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            chevronImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            chevronImageView.topAnchor.constraint(equalTo: underLineView.bottomAnchor, constant: 16)
+        ])
     }
 }
