@@ -42,6 +42,7 @@ class HomeCell: UITableViewCell {
         secondStackView.addArrangedSubview(balanceLabel)
         secondStackView.addArrangedSubview(balanceAmountLabel)
         
+        self.backgroundColor = .secondaryGreen
         self.contentView.addSubview(chevronImageView)
     }
     
@@ -75,13 +76,13 @@ class HomeCell: UITableViewCell {
     }
     
     private func setupUnderlineView() {
-        underLineView.backgroundColor = .secondaryGreen
-        underLineView.heightAnchor.constraint(equalToConstant: 4).isActive = true
+        underLineView.backgroundColor = .primaryGreen
+        underLineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
     
     private func setupNameLabel() {
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        nameLabel.text = "Cryptocurrency"
+        nameLabel.text = "Cryptocurrency ballout"
         nameLabel.textColor = .primaryGreen
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -90,7 +91,7 @@ class HomeCell: UITableViewCell {
     
     private func setupSecondStackView() {
         secondStackView.axis = .vertical
-        secondStackView.spacing = 6
+        secondStackView.spacing = 2
         secondStackView.alignment = .trailing
         secondStackView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -108,7 +109,7 @@ class HomeCell: UITableViewCell {
     
     private func setupBalanceAmountLabel() {
         balanceAmountLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        balanceAmountLabel.text = "$8,890.34"
+        balanceAmountLabel.attributedText = setupStyleForBalanceAmountLabel(dollars: "987.098", cents: ".09")
         balanceAmountLabel.textColor = .primaryGreen
     }
     
@@ -120,5 +121,21 @@ class HomeCell: UITableViewCell {
             chevronImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             chevronImageView.topAnchor.constraint(equalTo: underLineView.bottomAnchor, constant: 16)
         ])
+    }
+    
+    private func setupStyleForBalanceAmountLabel(dollars: String, cents: String) -> NSMutableAttributedString {
+        let dollarSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 4]
+        let dollarValueAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title2)]
+        let centValueAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 0]
+        
+        let rootString = NSMutableAttributedString(string: "$ ", attributes: dollarSignAttributes)
+        let dollarsString = NSAttributedString(string: dollars, attributes: dollarValueAttributes)
+        let centsString = NSAttributedString(string: cents, attributes: centValueAttributes)
+        
+        rootString.append(dollarsString)
+        rootString.append(centsString)
+        return rootString
+        
+        
     }
 }
