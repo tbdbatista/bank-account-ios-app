@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
     
     private func setStackView() {
         stackView.axis = .vertical
-        stackView.spacing = 16
+        stackView.spacing = 0
         
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
