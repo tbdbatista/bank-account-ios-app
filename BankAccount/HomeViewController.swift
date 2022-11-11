@@ -10,7 +10,6 @@ import UIKit
 class HomeViewController: UIViewController {
     
     let stackView = UIStackView()
-    let mainLabel = UILabel()
     let logoutButton = UIButton()
     let games = ["Pacman", "Space Invaders", "Space Patrol","Pacman", "Space Invaders", "Space Patrol","Pacman", "Space Invaders", "Space Patrol","Pacman", "Space Invaders", "Space Patrol"]
     var tableView = UITableView()
@@ -27,7 +26,6 @@ class HomeViewController: UIViewController {
     private func setSelfSetup() {
         view.addSubview(stackView)
         stackView.addArrangedSubview(tableView)
-        stackView.addArrangedSubview(mainLabel)
         stackView.addArrangedSubview(logoutButton)
         stackView.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -38,7 +36,6 @@ class HomeViewController: UIViewController {
 
     private func setViews() {
         setStackView()
-        setMainLabel()
         setLogoutButton()
         setupTableView()
         setupHeaderTableView()
@@ -54,12 +51,6 @@ class HomeViewController: UIViewController {
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-    }
-    
-    private func setMainLabel() {
-        mainLabel.text = "BA Bank"
-        mainLabel.textColor = .primaryGreen
-        mainLabel.textAlignment = .center
     }
     
     private func setLogoutButton() {
