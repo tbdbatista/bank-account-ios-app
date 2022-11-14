@@ -9,8 +9,6 @@ import UIKit
 
 class HomeCell: UITableViewCell {
     
-    let viewModel = HomeViewModel()
-    
     lazy var firstStackView = UIStackView()
     lazy var typeLabel = UILabel()
     lazy var underLineView = UIView()
@@ -142,18 +140,24 @@ class HomeCell: UITableViewCell {
     }
     
     //MARK: - Methods - Setup Cell
-    func configure(viewModel: HomeViewModel) {
-        switch viewModel.accountType {
+    func configure(model: HomeModel) {
+
+        typeLabel.text = model.accountType.rawValue
+        nameLabel.text = model.accountName
+        
+        switch model.accountType {
         case .Banking:
-            print(viewModel.accountType)
+            underLineView.backgroundColor = .systemBlue
+            print(model.accountType)
         case .CreditCard:
-            print(viewModel.accountType)
+            underLineView.backgroundColor = .systemCyan
+            print(model.accountType)
         case .Investment:
-            print(viewModel.accountType)
+            underLineView.backgroundColor = .systemRed
+            print(model.accountType)
         case .Cryptocurrency:
-            print(viewModel.accountType)
-        case .none:
-            print(viewModel.accountType)
+            underLineView.backgroundColor = .systemOrange
+            print(model.accountType)
         }
     }
 }

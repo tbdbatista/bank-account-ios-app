@@ -9,7 +9,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var accounts: [HomeViewModel] = []
+    let viewModel = HomeViewModel()
+    
+    var accounts: [HomeModel]?
     lazy var stackView = UIStackView()
     lazy var logoutButton = UIButton()
     lazy var tableView = UITableView()
@@ -21,6 +23,7 @@ class HomeViewController: UIViewController {
         setSelfSetup()
         setSelfView()
         setViews()
+        accounts = viewModel.fetchData()
     }
     
     private func setSelfSetup() {
@@ -93,12 +96,16 @@ class HomeViewController: UIViewController {
 //MARK: - Extension - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let accounts = accounts else {return UITableViewCell()}
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeCell.reuseID, for: indexPath) as! HomeCell
+        cell.configure(model: accounts[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return accounts.count
+        return accounts?.count ?? 0
     }
 }
 
