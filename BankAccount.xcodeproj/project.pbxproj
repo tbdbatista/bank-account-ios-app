@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */; };
 		DF24AF8E2908613100930240 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8D2908613100930240 /* HomeViewController.swift */; };
+		DF3D7EBC292271AB0043F06B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */; };
 		DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */; };
 		DFB7059B2906F35600A42A28 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */; };
 		DFB705A82907206100A42A28 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB705A72907206100A42A28 /* ColorExtension.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewModel.swift; sourceTree = "<group>"; };
 		DF24AF8D2908613100930240 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		DFB705A72907206100A42A28 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -92,6 +94,24 @@
 			isa = PBXGroup;
 			children = (
 				DFC05ECC291982A70069E7A0 /* MainTabBarViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		DF3D7EB9292271710043F06B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DF24AF8D2908613100930240 /* HomeViewController.swift */,
+				DFC05ED1291986E90069E7A0 /* Header */,
+				DFC05ED2291986F00069E7A0 /* Cell */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DF3D7EBA292271990043F06B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -236,9 +256,8 @@
 		DFF77CA42916F27E002A7113 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DFC05ED2291986F00069E7A0 /* Cell */,
-				DFC05ED1291986E90069E7A0 /* Header */,
-				DF24AF8D2908613100930240 /* HomeViewController.swift */,
+				DF3D7EBA292271990043F06B /* ViewModel */,
+				DF3D7EB9292271710043F06B /* Views */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -325,6 +344,7 @@
 				DFFE9445290AD445008AC892 /* ViewControllerExtension.swift in Sources */,
 				DFFE9448290B0F03008AC892 /* LocalState.swift in Sources */,
 				DFFE944A290C6670008AC892 /* MainTabBarController.swift in Sources */,
+				DF3D7EBC292271AB0043F06B /* HomeViewModel.swift in Sources */,
 				DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */,
 				DFC05ECD291982A70069E7A0 /* MainTabBarViewModel.swift in Sources */,
 				DFE87B372902E2080088CB76 /* LoginViewController.swift in Sources */,
