@@ -9,6 +9,8 @@ import UIKit
 
 class HomeCell: UITableViewCell {
     
+    
+    
     lazy var firstStackView = UIStackView()
     lazy var typeLabel = UILabel()
     lazy var underLineView = UIView()
