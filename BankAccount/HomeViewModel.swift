@@ -7,6 +7,15 @@
 
 import Foundation
 
+enum AccountType: String {
+    case Banking
+    case CreditCard
+    case Investment
+    case Cryptocurrency
+    
+}
 class HomeViewModel {
     
+    let accountType: AccountType? = nil
+    let accountName: String? = nil
 }

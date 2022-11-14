@@ -9,7 +9,7 @@ import UIKit
 
 class HomeCell: UITableViewCell {
     
-    
+    let viewModel = HomeViewModel()
     
     lazy var firstStackView = UIStackView()
     lazy var typeLabel = UILabel()
@@ -139,5 +139,21 @@ class HomeCell: UITableViewCell {
         return rootString
         
         
+    }
+    
+    //MARK: - Methods - Setup Cell
+    func configure(viewModel: HomeViewModel) {
+        switch viewModel.accountType {
+        case .Banking:
+            print(viewModel.accountType)
+        case .CreditCard:
+            print(viewModel.accountType)
+        case .Investment:
+            print(viewModel.accountType)
+        case .Cryptocurrency:
+            print(viewModel.accountType)
+        case .none:
+            print(viewModel.accountType)
+        }
     }
 }

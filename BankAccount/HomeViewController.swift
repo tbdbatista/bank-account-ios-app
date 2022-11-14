@@ -9,10 +9,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let stackView = UIStackView()
-    let logoutButton = UIButton()
-    let games = ["Pacman", "Space Invaders", "Space Patrol","Pacman", "Space Invaders", "Space Patrol","Pacman", "Space Invaders", "Space Patrol","Pacman", "Space Invaders", "Space Patrol"]
-    var tableView = UITableView()
+    var accounts: [HomeViewModel] = []
+    lazy var stackView = UIStackView()
+    lazy var logoutButton = UIButton()
+    lazy var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +84,7 @@ class HomeViewController: UIViewController {
         tableView.tableHeaderView = header
     }
     
-    //MARK: - Methods
+    //MARK: - Methods - Navigation
     @objc private func callLogout(sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -98,7 +98,7 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return accounts.count
     }
 }
 
