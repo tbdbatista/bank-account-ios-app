@@ -30,11 +30,11 @@ enum AccountType: String {
 class HomeViewModel {
 
     func fetchData() -> [HomeModel] {
-        let account = HomeModel(accountType: .Banking, accountName: "Conta Corrente")
-        let savings = HomeModel(accountType: .Banking, accountName: "Poupança")
-        let visa = HomeModel(accountType: .CreditCard, accountName: "Visa")
-        let investment = HomeModel(accountType: .Investment, accountName: "REIT Receipt")
-        let crypto = HomeModel(accountType: .Cryptocurrency, accountName: "Bitcoin")
+        let account = HomeModel(accountType: .Banking, accountName: "Single Account", dollars: "90,909", cents:"76")
+        let savings = HomeModel(accountType: .Banking, accountName: "Savings", dollars: "123,423", cents:"90")
+        let visa = HomeModel(accountType: .CreditCard, accountName: "Visa", dollars: "14,414", cents:"41")
+        let investment = HomeModel(accountType: .Investment, accountName: "REITs", dollars: "745,789", cents:"55")
+        let crypto = HomeModel(accountType: .Cryptocurrency, accountName: "Bitcoin", dollars: "234,423", cents:"32")
         let accounts = [account, savings, visa, investment, crypto]
         return accounts
     }

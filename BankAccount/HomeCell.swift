@@ -130,9 +130,11 @@ class HomeCell: UITableViewCell {
         
         let rootString = NSMutableAttributedString(string: "$ ", attributes: dollarSignAttributes)
         let dollarsString = NSAttributedString(string: dollars, attributes: dollarValueAttributes)
+        let dotString = NSAttributedString(string: ".", attributes: centValueAttributes)
         let centsString = NSAttributedString(string: cents, attributes: centValueAttributes)
         
         rootString.append(dollarsString)
+        rootString.append(dotString)
         rootString.append(centsString)
         return rootString
         
@@ -144,6 +146,7 @@ class HomeCell: UITableViewCell {
 
         typeLabel.text = model.accountType.rawValue
         nameLabel.text = model.accountName
+        balanceAmountLabel.attributedText = setupStyleForBalanceAmountLabel(dollars: model.dollars, cents: model.cents)
         
         switch model.accountType {
         case .Banking:

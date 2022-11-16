@@ -10,4 +10,6 @@ import Foundation
 struct HomeModel {
     var accountType: AccountType
     var accountName: String
+    var dollars: String
+    var cents: String
 }
