@@ -9,8 +9,6 @@ import UIKit
 
 class HomeCell: UITableViewCell {
     
-    
-    
     lazy var firstStackView = UIStackView()
     lazy var typeLabel = UILabel()
     lazy var underLineView = UIView()
@@ -132,12 +130,37 @@ class HomeCell: UITableViewCell {
         
         let rootString = NSMutableAttributedString(string: "$ ", attributes: dollarSignAttributes)
         let dollarsString = NSAttributedString(string: dollars, attributes: dollarValueAttributes)
+        let dotString = NSAttributedString(string: ".", attributes: centValueAttributes)
         let centsString = NSAttributedString(string: cents, attributes: centValueAttributes)
         
         rootString.append(dollarsString)
+        rootString.append(dotString)
         rootString.append(centsString)
         return rootString
         
         
+    }
+    
+    //MARK: - Methods - Setup Cell
+    func configure(model: HomeModel) {
+
+        typeLabel.text = model.accountType.rawValue
+        nameLabel.text = model.accountName
+        balanceAmountLabel.attributedText = setupStyleForBalanceAmountLabel(dollars: model.dollars, cents: model.cents)
+        
+        switch model.accountType {
+        case .Banking:
+            underLineView.backgroundColor = .systemBlue
+            print(model.accountType)
+        case .CreditCard:
+            underLineView.backgroundColor = .systemCyan
+            print(model.accountType)
+        case .Investment:
+            underLineView.backgroundColor = .systemRed
+            print(model.accountType)
+        case .Cryptocurrency:
+            underLineView.backgroundColor = .systemOrange
+            print(model.accountType)
+        }
     }
 }

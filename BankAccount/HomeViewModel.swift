@@ -7,6 +7,35 @@
 
 import Foundation
 
-class HomeViewModel {
+enum AccountType: String {
+    case Banking
+    case CreditCard
+    case Investment
+    case Cryptocurrency
     
+    var rawValue: String {
+        switch self {
+        case .Cryptocurrency:
+            return "Cryptocurrency"
+        case .Banking:
+            return "Banking"
+        case .Investment:
+            return "Investment"
+        case .CreditCard:
+            return "Credit Card"
+        }
+    }
+}
+
+class HomeViewModel {
+
+    func fetchData() -> [HomeModel] {
+        let account = HomeModel(accountType: .Banking, accountName: "Single Account", dollars: "90,909", cents:"76")
+        let savings = HomeModel(accountType: .Banking, accountName: "Savings", dollars: "123,423", cents:"90")
+        let visa = HomeModel(accountType: .CreditCard, accountName: "Visa", dollars: "14,414", cents:"41")
+        let investment = HomeModel(accountType: .Investment, accountName: "REITs", dollars: "745,789", cents:"55")
+        let crypto = HomeModel(accountType: .Cryptocurrency, accountName: "Bitcoin", dollars: "234,423", cents:"32")
+        let accounts = [account, savings, visa, investment, crypto]
+        return accounts
+    }
 }

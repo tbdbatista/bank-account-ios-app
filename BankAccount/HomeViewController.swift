@@ -9,10 +9,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let stackView = UIStackView()
-    let logoutButton = UIButton()
-    let games = ["Pacman", "Space Invaders", "Space Patrol","Pacman", "Space Invaders", "Space Patrol","Pacman", "Space Invaders", "Space Patrol","Pacman", "Space Invaders", "Space Patrol"]
-    var tableView = UITableView()
+    let viewModel = HomeViewModel()
+    
+    var accounts: [HomeModel]?
+    lazy var stackView = UIStackView()
+    lazy var logoutButton = UIButton()
+    lazy var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,7 @@ class HomeViewController: UIViewController {
         setSelfSetup()
         setSelfView()
         setViews()
+        accounts = viewModel.fetchData()
     }
     
     private func setSelfSetup() {
@@ -84,7 +87,7 @@ class HomeViewController: UIViewController {
         tableView.tableHeaderView = header
     }
     
-    //MARK: - Methods
+    //MARK: - Methods - Navigation
     @objc private func callLogout(sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -93,12 +96,16 @@ class HomeViewController: UIViewController {
 //MARK: - Extension - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let accounts = accounts else {return UITableViewCell()}
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeCell.reuseID, for: indexPath) as! HomeCell
+        cell.configure(model: accounts[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return accounts?.count ?? 0
     }
 }
 
