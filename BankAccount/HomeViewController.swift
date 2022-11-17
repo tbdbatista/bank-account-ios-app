@@ -66,6 +66,7 @@ class HomeViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .secondaryGreen
 
         tableView.register(HomeCell.self, forCellReuseIdentifier: HomeCell.reuseID)
         tableView.rowHeight = 90
