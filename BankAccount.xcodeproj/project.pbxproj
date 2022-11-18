@@ -10,6 +10,7 @@
 		DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */; };
 		DF24AF8E2908613100930240 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8D2908613100930240 /* HomeViewController.swift */; };
 		DF24AF912908665800930240 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF902908665800930240 /* HomeViewModel.swift */; };
+		DF2AF8612927F0CD00F7E479 /* BankAccountUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2AF8602927F0CD00F7E479 /* BankAccountUnitTests.swift */; };
 		DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */; };
 		DFB7059B2906F35600A42A28 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */; };
 		DFB705A82907206100A42A28 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB705A72907206100A42A28 /* ColorExtension.swift */; };
@@ -29,10 +30,22 @@
 		DFFE944E290C6D14008AC892 /* MoreInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE944D290C6D14008AC892 /* MoreInformationViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DF2AF8622927F0CD00F7E479 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFE87B272902E2080088CB76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFE87B2E2902E2080088CB76;
+			remoteInfo = BankAccount;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewModel.swift; sourceTree = "<group>"; };
 		DF24AF8D2908613100930240 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DF24AF902908665800930240 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DF2AF85E2927F0CD00F7E479 /* BankAccountUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankAccountUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF2AF8602927F0CD00F7E479 /* BankAccountUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountUnitTests.swift; sourceTree = "<group>"; };
 		DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		DFB705A72907206100A42A28 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -55,6 +68,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DF2AF85B2927F0CD00F7E479 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DFE87B2C2902E2080088CB76 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,6 +113,14 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		DF2AF85F2927F0CD00F7E479 /* BankAccountUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				DF2AF8602927F0CD00F7E479 /* BankAccountUnitTests.swift */,
+			);
+			path = BankAccountUnitTests;
+			sourceTree = "<group>";
+		};
 		DFAE0FB62904A5E6000D94C4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				DFE87B312902E2080088CB76 /* BankAccount */,
+				DF2AF85F2927F0CD00F7E479 /* BankAccountUnitTests */,
 				DFE87B302902E2080088CB76 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -132,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				DFE87B2F2902E2080088CB76 /* BankAccount.app */,
+				DF2AF85E2927F0CD00F7E479 /* BankAccountUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,6 +230,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DF2AF85D2927F0CD00F7E479 /* BankAccountUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF2AF8662927F0CD00F7E479 /* Build configuration list for PBXNativeTarget "BankAccountUnitTests" */;
+			buildPhases = (
+				DF2AF85A2927F0CD00F7E479 /* Sources */,
+				DF2AF85B2927F0CD00F7E479 /* Frameworks */,
+				DF2AF85C2927F0CD00F7E479 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DF2AF8632927F0CD00F7E479 /* PBXTargetDependency */,
+			);
+			name = BankAccountUnitTests;
+			productName = BankAccountUnitTests;
+			productReference = DF2AF85E2927F0CD00F7E479 /* BankAccountUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DFE87B2E2902E2080088CB76 /* BankAccount */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFE87B432902E2090088CB76 /* Build configuration list for PBXNativeTarget "BankAccount" */;
@@ -227,6 +275,10 @@
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					DF2AF85D2927F0CD00F7E479 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = DFE87B2E2902E2080088CB76;
+					};
 					DFE87B2E2902E2080088CB76 = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -246,11 +298,19 @@
 			projectRoot = "";
 			targets = (
 				DFE87B2E2902E2080088CB76 /* BankAccount */,
+				DF2AF85D2927F0CD00F7E479 /* BankAccountUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DF2AF85C2927F0CD00F7E479 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DFE87B2D2902E2080088CB76 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,6 +323,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DF2AF85A2927F0CD00F7E479 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF2AF8612927F0CD00F7E479 /* BankAccountUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DFE87B2B2902E2080088CB76 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +358,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DF2AF8632927F0CD00F7E479 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFE87B2E2902E2080088CB76 /* BankAccount */;
+			targetProxy = DF2AF8622927F0CD00F7E479 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		DFE87B3D2902E2090088CB76 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -302,6 +378,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DF2AF8642927F0CD00F7E479 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3ATBHFANP;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbdbatista.BankAccountUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BankAccount.app/BankAccount";
+			};
+			name = Debug;
+		};
+		DF2AF8652927F0CD00F7E479 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3ATBHFANP;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbdbatista.BankAccountUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BankAccount.app/BankAccount";
+			};
+			name = Release;
+		};
 		DFE87B412902E2090088CB76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -475,6 +597,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DF2AF8662927F0CD00F7E479 /* Build configuration list for PBXNativeTarget "BankAccountUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF2AF8642927F0CD00F7E479 /* Debug */,
+				DF2AF8652927F0CD00F7E479 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DFE87B2A2902E2080088CB76 /* Build configuration list for PBXProject "BankAccount" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
