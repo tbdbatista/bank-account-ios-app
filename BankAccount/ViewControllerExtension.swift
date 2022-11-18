@@ -70,7 +70,6 @@ extension UIViewController {
     func setNavBarAppearance () {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithTransparentBackground() // to hide Navigation Bar Line also
-        navBarAppearance.backgroundColor = .secondaryGreen
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
     }

@@ -9,19 +9,22 @@
 /* Begin PBXBuildFile section */
 		DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */; };
 		DF24AF8E2908613100930240 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8D2908613100930240 /* HomeViewController.swift */; };
-		DF24AF912908665800930240 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF902908665800930240 /* HomeViewModel.swift */; };
-		DF2AF8612927F0CD00F7E479 /* BankAccountUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2AF8602927F0CD00F7E479 /* BankAccountUnitTests.swift */; };
+		DF3D7EBC292271AB0043F06B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */; };
+		DF3D7EBF29227B4A0043F06B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBE29227B4A0043F06B /* HomeModel.swift */; };
 		DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */; };
 		DFB7059B2906F35600A42A28 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */; };
 		DFB705A82907206100A42A28 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB705A72907206100A42A28 /* ColorExtension.swift */; };
 		DFB705AE290730A800A42A28 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB705AD290730A800A42A28 /* OnboardingViewController.swift */; };
+		DFC05ECD291982A70069E7A0 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC05ECC291982A70069E7A0 /* MainTabBarViewModel.swift */; };
+		DFC05ED4291987150069E7A0 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC05ED3291987150069E7A0 /* HomeCell.swift */; };
 		DFE87B332902E2080088CB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B322902E2080088CB76 /* AppDelegate.swift */; };
 		DFE87B352902E2080088CB76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B342902E2080088CB76 /* SceneDelegate.swift */; };
 		DFE87B372902E2080088CB76 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B362902E2080088CB76 /* LoginViewController.swift */; };
 		DFE87B3C2902E2090088CB76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE87B3B2902E2090088CB76 /* Assets.xcassets */; };
 		DFE87B3F2902E2090088CB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE87B3D2902E2090088CB76 /* LaunchScreen.storyboard */; };
 		DFE87B492902FF360088CB76 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B482902FF360088CB76 /* LoginView.swift */; };
-		DFF77CA329159FCC002A7113 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF77CA229159FCC002A7113 /* ScrollViewController.swift */; };
+		DFF77CA62916F298002A7113 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF77CA52916F298002A7113 /* HomeHeaderView.swift */; };
+		DFF77CA82916F2B9002A7113 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF77CA72916F2B9002A7113 /* HomeHeaderView.xib */; };
 		DFFE9423290AC474008AC892 /* NavigationLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9422290AC474008AC892 /* NavigationLogin.swift */; };
 		DFFE9445290AD445008AC892 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9444290AD445008AC892 /* ViewControllerExtension.swift */; };
 		DFFE9448290B0F03008AC892 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9447290B0F03008AC892 /* LocalState.swift */; };
@@ -43,13 +46,14 @@
 /* Begin PBXFileReference section */
 		DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewModel.swift; sourceTree = "<group>"; };
 		DF24AF8D2908613100930240 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		DF24AF902908665800930240 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		DF2AF85E2927F0CD00F7E479 /* BankAccountUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankAccountUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF2AF8602927F0CD00F7E479 /* BankAccountUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountUnitTests.swift; sourceTree = "<group>"; };
+		DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DF3D7EBE29227B4A0043F06B /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		DFB705A72907206100A42A28 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		DFB705AD290730A800A42A28 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		DFC05ECC291982A70069E7A0 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
+		DFC05ED3291987150069E7A0 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		DFE87B2F2902E2080088CB76 /* BankAccount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankAccount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE87B322902E2080088CB76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE87B342902E2080088CB76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +62,8 @@
 		DFE87B3E2902E2090088CB76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFE87B402902E2090088CB76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFE87B482902FF360088CB76 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		DFF77CA229159FCC002A7113 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		DFF77CA52916F298002A7113 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		DFF77CA72916F2B9002A7113 /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		DFFE9422290AC474008AC892 /* NavigationLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLogin.swift; sourceTree = "<group>"; };
 		DFFE9444290AD445008AC892 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		DFFE9447290B0F03008AC892 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
@@ -96,11 +101,10 @@
 		DF24AF8C2908612100930240 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				DFFE9449290C6670008AC892 /* MainTabBarController.swift */,
-				DF24AF8F2908664700930240 /* ViewModel */,
-				DF24AF8D2908613100930240 /* HomeViewController.swift */,
-				DFFE944B290C6CE5008AC892 /* TransactionsViewController.swift */,
-				DFFE944D290C6D14008AC892 /* MoreInformationViewController.swift */,
+				DFC05ED0291986240069E7A0 /* MainTabBar */,
+				DFC05ECF291985CB0069E7A0 /* MoreInformation */,
+				DFC05ECE291985BB0069E7A0 /* Transactions */,
+				DFF77CA42916F27E002A7113 /* Home */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -108,17 +112,35 @@
 		DF24AF8F2908664700930240 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				DF24AF902908665800930240 /* HomeViewModel.swift */,
+				DFC05ECC291982A70069E7A0 /* MainTabBarViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
-		DF2AF85F2927F0CD00F7E479 /* BankAccountUnitTests */ = {
+		DF3D7EB9292271710043F06B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DF2AF8602927F0CD00F7E479 /* BankAccountUnitTests.swift */,
+				DF24AF8D2908613100930240 /* HomeViewController.swift */,
+				DFC05ED1291986E90069E7A0 /* Header */,
+				DFC05ED2291986F00069E7A0 /* Cell */,
 			);
-			path = BankAccountUnitTests;
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DF3D7EBA292271990043F06B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		DF3D7EBD29227B350043F06B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF3D7EBE29227B4A0043F06B /* HomeModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		DFAE0FB62904A5E6000D94C4 /* ViewModel */ = {
@@ -146,6 +168,48 @@
 				DFFE9444290AD445008AC892 /* ViewControllerExtension.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		DFC05ECE291985BB0069E7A0 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				DFFE944B290C6CE5008AC892 /* TransactionsViewController.swift */,
+			);
+			name = Transactions;
+			sourceTree = "<group>";
+		};
+		DFC05ECF291985CB0069E7A0 /* MoreInformation */ = {
+			isa = PBXGroup;
+			children = (
+				DFFE944D290C6D14008AC892 /* MoreInformationViewController.swift */,
+			);
+			name = MoreInformation;
+			sourceTree = "<group>";
+		};
+		DFC05ED0291986240069E7A0 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				DF24AF8F2908664700930240 /* ViewModel */,
+				DFFE9449290C6670008AC892 /* MainTabBarController.swift */,
+			);
+			name = MainTabBar;
+			sourceTree = "<group>";
+		};
+		DFC05ED1291986E90069E7A0 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				DFF77CA72916F2B9002A7113 /* HomeHeaderView.xib */,
+				DFF77CA52916F298002A7113 /* HomeHeaderView.swift */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
+		DFC05ED2291986F00069E7A0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DFC05ED3291987150069E7A0 /* HomeCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		DFE87B262902E2080088CB76 = {
@@ -176,7 +240,6 @@
 				DFB705992906F32200A42A28 /* Onboarding */,
 				DFE87B472902FEFF0088CB76 /* Login */,
 				DFE87B462902FE9E0088CB76 /* GeneralFiles */,
-				DFF77CA229159FCC002A7113 /* ScrollViewController.swift */,
 			);
 			path = BankAccount;
 			sourceTree = "<group>";
@@ -217,6 +280,16 @@
 				DFFE9422290AC474008AC892 /* NavigationLogin.swift */,
 			);
 			name = Navigation;
+			sourceTree = "<group>";
+		};
+		DFF77CA42916F27E002A7113 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DF3D7EBD29227B350043F06B /* Model */,
+				DF3D7EBA292271990043F06B /* ViewModel */,
+				DF3D7EB9292271710043F06B /* Views */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		DFFE9446290B0EF3008AC892 /* Utils */ = {
@@ -317,6 +390,7 @@
 			files = (
 				DFE87B3F2902E2090088CB76 /* LaunchScreen.storyboard in Resources */,
 				DFE87B3C2902E2090088CB76 /* Assets.xcassets in Resources */,
+				DFF77CA82916F2B9002A7113 /* HomeHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,18 +412,21 @@
 				DFFE9445290AD445008AC892 /* ViewControllerExtension.swift in Sources */,
 				DFFE9448290B0F03008AC892 /* LocalState.swift in Sources */,
 				DFFE944A290C6670008AC892 /* MainTabBarController.swift in Sources */,
+				DF3D7EBC292271AB0043F06B /* HomeViewModel.swift in Sources */,
 				DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */,
-				DF24AF912908665800930240 /* HomeViewModel.swift in Sources */,
+				DFC05ECD291982A70069E7A0 /* MainTabBarViewModel.swift in Sources */,
 				DFE87B372902E2080088CB76 /* LoginViewController.swift in Sources */,
 				DFFE944C290C6CE5008AC892 /* TransactionsViewController.swift in Sources */,
 				DFFE944E290C6D14008AC892 /* MoreInformationViewController.swift in Sources */,
+				DFF77CA62916F298002A7113 /* HomeHeaderView.swift in Sources */,
 				DFB7059B2906F35600A42A28 /* OnboardingContainerViewController.swift in Sources */,
 				DFE87B332902E2080088CB76 /* AppDelegate.swift in Sources */,
 				DFB705A82907206100A42A28 /* ColorExtension.swift in Sources */,
 				DF24AF8E2908613100930240 /* HomeViewController.swift in Sources */,
 				DFE87B492902FF360088CB76 /* LoginView.swift in Sources */,
-				DFF77CA329159FCC002A7113 /* ScrollViewController.swift in Sources */,
+				DFC05ED4291987150069E7A0 /* HomeCell.swift in Sources */,
 				DFFE9423290AC474008AC892 /* NavigationLogin.swift in Sources */,
+				DF3D7EBF29227B4A0043F06B /* HomeModel.swift in Sources */,
 				DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */,
 				DFB705AE290730A800A42A28 /* OnboardingViewController.swift in Sources */,
 				DFE87B352902E2080088CB76 /* SceneDelegate.swift in Sources */,

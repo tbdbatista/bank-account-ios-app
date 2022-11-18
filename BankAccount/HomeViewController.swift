@@ -9,31 +9,28 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let homeViewModel = HomeViewModel()
-    let stackView = UIStackView()
-    let mainLabel = UILabel()
-    let logoutButton = UIButton()
+    let viewModel = HomeViewModel()
+    
+    var accounts: [HomeModel]?
+    lazy var stackView = UIStackView()
+    lazy var logoutButton = UIButton()
+    lazy var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        homeViewModel.delegate = self
-  
+        self.navigationController?.isNavigationBarHidden = true
+
         setSelfSetup()
         setSelfView()
         setViews()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        homeViewModel.callOnboarding()
+        accounts = viewModel.fetchData()
     }
     
     private func setSelfSetup() {
         view.addSubview(stackView)
-        stackView.addArrangedSubview(mainLabel)
+        stackView.addArrangedSubview(tableView)
         stackView.addArrangedSubview(logoutButton)
-        view.subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+        stackView.translatesAutoresizingMaskIntoConstraints = false
     }
         
     private func setSelfView() {
@@ -42,23 +39,21 @@ class HomeViewController: UIViewController {
 
     private func setViews() {
         setStackView()
-        setMainLabel()
         setLogoutButton()
+        setupTableView()
+        setupHeaderTableView()
     }
     
     private func setStackView() {
         stackView.axis = .vertical
-        stackView.spacing = 16
+        stackView.spacing = 0
         
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-    }
-    
-    private func setMainLabel() {
-        mainLabel.text = "BA Bank"
-        mainLabel.textColor = .primaryGreen
     }
     
     private func setLogoutButton() {
@@ -68,20 +63,56 @@ class HomeViewController: UIViewController {
         logoutButton.addTarget(self, action: #selector(callLogout), for: .touchUpInside)
     }
     
-    //MARK: - Methods
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = .secondaryGreen
+
+        tableView.register(HomeCell.self, forCellReuseIdentifier: HomeCell.reuseID)
+        tableView.rowHeight = 90
+        tableView.tableFooterView = UIView()
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: stackView.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+        ])
+    }
+    
+    private func setupHeaderTableView() {
+        let header = HomeHeaderView(frame: .zero)
+        var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        size.width = UIScreen.main.bounds.width
+        header.frame.size = size
+        tableView.tableHeaderView = header
+    }
+    
+    //MARK: - Methods - Navigation
     @objc private func callLogout(sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 }
 
-//MARK: - Extension - HomeViewModelDelegate
-extension HomeViewController: HomeViewModelDelegate {
-    func didHaveOnboarded() {
-        NavigationLogin.goHome(presenter: self)
+//MARK: - Extension - UITableViewDataSource
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let accounts = accounts else {return UITableViewCell()}
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeCell.reuseID, for: indexPath) as! HomeCell
+        cell.configure(model: accounts[indexPath.row])
+        return cell
     }
     
-    func didNotHaveOnboarded() {
-        NavigationLogin.goOnboarding(presenter: self)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return accounts?.count ?? 0
     }
+}
 
+//MARK: - Extension - UITableViewDelegate
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Selected row: \(indexPath.row)")
+    }
 }
