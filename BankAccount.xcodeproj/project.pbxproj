@@ -10,6 +10,7 @@
 		DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */; };
 		DF24AF8E2908613100930240 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8D2908613100930240 /* HomeViewController.swift */; };
 		DF2AF86E2927F2CB00F7E479 /* BankAccountUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2AF86D2927F2CB00F7E479 /* BankAccountUnitTests.swift */; };
+		DF2AF8752927FB2600F7E479 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2AF8742927FB2600F7E479 /* CurrencyFormatter.swift */; };
 		DF3D7EBC292271AB0043F06B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */; };
 		DF3D7EBF29227B4A0043F06B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBE29227B4A0043F06B /* HomeModel.swift */; };
 		DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */; };
@@ -49,6 +50,7 @@
 		DF24AF8D2908613100930240 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DF2AF86B2927F2CB00F7E479 /* BankAccountUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankAccountUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2AF86D2927F2CB00F7E479 /* BankAccountUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountUnitTests.swift; sourceTree = "<group>"; };
+		DF2AF8742927FB2600F7E479 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DF3D7EBE29227B4A0043F06B /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				DFFE9447290B0F03008AC892 /* LocalState.swift */,
+				DF2AF8742927FB2600F7E479 /* CurrencyFormatter.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFFE9445290AD445008AC892 /* ViewControllerExtension.swift in Sources */,
+				DF2AF8752927FB2600F7E479 /* CurrencyFormatter.swift in Sources */,
 				DFFE9448290B0F03008AC892 /* LocalState.swift in Sources */,
 				DFFE944A290C6670008AC892 /* MainTabBarController.swift in Sources */,
 				DF3D7EBC292271AB0043F06B /* HomeViewModel.swift in Sources */,

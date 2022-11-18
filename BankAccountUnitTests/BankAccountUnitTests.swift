@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import BankAccount
 
 class BankAccountUnitTests: XCTestCase {
 
@@ -20,6 +21,19 @@ class BankAccountUnitTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertEqual(CurrencyFormatter().formatDollar(dollarsPart: 900000.50), "900,000")
+        XCTAssertEqual(CurrencyFormatter().formatDollar(dollarsPart: 9000000.50), "9,000,000")
+        XCTAssertEqual(CurrencyFormatter().formatDollar(dollarsPart: 9000000000.50), "9,000,000,000")
+        XCTAssertEqual(CurrencyFormatter().formatDollar(dollarsPart: 90000.50), "90,000")
+        XCTAssertEqual(CurrencyFormatter().formatDollar(dollarsPart: 90000.44), "90,000")
+        XCTAssertEqual(CurrencyFormatter().formatDollar(dollarsPart: 90000.5), "90,000")
+        XCTAssertEqual(CurrencyFormatter().formatDollar(dollarsPart: 90000), "90,000")
+        XCTAssertEqual(CurrencyFormatter().formatDollar(dollarsPart: -90000.50), "-90,000")
+        XCTAssertEqual(CurrencyFormatter().formatDollar(dollarsPart: -90000), "-90,000")
+        XCTAssertEqual(CurrencyFormatter().formatDollar(dollarsPart: -900000), "-900,000")
+        XCTAssertEqual(CurrencyFormatter().formatDollar(dollarsPart: -900000000), "-900,000,000")
+        XCTAssertEqual(CurrencyFormatter().formatDollar(dollarsPart: -9000000000), "-9,000,000,000")
+        XCTAssertEqual(CurrencyFormatter().formatDollar(dollarsPart: 0), "0")
     }
 
     func testPerformanceExample() throws {
