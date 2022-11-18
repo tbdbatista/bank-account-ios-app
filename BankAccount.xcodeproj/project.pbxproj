@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */; };
 		DF24AF8E2908613100930240 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8D2908613100930240 /* HomeViewController.swift */; };
+		DF2AF86E2927F2CB00F7E479 /* BankAccountUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2AF86D2927F2CB00F7E479 /* BankAccountUnitTests.swift */; };
 		DF3D7EBC292271AB0043F06B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */; };
 		DF3D7EBF29227B4A0043F06B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBE29227B4A0043F06B /* HomeModel.swift */; };
 		DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */; };
@@ -34,7 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DF2AF8622927F0CD00F7E479 /* PBXContainerItemProxy */ = {
+		DF2AF86F2927F2CB00F7E479 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DFE87B272902E2080088CB76 /* Project object */;
 			proxyType = 1;
@@ -46,6 +47,8 @@
 /* Begin PBXFileReference section */
 		DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewModel.swift; sourceTree = "<group>"; };
 		DF24AF8D2908613100930240 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DF2AF86B2927F2CB00F7E479 /* BankAccountUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankAccountUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF2AF86D2927F2CB00F7E479 /* BankAccountUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountUnitTests.swift; sourceTree = "<group>"; };
 		DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DF3D7EBE29227B4A0043F06B /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -73,7 +76,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DF2AF85B2927F0CD00F7E479 /* Frameworks */ = {
+		DF2AF8682927F2CB00F7E479 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,6 +118,14 @@
 				DFC05ECC291982A70069E7A0 /* MainTabBarViewModel.swift */,
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		DF2AF86C2927F2CB00F7E479 /* BankAccountUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				DF2AF86D2927F2CB00F7E479 /* BankAccountUnitTests.swift */,
+			);
+			path = BankAccountUnitTests;
 			sourceTree = "<group>";
 		};
 		DF3D7EB9292271710043F06B /* Views */ = {
@@ -216,7 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				DFE87B312902E2080088CB76 /* BankAccount */,
-				DF2AF85F2927F0CD00F7E479 /* BankAccountUnitTests */,
+				DF2AF86C2927F2CB00F7E479 /* BankAccountUnitTests */,
 				DFE87B302902E2080088CB76 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -225,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				DFE87B2F2902E2080088CB76 /* BankAccount.app */,
-				DF2AF85E2927F0CD00F7E479 /* BankAccountUnitTests.xctest */,
+				DF2AF86B2927F2CB00F7E479 /* BankAccountUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -303,22 +314,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DF2AF85D2927F0CD00F7E479 /* BankAccountUnitTests */ = {
+		DF2AF86A2927F2CB00F7E479 /* BankAccountUnitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF2AF8662927F0CD00F7E479 /* Build configuration list for PBXNativeTarget "BankAccountUnitTests" */;
+			buildConfigurationList = DF2AF8712927F2CB00F7E479 /* Build configuration list for PBXNativeTarget "BankAccountUnitTests" */;
 			buildPhases = (
-				DF2AF85A2927F0CD00F7E479 /* Sources */,
-				DF2AF85B2927F0CD00F7E479 /* Frameworks */,
-				DF2AF85C2927F0CD00F7E479 /* Resources */,
+				DF2AF8672927F2CB00F7E479 /* Sources */,
+				DF2AF8682927F2CB00F7E479 /* Frameworks */,
+				DF2AF8692927F2CB00F7E479 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DF2AF8632927F0CD00F7E479 /* PBXTargetDependency */,
+				DF2AF8702927F2CB00F7E479 /* PBXTargetDependency */,
 			);
 			name = BankAccountUnitTests;
 			productName = BankAccountUnitTests;
-			productReference = DF2AF85E2927F0CD00F7E479 /* BankAccountUnitTests.xctest */;
+			productReference = DF2AF86B2927F2CB00F7E479 /* BankAccountUnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		DFE87B2E2902E2080088CB76 /* BankAccount */ = {
@@ -348,7 +359,7 @@
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
-					DF2AF85D2927F0CD00F7E479 = {
+					DF2AF86A2927F2CB00F7E479 = {
 						CreatedOnToolsVersion = 13.1;
 						TestTargetID = DFE87B2E2902E2080088CB76;
 					};
@@ -371,13 +382,13 @@
 			projectRoot = "";
 			targets = (
 				DFE87B2E2902E2080088CB76 /* BankAccount */,
-				DF2AF85D2927F0CD00F7E479 /* BankAccountUnitTests */,
+				DF2AF86A2927F2CB00F7E479 /* BankAccountUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DF2AF85C2927F0CD00F7E479 /* Resources */ = {
+		DF2AF8692927F2CB00F7E479 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -397,11 +408,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DF2AF85A2927F0CD00F7E479 /* Sources */ = {
+		DF2AF8672927F2CB00F7E479 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF2AF8612927F0CD00F7E479 /* BankAccountUnitTests.swift in Sources */,
+				DF2AF86E2927F2CB00F7E479 /* BankAccountUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,10 +447,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DF2AF8632927F0CD00F7E479 /* PBXTargetDependency */ = {
+		DF2AF8702927F2CB00F7E479 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DFE87B2E2902E2080088CB76 /* BankAccount */;
-			targetProxy = DF2AF8622927F0CD00F7E479 /* PBXContainerItemProxy */;
+			targetProxy = DF2AF86F2927F2CB00F7E479 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -455,7 +466,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DF2AF8642927F0CD00F7E479 /* Debug */ = {
+		DF2AF8722927F2CB00F7E479 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -478,7 +489,7 @@
 			};
 			name = Debug;
 		};
-		DF2AF8652927F0CD00F7E479 /* Release */ = {
+		DF2AF8732927F2CB00F7E479 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -674,11 +685,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DF2AF8662927F0CD00F7E479 /* Build configuration list for PBXNativeTarget "BankAccountUnitTests" */ = {
+		DF2AF8712927F2CB00F7E479 /* Build configuration list for PBXNativeTarget "BankAccountUnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DF2AF8642927F0CD00F7E479 /* Debug */,
-				DF2AF8652927F0CD00F7E479 /* Release */,
+				DF2AF8722927F2CB00F7E479 /* Debug */,
+				DF2AF8732927F2CB00F7E479 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
