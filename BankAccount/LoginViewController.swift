@@ -57,10 +57,8 @@ class LoginViewController: UIViewController {
     //MARK: - Elements Setup
     
     private func setLogoLabel() {
-        self.logoLabel.text = "B.A. Bank"
-        self.logoLabel.font = UIFont.init(name: "American Typewriter", size: 40)
-        self.logoLabel.textAlignment = .center
-        self.logoLabel.textColor = .primaryGreen
+        self.logoLabel.text = "B.A. Bank".uppercased()
+        self.logoLabel = logoLabel.formatTitle()
         
         NSLayoutConstraint.activate([
             logoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),

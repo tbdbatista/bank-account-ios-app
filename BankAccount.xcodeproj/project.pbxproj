@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF0FFBC8292BE9E80053344D /* TextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0FFBC7292BE9E80053344D /* TextExtensions.swift */; };
 		DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */; };
 		DF24AF8E2908613100930240 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8D2908613100930240 /* HomeViewController.swift */; };
 		DF2AF86E2927F2CB00F7E479 /* BankAccountUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2AF86D2927F2CB00F7E479 /* BankAccountUnitTests.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF0FFBC7292BE9E80053344D /* TextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensions.swift; sourceTree = "<group>"; };
 		DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewModel.swift; sourceTree = "<group>"; };
 		DF24AF8D2908613100930240 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DF2AF86B2927F2CB00F7E479 /* BankAccountUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankAccountUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +181,7 @@
 			children = (
 				DFB705A72907206100A42A28 /* ColorExtension.swift */,
 				DFFE9444290AD445008AC892 /* ViewControllerExtension.swift */,
+				DF0FFBC7292BE9E80053344D /* TextExtensions.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				DF3D7EBF29227B4A0043F06B /* HomeModel.swift in Sources */,
 				DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */,
 				DFB705AE290730A800A42A28 /* OnboardingViewController.swift in Sources */,
+				DF0FFBC8292BE9E80053344D /* TextExtensions.swift in Sources */,
 				DFE87B352902E2080088CB76 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
