@@ -16,3 +16,12 @@ extension UILabel {
         return self
     }
 }
+
+extension String {
+    func getChar(index: Int) -> Character {
+        let starIndex = self.startIndex
+        let indexOffsetBy = self.index(starIndex, offsetBy: index)
+        let character = self[indexOffsetBy]
+        return character
+    }
+}
