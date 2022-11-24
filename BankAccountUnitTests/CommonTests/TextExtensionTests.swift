@@ -10,7 +10,7 @@ import XCTest
 
 @testable import BankAccount
 
-class StringTest: XCTestCase {
+class StringTests: XCTestCase {
     var string: String!
     
     override func setUp() {
