@@ -13,12 +13,11 @@ class HomeViewController: UIViewController {
     
     var accounts: [HomeModel]?
     lazy var stackView = UIStackView()
-    lazy var logoutButton = UIButton()
+    lazy var logoutButton = UIBarButtonItem()
     lazy var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
 
         setSelfSetup()
         setSelfView()
@@ -29,7 +28,6 @@ class HomeViewController: UIViewController {
     private func setSelfSetup() {
         view.addSubview(stackView)
         stackView.addArrangedSubview(tableView)
-        stackView.addArrangedSubview(logoutButton)
         stackView.translatesAutoresizingMaskIntoConstraints = false
     }
         
@@ -42,6 +40,7 @@ class HomeViewController: UIViewController {
         setLogoutButton()
         setupTableView()
         setupHeaderTableView()
+        setupNavBar()
     }
     
     private func setStackView() {
@@ -57,10 +56,8 @@ class HomeViewController: UIViewController {
     }
     
     private func setLogoutButton() {
-        logoutButton.setTitle("Logout", for: .normal)
-        logoutButton.backgroundColor = .secondaryGreen
-        logoutButton.setTitleColor(.primaryGreen, for: .normal)
-        logoutButton.addTarget(self, action: #selector(callLogout), for: .touchUpInside)
+//        logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(callLogout))
+        logoutButton = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(callLogout))
     }
     
     private func setupTableView() {
@@ -86,6 +83,12 @@ class HomeViewController: UIViewController {
         size.width = UIScreen.main.bounds.width
         header.frame.size = size
         tableView.tableHeaderView = header
+    }
+    
+    private func setupNavBar() {
+        navigationItem.rightBarButtonItem = logoutButton
+        self.navigationController?.navigationBar.backgroundColor = .secondaryGreen
+        self.navigationController?.navigationBar.tintColor = .primaryGreen
     }
     
     //MARK: - Methods - Navigation

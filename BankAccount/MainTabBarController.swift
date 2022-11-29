@@ -32,6 +32,7 @@ class MainTabBarController: UITabBarController {
         let nc3 = UINavigationController(rootViewController: vc3)
         
         nc1.setStatusBar()
+        nc1.setNavBarAppearance()
         
         self.viewControllers = [nc1, nc2, nc3]
     }
