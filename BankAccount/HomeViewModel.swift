@@ -12,19 +12,6 @@ enum AccountType: String {
     case CreditCard
     case Investment
     case Cryptocurrency
-    
-    var rawValue: String {
-        switch self {
-        case .Cryptocurrency:
-            return "Cryptocurrency"
-        case .Banking:
-            return "Banking"
-        case .Investment:
-            return "Investment"
-        case .CreditCard:
-            return "Credit Card"
-        }
-    }
 }
 
 class HomeViewModel {

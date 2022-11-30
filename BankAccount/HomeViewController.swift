@@ -91,7 +91,7 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .primaryGreen
     }
     
-    //MARK: - Methods - Navigation
+    //MARK: - Methods - Actions
     @objc private func callLogout(sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }

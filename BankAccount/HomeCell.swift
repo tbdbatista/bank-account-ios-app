@@ -151,16 +151,12 @@ class HomeCell: UITableViewCell {
         switch model.accountType {
         case .Banking:
             underLineView.backgroundColor = .systemBlue
-            print(model.accountType)
         case .CreditCard:
             underLineView.backgroundColor = .systemCyan
-            print(model.accountType)
         case .Investment:
             underLineView.backgroundColor = .systemRed
-            print(model.accountType)
         case .Cryptocurrency:
             underLineView.backgroundColor = .systemOrange
-            print(model.accountType)
         }
     }
 }
