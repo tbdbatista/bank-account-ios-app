@@ -76,6 +76,7 @@ class LoginView: UIView {
         self.passwordTextField.placeholder = " Password"
         self.passwordTextField.isSecureTextEntry = true
         self.passwordTextField.delegate = self
+        self.passwordTextField.enableToggleShowPassword()
     }
     
     private func setDividerView() {

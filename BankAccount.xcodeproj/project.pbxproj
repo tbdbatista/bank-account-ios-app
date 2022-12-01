@@ -13,6 +13,7 @@
 		DF2AF8752927FB2600F7E479 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2AF8742927FB2600F7E479 /* CurrencyFormatter.swift */; };
 		DF3D7EBC292271AB0043F06B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */; };
 		DF3D7EBF29227B4A0043F06B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBE29227B4A0043F06B /* HomeModel.swift */; };
+		DF7F30B1293913C900DE5921 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7F30B0293913C900DE5921 /* TextFieldExtension.swift */; };
 		DF820EDF292F9B3000A1DF8D /* TextExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF820EDE292F9B3000A1DF8D /* TextExtensionTests.swift */; };
 		DF820EE2292F9F2B00A1DF8D /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF820EE1292F9F2B00A1DF8D /* CurrencyFormatterTests.swift */; };
 		DFA9A1ED2938DFFB000A285C /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA9A1EC2938DFFB000A285C /* NSNotificationName.swift */; };
@@ -56,6 +57,7 @@
 		DF2AF8742927FB2600F7E479 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DF3D7EBE29227B4A0043F06B /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		DF7F30B0293913C900DE5921 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		DF820EDE292F9B3000A1DF8D /* TextExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensionTests.swift; sourceTree = "<group>"; };
 		DF820EE1292F9F2B00A1DF8D /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		DFA9A1EC2938DFFB000A285C /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
@@ -197,14 +199,15 @@
 			name = Onboarding;
 			sourceTree = "<group>";
 		};
-		DFB705A42907203600A42A28 /* Common */ = {
+		DFB705A42907203600A42A28 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				DFB705A72907206100A42A28 /* ColorExtension.swift */,
 				DFFE9444290AD445008AC892 /* ViewControllerExtension.swift */,
 				DF0FFBC7292BE9E80053344D /* TextExtensions.swift */,
+				DF7F30B0293913C900DE5921 /* TextFieldExtension.swift */,
 			);
-			name = Common;
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		DFC05ECE291985BB0069E7A0 /* Transactions */ = {
@@ -273,7 +276,7 @@
 				DFF77CA129157EA0002A7113 /* Navigation */,
 				DFFE9446290B0EF3008AC892 /* Utils */,
 				DF24AF8C2908612100930240 /* Main */,
-				DFB705A42907203600A42A28 /* Common */,
+				DFB705A42907203600A42A28 /* Extensions */,
 				DFB705992906F32200A42A28 /* Onboarding */,
 				DFE87B472902FEFF0088CB76 /* Login */,
 				DFE87B462902FE9E0088CB76 /* GeneralFiles */,
@@ -467,6 +470,7 @@
 				DF24AF8E2908613100930240 /* HomeViewController.swift in Sources */,
 				DFE87B492902FF360088CB76 /* LoginView.swift in Sources */,
 				DFC05ED4291987150069E7A0 /* HomeCell.swift in Sources */,
+				DF7F30B1293913C900DE5921 /* TextFieldExtension.swift in Sources */,
 				DFFE9423290AC474008AC892 /* NavigationLogin.swift in Sources */,
 				DF3D7EBF29227B4A0043F06B /* HomeModel.swift in Sources */,
 				DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */,

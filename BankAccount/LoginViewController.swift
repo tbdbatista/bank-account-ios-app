@@ -117,7 +117,7 @@ class LoginViewController: UIViewController {
         loginView.passwordTextField.text = ""
     }
     
-    //MARK: - Notification Center Functions
+    //MARK: - Notification Center Register
     private func registerForNotificationsToLogout() {
         NotificationCenter.default.addObserver(self, selector: #selector(callingLogout), name: .logout, object: nil)
     }
