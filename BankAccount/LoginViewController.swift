@@ -9,8 +9,6 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    private static var screenNumber = 0
-    
     let loginViewModel = LoginViewModel()
     
     lazy var logoLabel = UILabel()
@@ -37,7 +35,6 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Self.screenNumber = 0
     }
     
     private func setViews() {
@@ -106,7 +103,6 @@ class LoginViewController: UIViewController {
     //MARK: - Methods
     private func callLogin() {
         loginViewModel.login(username: username, password: password)
-        Self.screenNumber = 1
     }
     
     private func cleanInputs(wrongPassword: Bool = false) {
@@ -139,10 +135,10 @@ extension LoginViewController: LoginViewModelDelegate {
         
         switch errorWarningState {
         case .emptyLoginInput :
-            self.errorWarningsLabel.text = "Username and Password cannot be blank."
+            self.errorWarningsLabel.text = "Username and Password cannot be blank"
             self.errorWarningsLabel.isHidden = false
         case .incorrectLoginInput :
-            self.errorWarningsLabel.text = "Incorret Username/Password."
+            self.errorWarningsLabel.text = "Incorret Username/Password"
             self.errorWarningsLabel.isHidden = false
             self.cleanInputs(wrongPassword: true)
         default :

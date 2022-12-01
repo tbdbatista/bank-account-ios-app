@@ -65,7 +65,8 @@ class HomeCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             firstStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            firstStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
+            firstStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            firstStackView.widthAnchor.constraint(greaterThanOrEqualToConstant: 150 )
         ])
     }
     
@@ -102,7 +103,7 @@ class HomeCell: UITableViewCell {
     }
     
     private func setupBalanceLabel() {
-        balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        balanceLabel.font = UIFont(name: "Arial", size: 14)
         balanceLabel.text = "Cash balance"
         balanceLabel.textColor = .primaryGreen
     }
