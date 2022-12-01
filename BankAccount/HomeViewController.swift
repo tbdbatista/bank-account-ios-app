@@ -93,7 +93,7 @@ class HomeViewController: UIViewController {
     
     //MARK: - Methods - Actions
     @objc private func callLogout(sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: .logout, object: nil)
     }
 }
 

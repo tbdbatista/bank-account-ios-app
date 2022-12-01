@@ -9,6 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    private static var screenNumber = 0
+    
     let loginViewModel = LoginViewModel()
     
     lazy var logoLabel = UILabel()
@@ -30,6 +32,12 @@ class LoginViewController: UIViewController {
         setSelfView()
         layout()
         setViews()
+        registerForNotificationsToLogout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Self.screenNumber = 0
     }
     
     private func setViews() {
@@ -91,9 +99,14 @@ class LoginViewController: UIViewController {
         print("Actual state = \(String(describing: loginViewModel.getErrorWarningState()))")
     }
     
+    @objc private func callingLogout() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     //MARK: - Methods
     private func callLogin() {
         loginViewModel.login(username: username, password: password)
+        Self.screenNumber = 1
     }
     
     private func cleanInputs(wrongPassword: Bool = false) {
@@ -102,6 +115,11 @@ class LoginViewController: UIViewController {
             loginView.usernameTextField.becomeFirstResponder()
         }
         loginView.passwordTextField.text = ""
+    }
+    
+    //MARK: - Notification Center Functions
+    private func registerForNotificationsToLogout() {
+        NotificationCenter.default.addObserver(self, selector: #selector(callingLogout), name: .logout, object: nil)
     }
 }
 

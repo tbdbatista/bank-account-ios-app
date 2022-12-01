@@ -15,6 +15,7 @@
 		DF3D7EBF29227B4A0043F06B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBE29227B4A0043F06B /* HomeModel.swift */; };
 		DF820EDF292F9B3000A1DF8D /* TextExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF820EDE292F9B3000A1DF8D /* TextExtensionTests.swift */; };
 		DF820EE2292F9F2B00A1DF8D /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF820EE1292F9F2B00A1DF8D /* CurrencyFormatterTests.swift */; };
+		DFA9A1ED2938DFFB000A285C /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA9A1EC2938DFFB000A285C /* NSNotificationName.swift */; };
 		DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */; };
 		DFB7059B2906F35600A42A28 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */; };
 		DFB705A82907206100A42A28 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB705A72907206100A42A28 /* ColorExtension.swift */; };
@@ -57,6 +58,7 @@
 		DF3D7EBE29227B4A0043F06B /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		DF820EDE292F9B3000A1DF8D /* TextExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensionTests.swift; sourceTree = "<group>"; };
 		DF820EE1292F9F2B00A1DF8D /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
+		DFA9A1EC2938DFFB000A285C /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		DFB705A72907206100A42A28 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			children = (
 				DFFE9447290B0F03008AC892 /* LocalState.swift */,
 				DF2AF8742927FB2600F7E479 /* CurrencyFormatter.swift */,
+				DFA9A1EC2938DFFB000A285C /* NSNotificationName.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				DF2AF8752927FB2600F7E479 /* CurrencyFormatter.swift in Sources */,
 				DFFE9448290B0F03008AC892 /* LocalState.swift in Sources */,
 				DFFE944A290C6670008AC892 /* MainTabBarController.swift in Sources */,
+				DFA9A1ED2938DFFB000A285C /* NSNotificationName.swift in Sources */,
 				DF3D7EBC292271AB0043F06B /* HomeViewModel.swift in Sources */,
 				DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */,
 				DFC05ECD291982A70069E7A0 /* MainTabBarViewModel.swift in Sources */,
