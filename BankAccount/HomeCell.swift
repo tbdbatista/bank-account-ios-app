@@ -66,7 +66,7 @@ class HomeCell: UITableViewCell {
         NSLayoutConstraint.activate([
             firstStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             firstStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            firstStackView.widthAnchor.constraint(greaterThanOrEqualToConstant: 150 )
+            firstStackView.trailingAnchor.constraint(equalTo: secondStackView.leadingAnchor, constant: -20)
         ])
     }
     
@@ -85,6 +85,7 @@ class HomeCell: UITableViewCell {
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
         nameLabel.text = "Cryptocurrency ballout"
         nameLabel.textColor = .primaryGreen
+        nameLabel.adjustsFontSizeToFitWidth = true
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.heightAnchor.constraint(equalToConstant: 62).isActive = true
@@ -98,7 +99,8 @@ class HomeCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             secondStackView.topAnchor.constraint(equalTo: underLineView.bottomAnchor),
-            contentView.trailingAnchor.constraint(equalTo: secondStackView.trailingAnchor, constant: 32)
+            contentView.trailingAnchor.constraint(equalTo: secondStackView.trailingAnchor, constant: 32),
+            secondStackView.widthAnchor.constraint(equalToConstant: 120)
         ])
     }
     
@@ -112,6 +114,7 @@ class HomeCell: UITableViewCell {
         balanceAmountLabel.font = UIFont.preferredFont(forTextStyle: .body)
         balanceAmountLabel.attributedText = setupStyleForBalanceAmountLabel(dollars: "987.098", cents: ".09")
         balanceAmountLabel.textColor = .primaryGreen
+        balanceAmountLabel.adjustsFontSizeToFitWidth = true
     }
     
     private func setupChevronImageView() {
