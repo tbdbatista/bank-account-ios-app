@@ -69,6 +69,8 @@ class LoginView: UIView {
     
     private func setUsernameInputText() {
         self.usernameTextField.placeholder = " Username"
+        self.usernameTextField.autocapitalizationType = .none
+        self.usernameTextField.autocorrectionType = .no
         self.usernameTextField.delegate = self
     }
     
