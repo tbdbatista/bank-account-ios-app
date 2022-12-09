@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
     lazy var signInButton = UIButton()
     lazy var errorWarningsLabel = UILabel()
     
+    var logoLeadingAnchor: NSLayoutConstraint?
+    
     var username: String? {
         return loginView.usernameTextField.text
     }
@@ -33,8 +35,9 @@ class LoginViewController: UIViewController {
         registerForNotificationsToLogout()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.startLogoVerticalAnimation()
     }
     
     private func setViews() {
@@ -66,9 +69,10 @@ class LoginViewController: UIViewController {
         self.logoLabel = logoLabel.formatTitle()
         
         NSLayoutConstraint.activate([
-            logoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.topAnchor.constraint(equalToSystemSpacingBelow: logoLabel.bottomAnchor, multiplier: 6)
         ])
+        logoLeadingAnchor = logoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -1000)
+        logoLeadingAnchor?.isActive = true
     }
     
     private func setStackView() {
@@ -87,6 +91,16 @@ class LoginViewController: UIViewController {
         self.signInButton.backgroundColor = .primaryGreen
         self.signInButton.layer.cornerRadius = 5
         self.signInButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
+    }
+    
+    //MARK: - Logo Animation
+    private func startLogoVerticalAnimation() {
+        let logoAnimator = UIViewPropertyAnimator(duration: 1.0, curve: .easeOut, animations: {
+            self.logoLeadingAnchor?.isActive = false
+            self.logoLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+            self.view.layoutIfNeeded()
+        })
+        logoAnimator.startAnimation()
     }
 
     //MARK: - Actions
