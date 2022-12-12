@@ -93,7 +93,7 @@ class LoginViewController: UIViewController {
         self.signInButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
     }
     
-    //MARK: - Logo Animation
+    //MARK: - Animations
     private func startLogoVerticalAnimation() {
         let logoAnimator = UIViewPropertyAnimator(duration: 1.0, curve: .easeOut, animations: {
             self.logoLeadingAnchor?.isActive = false
@@ -101,6 +101,18 @@ class LoginViewController: UIViewController {
             self.view.layoutIfNeeded()
         })
         logoAnimator.startAnimation()
+    }
+    
+    private func shakeButtonAnimation() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, 10, 0, -10, 0, 10, 0, -10, 0]
+        animation.keyTimes = [0, 0.15, 0.35, 0.45, 0.55, 0.65, 0.85, 0.95, 1.0]
+        animation.duration = 0.4
+        
+        animation.isAdditive = true
+        signInButton.layer.add(animation, forKey: "shake")
+        
     }
 
     //MARK: - Actions
@@ -151,9 +163,11 @@ extension LoginViewController: LoginViewModelDelegate {
         case .emptyLoginInput :
             self.errorWarningsLabel.text = "Username and Password cannot be blank"
             self.errorWarningsLabel.isHidden = false
+            self.shakeButtonAnimation()
         case .incorrectLoginInput :
             self.errorWarningsLabel.text = "Incorret Username/Password"
             self.errorWarningsLabel.isHidden = false
+            self.shakeButtonAnimation()
             self.cleanInputs(wrongPassword: true)
         default :
             self.errorWarningsLabel.isHidden = true
