@@ -16,7 +16,6 @@ class HomeHeaderView: UIView {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    lazy var viewModel = HomeHeaderViewModel()
     let notificationBellView = NotificationBellView()
     
     override init(frame: CGRect) {
@@ -61,10 +60,9 @@ class HomeHeaderView: UIView {
         ])
     }
     
-    private func setupHeaderMessages(response: HomeHeaderResponse) {
+    private func setupHeaderMessages(response: HomeHeaderModel) {
         self.welcomeLabel.text = response.welcomeMessage
         self.nameLabel.text = response.name
         self.dateLabel.text = response.dateFormatted
     }
-    
 }

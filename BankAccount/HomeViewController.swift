@@ -10,11 +10,14 @@ import UIKit
 class HomeViewController: UIViewController {
     
     let viewModel = HomeViewModel()
+    let header = HomeHeaderView(frame: .zero)
     
     var accounts: [HomeAccountResponse]?
     lazy var stackView = UIStackView()
     lazy var logoutButton = UIBarButtonItem()
     lazy var tableView = UITableView()
+    
+    var homeHeaderProfile = HomeHeaderModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,11 @@ class HomeViewController: UIViewController {
         setSelfView()
         setViews()
         accounts = viewModel.fetchData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadNetworkData()
     }
     
     private func setSelfSetup() {
@@ -78,7 +86,6 @@ class HomeViewController: UIViewController {
     }
     
     private func setupHeaderTableView() {
-        let header = HomeHeaderView(frame: .zero)
         var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size.width = UIScreen.main.bounds.width
         header.frame.size = size
@@ -95,12 +102,31 @@ class HomeViewController: UIViewController {
     @objc private func callLogout(sender: UIButton) {
         NotificationCenter.default.post(name: .logout, object: nil)
     }
+    
+    //MARK: - Load network data
+    private func loadNetworkData() {
+        self.viewModel.getAccountProfileData(completion: { result, error in
+            guard let result = result else {
+                print(error)
+                return
+            }
+            self.homeHeaderProfile.name = result
+            print(self.homeHeaderProfile)
+            
+            DispatchQueue.main.async {
+                self.header.nameLabel.text = self.homeHeaderProfile.name
+                self.tableView.tableHeaderView = self.header
+                self.tableView.reloadData()
+            }
+        })
+
+        
+    }
 }
 
 //MARK: - Extension - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let accounts = accounts else {return UITableViewCell()}
         
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeCell.reuseID, for: indexPath) as! HomeCell

@@ -11,8 +11,7 @@
 		DF0FFBC8292BE9E80053344D /* TextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0FFBC7292BE9E80053344D /* TextExtensions.swift */; };
 		DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */; };
 		DF24AF8E2908613100930240 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8D2908613100930240 /* HomeViewController.swift */; };
-		DF250316294BBD12007D30E8 /* HomeHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF250315294BBD12007D30E8 /* HomeHeaderViewModel.swift */; };
-		DF25031D294BBDC4007D30E8 /* HomeHeaderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF25031C294BBDC4007D30E8 /* HomeHeaderResponse.swift */; };
+		DF25031D294BBDC4007D30E8 /* HomeHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF25031C294BBDC4007D30E8 /* HomeHeaderModel.swift */; };
 		DF2AF8752927FB2600F7E479 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2AF8742927FB2600F7E479 /* CurrencyFormatter.swift */; };
 		DF3D7EBC292271AB0043F06B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */; };
 		DF3D7EBF29227B4A0043F06B /* HomeAccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBE29227B4A0043F06B /* HomeAccountResponse.swift */; };
@@ -61,8 +60,7 @@
 		DF0FFBC7292BE9E80053344D /* TextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensions.swift; sourceTree = "<group>"; };
 		DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewModel.swift; sourceTree = "<group>"; };
 		DF24AF8D2908613100930240 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		DF250315294BBD12007D30E8 /* HomeHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewModel.swift; sourceTree = "<group>"; };
-		DF25031C294BBDC4007D30E8 /* HomeHeaderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderResponse.swift; sourceTree = "<group>"; };
+		DF25031C294BBDC4007D30E8 /* HomeHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderModel.swift; sourceTree = "<group>"; };
 		DF2AF86B2927F2CB00F7E479 /* BankAccountUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankAccountUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2AF8742927FB2600F7E479 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -144,14 +142,6 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
-		DF250318294BBD36007D30E8 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				DF250315294BBD12007D30E8 /* HomeHeaderViewModel.swift */,
-			);
-			name = ViewModel;
-			sourceTree = "<group>";
-		};
 		DF250319294BBD79007D30E8 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				DF3D7EBE29227B4A0043F06B /* HomeAccountResponse.swift */,
-				DF25031C294BBDC4007D30E8 /* HomeHeaderResponse.swift */,
+				DF25031C294BBDC4007D30E8 /* HomeHeaderModel.swift */,
 				DFEF394A294C9FFD003413BC /* AccountProfileResponse.swift */,
 			);
 			name = Model;
@@ -289,7 +279,6 @@
 		DFC05ED1291986E90069E7A0 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				DF250318294BBD36007D30E8 /* ViewModel */,
 				DF01BB652949F8C100C2F850 /* NotificationBellView.swift */,
 				DFF77CA72916F2B9002A7113 /* HomeHeaderView.xib */,
 				DFF77CA52916F298002A7113 /* HomeHeaderView.swift */,
@@ -538,8 +527,7 @@
 				DF7F30B1293913C900DE5921 /* TextFieldExtension.swift in Sources */,
 				DFFE9423290AC474008AC892 /* NavigationLogin.swift in Sources */,
 				DFEF3949294C9F74003413BC /* FetchAccountProfileUseCase.swift in Sources */,
-				DF25031D294BBDC4007D30E8 /* HomeHeaderResponse.swift in Sources */,
-				DF250316294BBD12007D30E8 /* HomeHeaderViewModel.swift in Sources */,
+				DF25031D294BBDC4007D30E8 /* HomeHeaderModel.swift in Sources */,
 				DF3D7EBF29227B4A0043F06B /* HomeAccountResponse.swift in Sources */,
 				DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */,
 				DFB705AE290730A800A42A28 /* OnboardingViewController.swift in Sources */,
