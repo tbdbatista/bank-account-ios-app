@@ -17,6 +17,7 @@
 		DF7F30B1293913C900DE5921 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7F30B0293913C900DE5921 /* TextFieldExtension.swift */; };
 		DF820EDF292F9B3000A1DF8D /* TextExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF820EDE292F9B3000A1DF8D /* TextExtensionTests.swift */; };
 		DF820EE2292F9F2B00A1DF8D /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF820EE1292F9F2B00A1DF8D /* CurrencyFormatterTests.swift */; };
+		DF87FFFD294A347E00A53C9F /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF87FFFC294A347E00A53C9F /* ImageViewExtension.swift */; };
 		DFA9A1ED2938DFFB000A285C /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA9A1EC2938DFFB000A285C /* NSNotificationName.swift */; };
 		DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */; };
 		DFB7059B2906F35600A42A28 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */; };
@@ -62,6 +63,7 @@
 		DF7F30B0293913C900DE5921 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		DF820EDE292F9B3000A1DF8D /* TextExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensionTests.swift; sourceTree = "<group>"; };
 		DF820EE1292F9F2B00A1DF8D /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
+		DF87FFFC294A347E00A53C9F /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		DFA9A1EC2938DFFB000A285C /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				DFFE9444290AD445008AC892 /* ViewControllerExtension.swift */,
 				DF0FFBC7292BE9E80053344D /* TextExtensions.swift */,
 				DF7F30B0293913C900DE5921 /* TextFieldExtension.swift */,
+				DF87FFFC294A347E00A53C9F /* ImageViewExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				DFFE944C290C6CE5008AC892 /* TransactionsViewController.swift in Sources */,
 				DFFE944E290C6D14008AC892 /* MoreInformationViewController.swift in Sources */,
 				DFF77CA62916F298002A7113 /* HomeHeaderView.swift in Sources */,
+				DF87FFFD294A347E00A53C9F /* ImageViewExtension.swift in Sources */,
 				DFB7059B2906F35600A42A28 /* OnboardingContainerViewController.swift in Sources */,
 				DFE87B332902E2080088CB76 /* AppDelegate.swift in Sources */,
 				DFB705A82907206100A42A28 /* ColorExtension.swift in Sources */,

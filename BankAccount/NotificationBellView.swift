@@ -49,6 +49,49 @@ class NotificationBellView: UIView {
     }
     
     @objc private func didTapBellImage() {
-        print("shake it babe")
+        for x in 0...3 {
+            perform(#selector(defaultBellShake), with: .none, afterDelay: Double(x))
+        }
+    }
+    
+    @objc private func defaultBellShake() {
+        shakeWith(duration: 1, angle: .pi/8, yOffset: 0.5)
+    }
+    
+    // MARK: - Animation
+    private func shakeWith(duration: Double, angle: CGFloat, yOffset: CGFloat) {
+        let numberOfFrames: Double = 6
+        let frameDuration = Double(1/numberOfFrames)
+        
+        bellView.setAnchorPoint(CGPoint(x: 0.5, y: yOffset))
+        
+        UIView.animateKeyframes(withDuration: duration, delay: 0, options: [],
+                                animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.0,
+                               relativeDuration: frameDuration) {
+                self.bellView.transform = CGAffineTransform(rotationAngle: -angle)
+            }
+            UIView.addKeyframe(withRelativeStartTime: frameDuration,
+                               relativeDuration: frameDuration) {
+                self.bellView.transform = CGAffineTransform(rotationAngle: +angle)
+            }
+            UIView.addKeyframe(withRelativeStartTime: frameDuration*2,
+                               relativeDuration: frameDuration) {
+                self.bellView.transform = CGAffineTransform(rotationAngle: -angle)
+            }
+            UIView.addKeyframe(withRelativeStartTime: frameDuration*3,
+                               relativeDuration: frameDuration) {
+                self.bellView.transform = CGAffineTransform(rotationAngle: +angle)
+            }
+            UIView.addKeyframe(withRelativeStartTime: frameDuration*4,
+                               relativeDuration: frameDuration) {
+                self.bellView.transform = CGAffineTransform(rotationAngle: -angle)
+            }
+            UIView.addKeyframe(withRelativeStartTime: frameDuration*5,
+                               relativeDuration: frameDuration) {
+                self.bellView.transform = CGAffineTransform.identity
+            }
+        })
     }
 }
+
