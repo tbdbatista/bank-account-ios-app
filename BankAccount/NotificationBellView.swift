@@ -55,7 +55,7 @@ class NotificationBellView: UIView {
     }
     
     @objc private func defaultBellShake() {
-        shakeWith(duration: 1, angle: .pi/8, yOffset: 0.5)
+        shakeWith(duration: 1, angle: .pi/8, yOffset: 0.0)
     }
     
     // MARK: - Animation
