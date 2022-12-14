@@ -34,6 +34,8 @@
 		DFE87B3F2902E2090088CB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE87B3D2902E2090088CB76 /* LaunchScreen.storyboard */; };
 		DFE87B492902FF360088CB76 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B482902FF360088CB76 /* LoginView.swift */; };
 		DFEF3946294C9A03003413BC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF3945294C9A03003413BC /* DateExtension.swift */; };
+		DFEF3949294C9F74003413BC /* FetchAccountProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF3948294C9F74003413BC /* FetchAccountProfileUseCase.swift */; };
+		DFEF394B294C9FFD003413BC /* AccountProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF394A294C9FFD003413BC /* AccountProfileResponse.swift */; };
 		DFF77CA62916F298002A7113 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF77CA52916F298002A7113 /* HomeHeaderView.swift */; };
 		DFF77CA82916F2B9002A7113 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF77CA72916F2B9002A7113 /* HomeHeaderView.xib */; };
 		DFFE9423290AC474008AC892 /* NavigationLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9422290AC474008AC892 /* NavigationLogin.swift */; };
@@ -85,6 +87,8 @@
 		DFE87B402902E2090088CB76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFE87B482902FF360088CB76 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DFEF3945294C9A03003413BC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		DFEF3948294C9F74003413BC /* FetchAccountProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAccountProfileUseCase.swift; sourceTree = "<group>"; };
+		DFEF394A294C9FFD003413BC /* AccountProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProfileResponse.swift; sourceTree = "<group>"; };
 		DFF77CA52916F298002A7113 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		DFF77CA72916F2B9002A7113 /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		DFFE9422290AC474008AC892 /* NavigationLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLogin.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 		DF25031A294BBD84007D30E8 /* UserAccountInformation */ = {
 			isa = PBXGroup;
 			children = (
+				DFEF3947294C9F26003413BC /* UseCase */,
 				DF25031B294BBDB4007D30E8 /* Model */,
 			);
 			name = UserAccountInformation;
@@ -169,6 +174,7 @@
 			children = (
 				DF3D7EBE29227B4A0043F06B /* HomeAccountResponse.swift */,
 				DF25031C294BBDC4007D30E8 /* HomeHeaderResponse.swift */,
+				DFEF394A294C9FFD003413BC /* AccountProfileResponse.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -362,6 +368,14 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		DFEF3947294C9F26003413BC /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				DFEF3948294C9F74003413BC /* FetchAccountProfileUseCase.swift */,
+			);
+			name = UseCase;
+			sourceTree = "<group>";
+		};
 		DFF77CA129157EA0002A7113 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,6 +517,7 @@
 				DFEF3946294C9A03003413BC /* DateExtension.swift in Sources */,
 				DF2AF8752927FB2600F7E479 /* CurrencyFormatter.swift in Sources */,
 				DFFE9448290B0F03008AC892 /* LocalState.swift in Sources */,
+				DFEF394B294C9FFD003413BC /* AccountProfileResponse.swift in Sources */,
 				DFFE944A290C6670008AC892 /* MainTabBarController.swift in Sources */,
 				DF01BB662949F8C100C2F850 /* NotificationBellView.swift in Sources */,
 				DFA9A1ED2938DFFB000A285C /* NSNotificationName.swift in Sources */,
@@ -522,6 +537,7 @@
 				DFC05ED4291987150069E7A0 /* HomeCell.swift in Sources */,
 				DF7F30B1293913C900DE5921 /* TextFieldExtension.swift in Sources */,
 				DFFE9423290AC474008AC892 /* NavigationLogin.swift in Sources */,
+				DFEF3949294C9F74003413BC /* FetchAccountProfileUseCase.swift in Sources */,
 				DF25031D294BBDC4007D30E8 /* HomeHeaderResponse.swift in Sources */,
 				DF250316294BBD12007D30E8 /* HomeHeaderViewModel.swift in Sources */,
 				DF3D7EBF29227B4A0043F06B /* HomeAccountResponse.swift in Sources */,
