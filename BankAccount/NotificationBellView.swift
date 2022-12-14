@@ -15,6 +15,7 @@ class NotificationBellView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupSelfView()
+        self.setupSelfViewGesture()
     }
     
     required init?(coder: NSCoder) {
@@ -25,7 +26,7 @@ class NotificationBellView: UIView {
         return CGSize(width: 48, height: 48)
     }
 
-    func setupSelfView() {
+    private func setupSelfView() {
         translatesAutoresizingMaskIntoConstraints = false
         bellView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -40,5 +41,14 @@ class NotificationBellView: UIView {
             bellView.heightAnchor.constraint(equalToConstant: 24),
             bellView.widthAnchor.constraint(equalToConstant: 24)
         ])
+    }
+    
+    private func setupSelfViewGesture() {
+        bellView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapBellImage)))
+        bellView.isUserInteractionEnabled = true
+    }
+    
+    @objc private func didTapBellImage() {
+        print("shake it babe")
     }
 }
