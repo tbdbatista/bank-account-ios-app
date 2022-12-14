@@ -11,6 +11,7 @@ import UIKit
 class NotificationBellView: UIView {
     
     let bellView = UIImageView()
+    let buttonView = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,7 +34,15 @@ class NotificationBellView: UIView {
         let image = UIImage(systemName: "bell.fill")!.withTintColor(.primaryGreen, renderingMode: .alwaysOriginal)
         bellView.image = image
         
+        buttonView.translatesAutoresizingMaskIntoConstraints = false
+        buttonView.backgroundColor = .systemRed
+        buttonView.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        buttonView.layer.cornerRadius = 16/2
+        buttonView.setTitle("9", for: .normal)
+        buttonView.setTitleColor(.white, for: .normal)
+        
         addSubview(bellView)
+        addSubview(buttonView)
         
         NSLayoutConstraint.activate([
             bellView.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -41,11 +50,20 @@ class NotificationBellView: UIView {
             bellView.heightAnchor.constraint(equalToConstant: 24),
             bellView.widthAnchor.constraint(equalToConstant: 24)
         ])
+        
+        NSLayoutConstraint.activate([
+            buttonView.topAnchor.constraint(equalTo: bellView.topAnchor),
+            buttonView.leadingAnchor.constraint(equalTo: bellView.trailingAnchor, constant: -9),
+            buttonView.widthAnchor.constraint(equalToConstant: 16),
+            buttonView.heightAnchor.constraint(equalToConstant: 16)
+        ])
     }
     
     private func setupSelfViewGesture() {
-        bellView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapBellImage)))
-        bellView.isUserInteractionEnabled = true
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapBellImage)))
+        self.isUserInteractionEnabled = true
+        buttonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapBellImage)))
+        buttonView.isUserInteractionEnabled = true
     }
     
     @objc private func didTapBellImage() {

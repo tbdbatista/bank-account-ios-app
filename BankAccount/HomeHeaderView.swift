@@ -43,6 +43,7 @@ class HomeHeaderView: UIView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         setupNotificationBellView()
+        
     }
     
     private func setupNotificationBellView() {
