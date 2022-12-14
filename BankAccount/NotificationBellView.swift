@@ -10,7 +10,7 @@ import UIKit
 
 class NotificationBellView: UIView {
     
-    lazy var bellView = UIImageView()
+    let bellView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +29,7 @@ class NotificationBellView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         bellView.translatesAutoresizingMaskIntoConstraints = false
         
-        let image = UIImage(systemName: "bell.fill")!.withTintColor(.white, renderingMode: .alwaysOriginal)
+        let image = UIImage(systemName: "bell.fill")!.withTintColor(.primaryGreen, renderingMode: .alwaysOriginal)
         bellView.image = image
         
         addSubview(bellView)

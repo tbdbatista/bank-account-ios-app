@@ -12,6 +12,8 @@ class HomeHeaderView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var mainLabel: UILabel!
     
+    let notificationBellView = NotificationBellView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -20,6 +22,7 @@ class HomeHeaderView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
+        
     }
     
     override var intrinsicContentSize: CGSize {
@@ -38,5 +41,18 @@ class HomeHeaderView: UIView {
         contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        
+        setupNotificationBellView()
     }
+    
+    private func setupNotificationBellView() {
+        notificationBellView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(notificationBellView)
+        
+        NSLayoutConstraint.activate([
+            notificationBellView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            notificationBellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+    }
+    
 }

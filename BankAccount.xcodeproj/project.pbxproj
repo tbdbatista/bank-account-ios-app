@@ -147,7 +147,6 @@
 				DF24AF8D2908613100930240 /* HomeViewController.swift */,
 				DFC05ED1291986E90069E7A0 /* Header */,
 				DFC05ED2291986F00069E7A0 /* Cell */,
-				DF01BB652949F8C100C2F850 /* NotificationBellView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -241,6 +240,7 @@
 		DFC05ED1291986E90069E7A0 /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				DF01BB652949F8C100C2F850 /* NotificationBellView.swift */,
 				DFF77CA72916F2B9002A7113 /* HomeHeaderView.xib */,
 				DFF77CA52916F298002A7113 /* HomeHeaderView.swift */,
 			);
