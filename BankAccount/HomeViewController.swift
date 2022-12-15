@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
     
     let viewModel = HomeViewModel()
     
-    var accounts: [HomeModel]?
+    var accounts: [HomeAccountResponse]?
     lazy var stackView = UIStackView()
     lazy var logoutButton = UIBarButtonItem()
     lazy var tableView = UITableView()
@@ -104,7 +104,7 @@ extension HomeViewController: UITableViewDataSource {
         guard let accounts = accounts else {return UITableViewCell()}
         
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeCell.reuseID, for: indexPath) as! HomeCell
-        cell.configure(model: accounts[indexPath.row])
+        cell.configure(response: accounts[indexPath.row])
         return cell
     }
     

@@ -12,6 +12,11 @@ class HomeHeaderView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var mainLabel: UILabel!
     
+    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    lazy var viewModel = HomeHeaderViewModel()
     let notificationBellView = NotificationBellView()
     
     override init(frame: CGRect) {
@@ -54,6 +59,12 @@ class HomeHeaderView: UIView {
             notificationBellView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             notificationBellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
+    }
+    
+    private func setupHeaderMessages(response: HomeHeaderResponse) {
+        self.welcomeLabel.text = response.welcomeMessage
+        self.nameLabel.text = response.name
+        self.dateLabel.text = response.date
     }
     
 }

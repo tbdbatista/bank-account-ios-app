@@ -146,13 +146,13 @@ class HomeCell: UITableViewCell {
     }
     
     //MARK: - Methods - Setup Cell
-    func configure(model: HomeModel) {
+    func configure(response: HomeAccountResponse) {
 
-        typeLabel.text = model.accountType.rawValue
-        nameLabel.text = model.accountName
-        balanceAmountLabel.attributedText = setupStyleForBalanceAmountLabel(dollars: model.dollars, cents: model.cents)
+        typeLabel.text = response.accountType.rawValue
+        nameLabel.text = response.accountName
+        balanceAmountLabel.attributedText = setupStyleForBalanceAmountLabel(dollars: response.dollars, cents: response.cents)
         
-        switch model.accountType {
+        switch response.accountType {
         case .Banking:
             underLineView.backgroundColor = .systemBlue
         case .CreditCard:
