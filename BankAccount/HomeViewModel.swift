@@ -32,7 +32,7 @@ class HomeViewModel {
     var lastName: String?
     
     func getAccountProfileData(completion: @escaping (String?, String?) -> Void) {
-        fetchAccountProfileUseCase.fetchProfile(id: "1", completion: { result in
+        fetchAccountProfileUseCase.fetchProfile(id: "2", completion: { result in
             switch result {
             case .success(let profile):
                 self.firstName = profile.firstName

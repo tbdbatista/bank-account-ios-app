@@ -14,8 +14,8 @@
                 <outlet property="contentView" destination="iN0-l3-epB" id="X4w-yB-wpw"/>
                 <outlet property="dateLabel" destination="PL5-dP-n6N" id="mBp-Qk-zKa"/>
                 <outlet property="mainLabel" destination="ajd-rp-Lu0" id="lpd-9a-RRn"/>
-                <outlet property="nameLabel" destination="eKW-Hg-VIM" id="Ae6-n5-rCA"/>
-                <outlet property="welcomeLabel" destination="6Nr-Fi-3XS" id="Y3t-Lr-Iht"/>
+                <outlet property="nameLabel" destination="6Nr-Fi-3XS" id="A4G-IT-KSJ"/>
+                <outlet property="welcomeLabel" destination="eKW-Hg-VIM" id="AMZ-2o-HeP"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

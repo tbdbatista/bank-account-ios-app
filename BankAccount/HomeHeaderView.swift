@@ -12,8 +12,8 @@ class HomeHeaderView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var mainLabel: UILabel!
     
-    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
     let notificationBellView = NotificationBellView()

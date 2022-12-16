@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
         setupTableView()
         setupHeaderTableView()
         setupNavBar()
+        setupHeaderProfile()
     }
     
     private func setStackView() {
@@ -62,6 +63,11 @@ class HomeViewController: UIViewController {
     private func setLogoutButton() {
 //        logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(callLogout))
         logoutButton = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(callLogout))
+    }
+    
+    private func setupHeaderProfile() {
+        self.homeHeaderProfile.welcomeMessage = "Welcome to the B.A. Bank."
+        self.homeHeaderProfile.date = Date()
     }
     
     private func setupTableView() {
@@ -109,7 +115,9 @@ class HomeViewController: UIViewController {
             self.homeHeaderProfile.name = result as String
             
             DispatchQueue.main.async {
-                self.header.nameLabel.text = self.homeHeaderProfile.name
+                self.header.nameLabel.text = "Hello, " + self.homeHeaderProfile.name! + "."
+                self.header.welcomeLabel.text = self.homeHeaderProfile.welcomeMessage
+                self.header.dateLabel.text = "Today is " + self.homeHeaderProfile.dateFormatted + "."
                 self.tableView.tableHeaderView = self.header
                 self.tableView.reloadData()
             }
