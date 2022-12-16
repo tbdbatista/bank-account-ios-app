@@ -103,10 +103,10 @@ class HomeViewController: UIViewController {
     private func loadNetworkData() {
         self.viewModel.getAccountProfileData(completion: { result, error in
             guard let result = result else {
-                print(error)
+                print(error ?? "Error getting Account Profile Data")
                 return
             }
-            self.homeHeaderProfile.name = result
+            self.homeHeaderProfile.name = result as String
             
             DispatchQueue.main.async {
                 self.header.nameLabel.text = self.homeHeaderProfile.name

@@ -119,7 +119,6 @@ class LoginViewController: UIViewController {
     @objc private func signInButtonTapped() {
         print("button tapped")
         self.callLogin()
-        print("Actual state = \(String(describing: loginViewModel.getErrorWarningState()))")
     }
     
     @objc private func callingLogout() {

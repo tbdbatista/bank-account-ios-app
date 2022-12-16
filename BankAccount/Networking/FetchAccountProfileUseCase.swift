@@ -21,12 +21,13 @@ class FetchAccountProfileUseCase {
                 completion(.failure(.serverError))
                 return
             }
-            if let response = response {
-                print(response)
+            if let response : HTTPURLResponse = response as? HTTPURLResponse {
+                print(response.statusCode)
             }
             
             do {
                 let profile = try JSONDecoder().decode(AccountProfileResponse.self, from: data)
+                print(profile)
                 completion(.success(profile))
             } catch {
                 completion(.failure(.decodingError))
