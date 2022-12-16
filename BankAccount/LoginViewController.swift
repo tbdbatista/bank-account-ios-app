@@ -40,6 +40,11 @@ class LoginViewController: UIViewController {
         self.startLogoVerticalAnimation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.loginView.usernameTextField.resignFirstResponder()
+    }
+    
     private func setViews() {
         self.setStackView()
         self.setSignInButton()
@@ -95,7 +100,7 @@ class LoginViewController: UIViewController {
     
     //MARK: - Animations
     private func startLogoVerticalAnimation() {
-        let logoAnimator = UIViewPropertyAnimator(duration: 1.0, curve: .easeOut, animations: {
+        let logoAnimator = UIViewPropertyAnimator(duration: 0.7, curve: .easeOut, animations: {
             self.logoLeadingAnchor?.isActive = false
             self.logoLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
             self.view.layoutIfNeeded()
@@ -121,13 +126,14 @@ class LoginViewController: UIViewController {
         self.callLogin()
     }
     
-    @objc private func callingLogout() {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    //MARK: - Methods
     private func callLogin() {
         loginViewModel.login(username: username, password: password)
+    }
+    
+    @objc private func callingLogout() {
+        dismiss(animated: true, completion: nil)
+        
+        self.loginView.usernameTextField.resignFirstResponder()
     }
     
     private func cleanInputs(wrongPassword: Bool = false) {

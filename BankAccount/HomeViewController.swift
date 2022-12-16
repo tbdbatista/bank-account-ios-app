@@ -115,17 +115,14 @@ class HomeViewController: UIViewController {
             }
             
             DispatchQueue.main.async {
-                self.confiureTableHeaderView(response: response)
-//                self.headerView.nameLabel.text = "Hello, " + self.homeHeaderProfile.name! + "."
-//                self.headerView.welcomeLabel.text = self.homeHeaderProfile.welcomeMessage
-//                self.headerView.dateLabel.text = "Today is " + self.homeHeaderProfile.dateFormatted + "."
+                self.configureTableHeaderView(response: response)
                 self.tableView.tableHeaderView = self.headerView
                 self.tableView.reloadData()
             }
         })
     }
     
-    private func confiureTableHeaderView(response: AccountProfileResponse) {
+    private func configureTableHeaderView(response: AccountProfileResponse) {
         let accountModel = HomeHeaderModel(welcomeMessage: "Welcome to the B.A. Bank.", name: (response.firstName + " " + response.lastName), date: Date())
         self.headerView.setupHeaderMessages(model: accountModel)
     }
