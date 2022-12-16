@@ -42,6 +42,8 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.loginView.usernameTextField.text = "thiago.batista"
+        self.loginView.passwordTextField.text = "password"
         self.loginView.usernameTextField.resignFirstResponder()
     }
     

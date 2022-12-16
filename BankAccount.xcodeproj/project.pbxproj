@@ -16,6 +16,8 @@
 		DF3D7EBC292271AB0043F06B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */; };
 		DF3D7EBF29227B4A0043F06B /* HomeAccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3D7EBE29227B4A0043F06B /* HomeAccountResponse.swift */; };
 		DF7F30B1293913C900DE5921 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7F30B0293913C900DE5921 /* TextFieldExtension.swift */; };
+		DF7F52D3294D042F0049218D /* AccountDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7F52D2294D042F0049218D /* AccountDetailsResponse.swift */; };
+		DF7F52D5294D05780049218D /* FetchAccountDetailsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7F52D4294D05780049218D /* FetchAccountDetailsUseCase.swift */; };
 		DF820EDF292F9B3000A1DF8D /* TextExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF820EDE292F9B3000A1DF8D /* TextExtensionTests.swift */; };
 		DF820EE2292F9F2B00A1DF8D /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF820EE1292F9F2B00A1DF8D /* CurrencyFormatterTests.swift */; };
 		DF87FFFD294A347E00A53C9F /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF87FFFC294A347E00A53C9F /* ViewExtension.swift */; };
@@ -66,6 +68,8 @@
 		DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DF3D7EBE29227B4A0043F06B /* HomeAccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeAccountResponse.swift; path = ../HomeAccountResponse.swift; sourceTree = "<group>"; };
 		DF7F30B0293913C900DE5921 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		DF7F52D2294D042F0049218D /* AccountDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsResponse.swift; sourceTree = "<group>"; };
+		DF7F52D4294D05780049218D /* FetchAccountDetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAccountDetailsUseCase.swift; sourceTree = "<group>"; };
 		DF820EDE292F9B3000A1DF8D /* TextExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensionTests.swift; sourceTree = "<group>"; };
 		DF820EE1292F9F2B00A1DF8D /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		DF87FFFC294A347E00A53C9F /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				DF3D7EBE29227B4A0043F06B /* HomeAccountResponse.swift */,
 				DF25031C294BBDC4007D30E8 /* HomeHeaderModel.swift */,
 				DFEF394A294C9FFD003413BC /* AccountProfileResponse.swift */,
+				DF7F52D2294D042F0049218D /* AccountDetailsResponse.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				DFEF3948294C9F74003413BC /* FetchAccountProfileUseCase.swift */,
+				DF7F52D4294D05780049218D /* FetchAccountDetailsUseCase.swift */,
 			);
 			name = UseCase;
 			sourceTree = "<group>";
@@ -512,6 +518,7 @@
 			files = (
 				DFFE9445290AD445008AC892 /* ViewControllerExtension.swift in Sources */,
 				DFEF3946294C9A03003413BC /* DateExtension.swift in Sources */,
+				DF7F52D5294D05780049218D /* FetchAccountDetailsUseCase.swift in Sources */,
 				DF2AF8752927FB2600F7E479 /* CurrencyFormatter.swift in Sources */,
 				DFFE9448290B0F03008AC892 /* LocalState.swift in Sources */,
 				DFEF394B294C9FFD003413BC /* AccountProfileResponse.swift in Sources */,
@@ -535,6 +542,7 @@
 				DF7F30B1293913C900DE5921 /* TextFieldExtension.swift in Sources */,
 				DFFE9423290AC474008AC892 /* NavigationLogin.swift in Sources */,
 				DFEF3949294C9F74003413BC /* FetchAccountProfileUseCase.swift in Sources */,
+				DF7F52D3294D042F0049218D /* AccountDetailsResponse.swift in Sources */,
 				DF25031D294BBDC4007D30E8 /* HomeHeaderModel.swift in Sources */,
 				DF3D7EBF29227B4A0043F06B /* HomeAccountResponse.swift in Sources */,
 				DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */,

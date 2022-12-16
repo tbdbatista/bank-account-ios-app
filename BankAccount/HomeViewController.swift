@@ -26,7 +26,8 @@ class HomeViewController: UIViewController {
         setSelfView()
         setViews()
         accounts = viewModel.fetchAccountsData()
-        self.loadNetworkData()
+        self.loadNetworkDataHeader()
+        self.loadNetworkDataAccount()
     }
     
     private func setSelfSetup() {
@@ -106,8 +107,8 @@ class HomeViewController: UIViewController {
         NotificationCenter.default.post(name: .logout, object: nil)
     }
     
-    //MARK: - Load network data
-    private func loadNetworkData() {
+    //MARK: - Load network data - Header
+    private func loadNetworkDataHeader() {
         self.viewModel.getAccountProfileData(completion: { response, error in
             guard let response = response else {
                 print(error ?? "Error getting Account Profile Data")
@@ -125,6 +126,25 @@ class HomeViewController: UIViewController {
     private func configureTableHeaderView(response: AccountProfileResponse) {
         let accountModel = HomeHeaderModel(welcomeMessage: "Welcome to the B.A. Bank.", name: (response.firstName + " " + response.lastName), date: Date())
         self.headerView.setupHeaderMessages(model: accountModel)
+    }
+    
+    //MARK: - Load network data - Accounts
+    private func loadNetworkDataAccount() {
+        self.viewModel.getAccountsDetails { response, error in
+            guard let response = response else {
+                print(error ?? "Error getting Account Details Data")
+                return
+            }
+
+            DispatchQueue.main.async {
+                self.configureTableViewAccounts(response: response)
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    private func configureTableViewAccounts(response: [AccountDetailsResponse]?) {
+        print(response)
     }
 }
 

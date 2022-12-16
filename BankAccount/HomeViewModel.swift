@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AccountType: String {
+enum AccountType: String, Codable {
     case Banking
     case CreditCard
     case Investment
@@ -17,6 +17,7 @@ enum AccountType: String {
 class HomeViewModel {
 
     private let fetchAccountProfileUseCase = FetchAccountProfileUseCase()
+    private let fetchAccountDetailsUseCase = FetchAccountDetailsUseCase()
     
     func fetchAccountsData() -> [HomeAccountResponse] {
         let account = HomeAccountResponse(accountType: .Banking, accountName: "Single Account", dollars: "90,909", cents:"76")
@@ -26,6 +27,17 @@ class HomeViewModel {
         let crypto = HomeAccountResponse(accountType: .Cryptocurrency, accountName: "Bitcoin", dollars: "234,423", cents:"32")
         let accounts = [account, savings, visa, investment, crypto]
         return accounts
+    }
+    
+    func getAccountsDetails(completion: @escaping ([AccountDetailsResponse]?, String?) -> Void) {
+        fetchAccountDetailsUseCase.fetchAccountDetails(id: "1") { result in
+            switch result {
+            case .success(let accountDetails):
+                completion(accountDetails, nil)
+            case .failure(let error):
+                completion(nil, error.localizedDescription)
+            }
+        }
     }
     
     func getAccountProfileData(completion: @escaping (AccountProfileResponse?, String?) -> Void) {
