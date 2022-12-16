@@ -60,9 +60,9 @@ class HomeHeaderView: UIView {
         ])
     }
     
-    private func setupHeaderMessages(response: HomeHeaderModel) {
-        self.welcomeLabel.text = response.welcomeMessage
-        self.nameLabel.text = response.name
-        self.dateLabel.text = response.dateFormatted
+    func setupHeaderMessages(model: HomeHeaderModel) {
+        self.nameLabel.text = "Hello, " + model.name! + "."
+        self.welcomeLabel.text = model.welcomeMessage
+        self.dateLabel.text = "Today is " + model.dateFormatted + "."
     }
 }

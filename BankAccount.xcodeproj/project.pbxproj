@@ -126,6 +126,7 @@
 		DF24AF8C2908612100930240 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DF250319294BBD79007D30E8 /* Networking */,
 				DFC05ED0291986240069E7A0 /* MainTabBar */,
 				DFC05ECF291985CB0069E7A0 /* MoreInformation */,
 				DFC05ECE291985BB0069E7A0 /* Transactions */,
@@ -202,6 +203,16 @@
 				DF3D7EBB292271AB0043F06B /* HomeViewModel.swift */,
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		DF7F52D1294CED070049218D /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				DFE87B472902FEFF0088CB76 /* Login */,
+				DFB705992906F32200A42A28 /* Onboarding */,
+				DF24AF8C2908612100930240 /* Main */,
+			);
+			name = Steps;
 			sourceTree = "<group>";
 		};
 		DF820EDD292F9B0A00A1DF8D /* CommonTests */ = {
@@ -315,13 +326,10 @@
 		DFE87B312902E2080088CB76 /* BankAccount */ = {
 			isa = PBXGroup;
 			children = (
-				DF250319294BBD79007D30E8 /* Networking */,
+				DF7F52D1294CED070049218D /* Steps */,
 				DFF77CA129157EA0002A7113 /* Navigation */,
 				DFFE9446290B0EF3008AC892 /* Utils */,
-				DF24AF8C2908612100930240 /* Main */,
 				DFB705A42907203600A42A28 /* Extensions */,
-				DFB705992906F32200A42A28 /* Onboarding */,
-				DFE87B472902FEFF0088CB76 /* Login */,
 				DFE87B462902FE9E0088CB76 /* GeneralFiles */,
 			);
 			path = BankAccount;

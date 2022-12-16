@@ -18,7 +18,7 @@ class HomeViewModel {
 
     private let fetchAccountProfileUseCase = FetchAccountProfileUseCase()
     
-    func fetchData() -> [HomeAccountResponse] {
+    func fetchAccountsData() -> [HomeAccountResponse] {
         let account = HomeAccountResponse(accountType: .Banking, accountName: "Single Account", dollars: "90,909", cents:"76")
         let savings = HomeAccountResponse(accountType: .Banking, accountName: "Savings", dollars: "123,423", cents:"90")
         let visa = HomeAccountResponse(accountType: .CreditCard, accountName: "Visa", dollars: "14,414", cents:"41")
@@ -26,18 +26,13 @@ class HomeViewModel {
         let crypto = HomeAccountResponse(accountType: .Cryptocurrency, accountName: "Bitcoin", dollars: "234,423", cents:"32")
         let accounts = [account, savings, visa, investment, crypto]
         return accounts
-    } 
-
-    var firstName: String?
-    var lastName: String?
+    }
     
-    func getAccountProfileData(completion: @escaping (String?, String?) -> Void) {
+    func getAccountProfileData(completion: @escaping (AccountProfileResponse?, String?) -> Void) {
         fetchAccountProfileUseCase.fetchProfile(id: "2", completion: { result in
             switch result {
             case .success(let profile):
-                self.firstName = profile.firstName
-                self.lastName = profile.lastName
-                completion(self.firstName! + " " + self.lastName!, nil)
+                completion(profile, nil)
             case .failure(let error):
                 completion(nil, error.localizedDescription)
             }

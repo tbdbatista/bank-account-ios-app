@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     let viewModel = HomeViewModel()
-    let header = HomeHeaderView(frame: .zero)
+    var headerView = HomeHeaderView(frame: .zero)
     
     var accounts: [HomeAccountResponse]?
     lazy var stackView = UIStackView()
@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
         setSelfSetup()
         setSelfView()
         setViews()
-        accounts = viewModel.fetchData()
+        accounts = viewModel.fetchAccountsData()
         self.loadNetworkData()
     }
     
@@ -74,6 +74,7 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .secondaryGreen
+        tableView.separatorColor = .primaryGreen
 
         tableView.register(HomeCell.self, forCellReuseIdentifier: HomeCell.reuseID)
         tableView.rowHeight = 90
@@ -88,10 +89,10 @@ class HomeViewController: UIViewController {
     }
     
     private func setupHeaderTableView() {
-        var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        var size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size.width = UIScreen.main.bounds.width
-        header.frame.size = size
-        tableView.tableHeaderView = header
+        headerView.frame.size = size
+        tableView.tableHeaderView = headerView
     }
     
     private func setupNavBar() {
@@ -107,21 +108,26 @@ class HomeViewController: UIViewController {
     
     //MARK: - Load network data
     private func loadNetworkData() {
-        self.viewModel.getAccountProfileData(completion: { result, error in
-            guard let result = result else {
+        self.viewModel.getAccountProfileData(completion: { response, error in
+            guard let response = response else {
                 print(error ?? "Error getting Account Profile Data")
                 return
             }
-            self.homeHeaderProfile.name = result as String
             
             DispatchQueue.main.async {
-                self.header.nameLabel.text = "Hello, " + self.homeHeaderProfile.name! + "."
-                self.header.welcomeLabel.text = self.homeHeaderProfile.welcomeMessage
-                self.header.dateLabel.text = "Today is " + self.homeHeaderProfile.dateFormatted + "."
-                self.tableView.tableHeaderView = self.header
+                self.confiureTableHeaderView(response: response)
+//                self.headerView.nameLabel.text = "Hello, " + self.homeHeaderProfile.name! + "."
+//                self.headerView.welcomeLabel.text = self.homeHeaderProfile.welcomeMessage
+//                self.headerView.dateLabel.text = "Today is " + self.homeHeaderProfile.dateFormatted + "."
+                self.tableView.tableHeaderView = self.headerView
                 self.tableView.reloadData()
             }
         })
+    }
+    
+    private func confiureTableHeaderView(response: AccountProfileResponse) {
+        let accountModel = HomeHeaderModel(welcomeMessage: "Welcome to the B.A. Bank.", name: (response.firstName + " " + response.lastName), date: Date())
+        self.headerView.setupHeaderMessages(model: accountModel)
     }
 }
 
