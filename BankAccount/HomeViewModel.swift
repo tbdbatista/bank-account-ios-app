@@ -37,7 +37,7 @@ class HomeViewModel {
             case .success(let profile):
                 self.firstName = profile.firstName
                 self.lastName = profile.lastName
-                completion(self.firstName! + self.lastName!, nil)
+                completion(self.firstName! + " " + self.lastName!, nil)
             case .failure(let error):
                 completion(nil, error.localizedDescription)
             }

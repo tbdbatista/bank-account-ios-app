@@ -26,10 +26,6 @@ class HomeViewController: UIViewController {
         setSelfView()
         setViews()
         accounts = viewModel.fetchData()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         self.loadNetworkData()
     }
     
@@ -111,7 +107,6 @@ class HomeViewController: UIViewController {
                 return
             }
             self.homeHeaderProfile.name = result
-            print(self.homeHeaderProfile)
             
             DispatchQueue.main.async {
                 self.header.nameLabel.text = self.homeHeaderProfile.name
@@ -119,8 +114,6 @@ class HomeViewController: UIViewController {
                 self.tableView.reloadData()
             }
         })
-
-        
     }
 }
 
