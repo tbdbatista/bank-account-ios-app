@@ -33,6 +33,7 @@
 		DFE87B3C2902E2090088CB76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE87B3B2902E2090088CB76 /* Assets.xcassets */; };
 		DFE87B3F2902E2090088CB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE87B3D2902E2090088CB76 /* LaunchScreen.storyboard */; };
 		DFE87B492902FF360088CB76 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE87B482902FF360088CB76 /* LoginView.swift */; };
+		DFEF3946294C9A03003413BC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF3945294C9A03003413BC /* DateExtension.swift */; };
 		DFF77CA62916F298002A7113 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF77CA52916F298002A7113 /* HomeHeaderView.swift */; };
 		DFF77CA82916F2B9002A7113 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF77CA72916F2B9002A7113 /* HomeHeaderView.xib */; };
 		DFFE9423290AC474008AC892 /* NavigationLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE9422290AC474008AC892 /* NavigationLogin.swift */; };
@@ -83,6 +84,7 @@
 		DFE87B3E2902E2090088CB76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFE87B402902E2090088CB76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFE87B482902FF360088CB76 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DFEF3945294C9A03003413BC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		DFF77CA52916F298002A7113 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		DFF77CA72916F2B9002A7113 /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		DFFE9422290AC474008AC892 /* NavigationLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLogin.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				DF0FFBC7292BE9E80053344D /* TextExtensions.swift */,
 				DF7F30B0293913C900DE5921 /* TextFieldExtension.swift */,
 				DF87FFFC294A347E00A53C9F /* ViewExtension.swift */,
+				DFEF3945294C9A03003413BC /* DateExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFFE9445290AD445008AC892 /* ViewControllerExtension.swift in Sources */,
+				DFEF3946294C9A03003413BC /* DateExtension.swift in Sources */,
 				DF2AF8752927FB2600F7E479 /* CurrencyFormatter.swift in Sources */,
 				DFFE9448290B0F03008AC892 /* LocalState.swift in Sources */,
 				DFFE944A290C6670008AC892 /* MainTabBarController.swift in Sources */,

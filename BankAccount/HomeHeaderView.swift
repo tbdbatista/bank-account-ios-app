@@ -64,7 +64,7 @@ class HomeHeaderView: UIView {
     private func setupHeaderMessages(response: HomeHeaderResponse) {
         self.welcomeLabel.text = response.welcomeMessage
         self.nameLabel.text = response.name
-        self.dateLabel.text = response.date
+        self.dateLabel.text = response.dateFormatted
     }
     
 }

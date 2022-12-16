@@ -10,9 +10,9 @@ import Foundation
 struct HomeHeaderResponse: Codable {
     let welcomeMessage: String
     let name: String
-    let date: String
+    let date: Date
     
-//    var dateFormatted: String {
-//        return date.monthDayYearString
-//    }
+    var dateFormatted: String {
+        return date.monthDayYearString
+    }
 }
