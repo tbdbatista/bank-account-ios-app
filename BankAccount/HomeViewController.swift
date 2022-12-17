@@ -144,14 +144,14 @@ class HomeViewController: UIViewController {
     
     private func configureTableViewAccounts(response: [AccountDetailsResponse]?) {
         self.accountsList = [HomeAccountModel]()
-        for n in 0...(response!.count)-1 {
-            guard let accountType = response?[n].type else { return }
-            let dollarFormatter = CurrencyFormatter()
-            let dollarAmount = dollarFormatter.formatDollar(dollarsPart: response![n].amount)
-            let centsAmmount = dollarFormatter.formatCents(extractCentsFrom: response![n].amount)
-            let account = HomeAccountModel(accountType: accountType, accountName: (response?[n].name)!, dollars: dollarAmount, cents: centsAmmount)
-            self.accountsList?.append(account)
-        }
+        let dollarFormatter = CurrencyFormatter()
+        
+        self.accountsList = response?.map({
+            HomeAccountModel(accountType: $0.type,
+                             accountName: ($0.name),
+                             dollars: dollarFormatter.formatDollar(dollarsPart: $0.amount),
+                             cents: dollarFormatter.formatCents(extractCentsFrom: $0.amount))
+        })
     }
 }
 

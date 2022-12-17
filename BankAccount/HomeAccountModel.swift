@@ -13,5 +13,3 @@ struct HomeAccountModel {
     let dollars: String
     let cents: String
 }
-
-//TO DO - THIAGO: remover essa classe se não for mais usada
