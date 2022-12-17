@@ -11,6 +11,6 @@ struct AccountDetailsResponse: Codable {
     let id: String
     let type: AccountType
     let name: String
-    let amount: Decimal
+    let amount: Double
     let createdDateTime: Date
 }

@@ -146,7 +146,7 @@ class HomeCell: UITableViewCell {
     }
     
     //MARK: - Methods - Setup Cell
-    func configure(response: HomeAccountResponse) {
+    func configure(response: HomeAccountModel) {
 
         typeLabel.text = response.accountType.rawValue
         nameLabel.text = response.accountName

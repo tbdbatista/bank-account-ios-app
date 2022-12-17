@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
     let viewModel = HomeViewModel()
     var headerView = HomeHeaderView(frame: .zero)
     
-    var accounts: [HomeAccountResponse]?
+    var accountsList: [HomeAccountModel]?
     lazy var stackView = UIStackView()
     lazy var logoutButton = UIBarButtonItem()
     lazy var tableView = UITableView()
@@ -25,7 +25,6 @@ class HomeViewController: UIViewController {
         setSelfSetup()
         setSelfView()
         setViews()
-        accounts = viewModel.fetchAccountsData()
         self.loadNetworkDataHeader()
         self.loadNetworkDataAccount()
     }
@@ -124,8 +123,8 @@ class HomeViewController: UIViewController {
     }
     
     private func configureTableHeaderView(response: AccountProfileResponse) {
-        let accountModel = HomeHeaderModel(welcomeMessage: "Welcome to the B.A. Bank.", name: (response.firstName + " " + response.lastName), date: Date())
-        self.headerView.setupHeaderMessages(model: accountModel)
+        let accountHeaderModel = HomeHeaderModel(welcomeMessage: "Welcome to the B.A. Bank.", name: (response.firstName + " " + response.lastName), date: Date())
+        self.headerView.setupHeaderMessages(model: accountHeaderModel)
     }
     
     //MARK: - Load network data - Accounts
@@ -144,14 +143,22 @@ class HomeViewController: UIViewController {
     }
     
     private func configureTableViewAccounts(response: [AccountDetailsResponse]?) {
-        print(response)
+        self.accountsList = [HomeAccountModel]()
+        for n in 0...(response!.count)-1 {
+            guard let accountType = response?[n].type else { return }
+            let dollarFormatter = CurrencyFormatter()
+            let dollarAmount = dollarFormatter.formatDollar(dollarsPart: response![n].amount)
+            let centsAmmount = dollarFormatter.formatCents(extractCentsFrom: response![n].amount)
+            let account = HomeAccountModel(accountType: accountType, accountName: (response?[n].name)!, dollars: dollarAmount, cents: centsAmmount)
+            self.accountsList?.append(account)
+        }
     }
 }
 
 //MARK: - Extension - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let accounts = accounts else {return UITableViewCell()}
+        guard let accounts = accountsList else {return UITableViewCell()}
         
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeCell.reuseID, for: indexPath) as! HomeCell
         cell.configure(response: accounts[indexPath.row])
@@ -159,7 +166,7 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return accounts?.count ?? 0
+        return accountsList?.count ?? 0
     }
 }
 

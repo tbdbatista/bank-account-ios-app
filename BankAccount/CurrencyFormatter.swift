@@ -26,4 +26,23 @@ class CurrencyFormatter {
         dollarsString = String(dollarsReversedString.reversed())
         return dollarsString
     }
+    
+    func formatCents(extractCentsFrom amount: Double) -> String {
+        var cents: String = "00"
+        var doubleCents: Double = 0.0
+        
+        switch amount {
+        case _ where amount < 0.0 :
+            doubleCents *= -1
+        case 0.0 :
+            return "00"
+        default:
+            doubleCents = amount
+        }
+        
+        cents = String(Int(amount*100))
+        let formattedCents = cents.suffix(2)
+
+        return String(formattedCents)
+    }
 }
