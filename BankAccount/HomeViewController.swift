@@ -9,28 +9,33 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    //MARK: - Models
     let viewModel = HomeViewModel()
-    var headerView = HomeHeaderView(frame: .zero)
-    let group = DispatchGroup()
-    
+    var homeHeaderProfile = HomeHeaderModel()
     var accountsList: [HomeAccountModel]?
+
+    //MARK: - Tools
+    let group = DispatchGroup()
+
+    //MARK: - UI Components
+    var headerView = HomeHeaderView(frame: .zero)
     lazy var stackView = UIStackView()
     lazy var logoutButton = UIBarButtonItem()
     lazy var tableView = UITableView()
+    lazy var refreshControl = UIRefreshControl()
     
-    var homeHeaderProfile = HomeHeaderModel()
-    
+    //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setSelfSetup()
         setSelfView()
-        setViews()
-        self.loadNetworkDataHeader()
-        self.loadNetworkDataAccount()
-        self.groupLoadingWithDispatchGroup()
+        setupViews()
+        self.fetchHomeData()
+        self.setupRefreshControl()
     }
     
+    //MARK: - View Setup
     private func setSelfSetup() {
         view.addSubview(stackView)
         stackView.addArrangedSubview(tableView)
@@ -41,7 +46,8 @@ class HomeViewController: UIViewController {
         self.view.backgroundColor = .white
     }
 
-    private func setViews() {
+    //MARK: - Setup Other UI Components
+    private func setupViews() {
         setStackView()
         setLogoutButton()
         setupTableView()
@@ -103,12 +109,31 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .primaryGreen
     }
     
+    private func setupRefreshControl() {
+        refreshControl.tintColor = .primaryGreen
+        refreshControl.addTarget(self, action: #selector(refreshContent), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+    
     //MARK: - Methods - Actions
     @objc private func callLogout(sender: UIButton) {
         NotificationCenter.default.post(name: .logout, object: nil)
     }
     
+    @objc private func refreshContent(sender: UIRefreshControl) {
+        self.fetchHomeData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+            self.tableView.refreshControl?.endRefreshing()
+        })
+    }
+    
     //MARK: - Group UI Loading from Networking data
+    private func fetchHomeData() {
+        self.loadNetworkDataHeader()
+        self.loadNetworkDataAccount()
+        self.groupLoadingWithDispatchGroup()
+    }
+    
     private func groupLoadingWithDispatchGroup() {
         self.group.notify(queue: .main) {
             self.tableView.reloadData()
