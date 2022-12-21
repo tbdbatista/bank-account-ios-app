@@ -28,9 +28,7 @@ class HomeViewController: UIViewController {
         setViews()
         self.loadNetworkDataHeader()
         self.loadNetworkDataAccount()
-        self.group.notify(queue: .main) {
-            self.tableView.reloadData() // add
-        }
+        self.groupLoadingWithDispatchGroup()
     }
     
     private func setSelfSetup() {
@@ -112,9 +110,10 @@ class HomeViewController: UIViewController {
     
     //MARK: - Group UI Loading from Networking data
     private func groupLoadingWithDispatchGroup() {
-        
+        self.group.notify(queue: .main) {
+            self.tableView.reloadData()
+        }
     }
-    
     
     //MARK: - Load network data - Header
     private func loadNetworkDataHeader() {
@@ -128,7 +127,7 @@ class HomeViewController: UIViewController {
                 self.configureTableHeaderView(response: response)
                 self.tableView.tableHeaderView = self.headerView
                 self.group.leave()
-//                self.tableView.reloadData()
+                // reloadData() => chamada pelo dispatchGroup depois das informações já terem sido retornadas
             }
         })
     }
@@ -149,7 +148,7 @@ class HomeViewController: UIViewController {
             DispatchQueue.main.async {
                 self.configureTableViewAccounts(response: response)
                 self.group.leave()
-//                self.tableView.reloadData()
+                // reloadData() => chamada pelo dispatchGroup depois das informações já terem sido retornadas
             }
         }
     }
