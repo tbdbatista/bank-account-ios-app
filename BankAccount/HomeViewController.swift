@@ -121,8 +121,8 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func refreshContent(sender: UIRefreshControl) {
-        self.fetchHomeData()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            self.fetchHomeData()
             self.tableView.refreshControl?.endRefreshing()
         })
     }

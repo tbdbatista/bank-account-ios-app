@@ -20,7 +20,8 @@ class HomeViewModel {
     private let fetchAccountDetailsUseCase = FetchAccountDetailsUseCase()
   
     func getAccountsDetails(completion: @escaping ([AccountDetailsResponse]?, String?) -> Void) {
-        fetchAccountDetailsUseCase.fetchAccountDetails(id: "1") { result in
+        let userID = String(Int.random(in: 1...3))
+        fetchAccountDetailsUseCase.fetchAccountDetails(id: userID) { result in
             switch result {
             case .success(let accountDetails):
                 completion(accountDetails, nil)
@@ -31,7 +32,8 @@ class HomeViewModel {
     }
     
     func getAccountProfileData(completion: @escaping (AccountProfileResponse?, String?) -> Void) {
-        fetchAccountProfileUseCase.fetchProfile(id: "2", completion: { result in
+        let userID = String(Int.random(in: 1...3))
+        fetchAccountProfileUseCase.fetchProfile(id: userID, completion: { result in
             switch result {
             case .success(let profile):
                 completion(profile, nil)
