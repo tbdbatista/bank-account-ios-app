@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
     
     let viewModel = HomeViewModel()
     var headerView = HomeHeaderView(frame: .zero)
+    let group = DispatchGroup()
     
     var accountsList: [HomeAccountModel]?
     lazy var stackView = UIStackView()
@@ -27,6 +28,9 @@ class HomeViewController: UIViewController {
         setViews()
         self.loadNetworkDataHeader()
         self.loadNetworkDataAccount()
+        self.group.notify(queue: .main) {
+            self.tableView.reloadData() // add
+        }
     }
     
     private func setSelfSetup() {
@@ -106,18 +110,25 @@ class HomeViewController: UIViewController {
         NotificationCenter.default.post(name: .logout, object: nil)
     }
     
+    //MARK: - Group UI Loading from Networking data
+    private func groupLoadingWithDispatchGroup() {
+        
+    }
+    
+    
     //MARK: - Load network data - Header
     private func loadNetworkDataHeader() {
+        self.group.enter()
         self.viewModel.getAccountProfileData(completion: { response, error in
             guard let response = response else {
                 print(error ?? "Error getting Account Profile Data")
                 return
             }
-            
             DispatchQueue.main.async {
                 self.configureTableHeaderView(response: response)
                 self.tableView.tableHeaderView = self.headerView
-                self.tableView.reloadData()
+                self.group.leave()
+//                self.tableView.reloadData()
             }
         })
     }
@@ -129,15 +140,16 @@ class HomeViewController: UIViewController {
     
     //MARK: - Load network data - Accounts
     private func loadNetworkDataAccount() {
+        self.group.enter()
         self.viewModel.getAccountsDetails { response, error in
             guard let response = response else {
                 print(error ?? "Error getting Account Details Data")
                 return
             }
-
             DispatchQueue.main.async {
                 self.configureTableViewAccounts(response: response)
-                self.tableView.reloadData()
+                self.group.leave()
+//                self.tableView.reloadData()
             }
         }
     }
