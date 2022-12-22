@@ -21,6 +21,7 @@
 		DF820EDF292F9B3000A1DF8D /* TextExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF820EDE292F9B3000A1DF8D /* TextExtensionTests.swift */; };
 		DF820EE2292F9F2B00A1DF8D /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF820EE1292F9F2B00A1DF8D /* CurrencyFormatterTests.swift */; };
 		DF87FFFD294A347E00A53C9F /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF87FFFC294A347E00A53C9F /* ViewExtension.swift */; };
+		DFA3E7432954A88800A45845 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3E7422954A88800A45845 /* SkeletonLoadable.swift */; };
 		DFA9A1ED2938DFFB000A285C /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA9A1EC2938DFFB000A285C /* NSNotificationName.swift */; };
 		DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */; };
 		DFB7059B2906F35600A42A28 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */; };
@@ -76,6 +77,7 @@
 		DF820EDE292F9B3000A1DF8D /* TextExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensionTests.swift; sourceTree = "<group>"; };
 		DF820EE1292F9F2B00A1DF8D /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		DF87FFFC294A347E00A53C9F /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		DFA3E7422954A88800A45845 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
 		DFA9A1EC2938DFFB000A285C /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		DFAE0FB72904A600000D94C4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DFB7059A2906F35600A42A28 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				DFC05ED3291987150069E7A0 /* HomeCell.swift */,
+				DFA3E7422954A88800A45845 /* SkeletonLoadable.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				DFFE9423290AC474008AC892 /* NavigationLogin.swift in Sources */,
 				DFEF3949294C9F74003413BC /* FetchAccountProfileUseCase.swift in Sources */,
 				DF7F52D3294D042F0049218D /* AccountDetailsResponse.swift in Sources */,
+				DFA3E7432954A88800A45845 /* SkeletonLoadable.swift in Sources */,
 				DF25031D294BBDC4007D30E8 /* HomeHeaderModel.swift in Sources */,
 				DF3D7EBF29227B4A0043F06B /* HomeAccountModel.swift in Sources */,
 				DFAE0FB82904A600000D94C4 /* LoginViewModel.swift in Sources */,
