@@ -24,6 +24,9 @@ class HomeViewController: UIViewController {
     lazy var tableView = UITableView()
     lazy var refreshControl = UIRefreshControl()
     
+    //MARK: - Variables
+    var isDataLoaded: Bool = false
+    
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,4 +13,8 @@ struct AccountDetailsResponse: Codable {
     let name: String
     let amount: Double
     let createdDateTime: Date
+    
+    static func makeSkeleton() -> AccountDetailsResponse {
+        return AccountDetailsResponse(id: "1", type: .Banking, name: "Account name", amount: 0.0, createdDateTime: Date())
+    }
 }

@@ -19,7 +19,7 @@ class SkeletonCell: UITableViewCell, SkeletonLoadable {
         
     let chevronImageView = UIImageView()
     
-    // Gradients
+    //MARK: - Gradients
     let typeLayer = CAGradientLayer()
     let nameLayer = CAGradientLayer()
     let balanceLayer = CAGradientLayer()
@@ -55,9 +55,7 @@ class SkeletonCell: UITableViewCell, SkeletonLoadable {
         balanceAmountLayer.frame = balanceAmountLabel.bounds
         balanceAmountLayer.cornerRadius = balanceAmountLabel.bounds.height/2
     }
-}
 
-extension SkeletonCell {
     
     private func setup() {
         typeLabel.translatesAutoresizingMaskIntoConstraints = false
