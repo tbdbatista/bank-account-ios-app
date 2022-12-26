@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF01BB662949F8C100C2F850 /* NotificationBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF01BB652949F8C100C2F850 /* NotificationBellView.swift */; };
+		DF0D25A62959C7D700461466 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D25A52959C7D600461466 /* SkeletonCell.swift */; };
 		DF0FFBC8292BE9E80053344D /* TextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0FFBC7292BE9E80053344D /* TextExtensions.swift */; };
 		DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */; };
 		DF24AF8E2908613100930240 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8D2908613100930240 /* HomeViewController.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		DF01BB652949F8C100C2F850 /* NotificationBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBellView.swift; sourceTree = "<group>"; };
+		DF0D25A52959C7D600461466 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
 		DF0FFBC7292BE9E80053344D /* TextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensions.swift; sourceTree = "<group>"; };
 		DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewModel.swift; sourceTree = "<group>"; };
 		DF24AF8D2908613100930240 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			children = (
 				DFC05ED3291987150069E7A0 /* HomeCell.swift */,
 				DFA3E7422954A88800A45845 /* SkeletonLoadable.swift */,
+				DF0D25A52959C7D600461466 /* SkeletonCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				DFB93BC9294E62F8004C4457 /* DecimalExtension.swift in Sources */,
 				DFB705A82907206100A42A28 /* ColorExtension.swift in Sources */,
 				DF24AF8E2908613100930240 /* HomeViewController.swift in Sources */,
+				DF0D25A62959C7D700461466 /* SkeletonCell.swift in Sources */,
 				DFE87B492902FF360088CB76 /* LoginView.swift in Sources */,
 				DFC05ED4291987150069E7A0 /* HomeCell.swift in Sources */,
 				DF7F30B1293913C900DE5921 /* TextFieldExtension.swift in Sources */,
