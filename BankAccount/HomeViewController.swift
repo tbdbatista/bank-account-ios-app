@@ -57,6 +57,7 @@ class HomeViewController: UIViewController {
         setupHeaderTableView()
         setupNavBar()
         setupHeaderProfile()
+        setupSkeletons()
     }
     
     private func setStackView() {
@@ -74,6 +75,14 @@ class HomeViewController: UIViewController {
     private func setLogoutButton() {
 //        logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(callLogout))
         logoutButton = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(callLogout))
+    }
+    
+    private func setupSkeletons() {
+        let row = AccountDetailsResponse.makeSkeleton()
+        let skeletonAccountsList = Array(repeating: row, count: 10)
+        
+        configureTableViewAccounts(response: skeletonAccountsList)
+//        configureTableCells(with: accountsList)
     }
     
     private func setupHeaderProfile() {
