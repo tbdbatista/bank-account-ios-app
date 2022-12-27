@@ -64,7 +64,7 @@ class SkeletonCell: UITableViewCell, SkeletonLoadable {
         typeLabel.text = "           "
                 
         underlineView.translatesAutoresizingMaskIntoConstraints = false
-//        underlineView.backgroundColor = appColor
+        underlineView.backgroundColor = .secondaryGreen
 
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)

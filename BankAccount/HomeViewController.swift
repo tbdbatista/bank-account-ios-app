@@ -97,6 +97,7 @@ class HomeViewController: UIViewController {
         tableView.separatorColor = .primaryGreen
 
         tableView.register(HomeCell.self, forCellReuseIdentifier: HomeCell.reuseID)
+        tableView.register(SkeletonCell.self, forCellReuseIdentifier: SkeletonCell.reuseID)
         tableView.rowHeight = 90
         tableView.tableFooterView = UIView()
         
@@ -127,12 +128,19 @@ class HomeViewController: UIViewController {
         tableView.refreshControl = refreshControl
     }
     
+    private func resetDetails() {
+        accountsList = []
+        isDataLoaded = false
+    }
+    
     //MARK: - Methods - Actions
     @objc private func callLogout(sender: UIButton) {
         NotificationCenter.default.post(name: .logout, object: nil)
     }
     
     @objc private func refreshContent(sender: UIRefreshControl) {
+        resetDetails()
+        setupSkeletons()
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.fetchHomeData()
             self.tableView.refreshControl?.endRefreshing()
@@ -148,6 +156,7 @@ class HomeViewController: UIViewController {
     
     private func groupLoadingWithDispatchGroup() {
         self.group.notify(queue: .main) {
+            self.isDataLoaded = true
             self.tableView.reloadData()
         }
     }
@@ -208,8 +217,13 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let accounts = accountsList else {return UITableViewCell()}
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeCell.reuseID, for: indexPath) as! HomeCell
-        cell.configure(response: accounts[indexPath.row])
+        if isDataLoaded {
+            let cell = tableView.dequeueReusableCell(withIdentifier: HomeCell.reuseID, for: indexPath) as! HomeCell
+            cell.configure(response: accounts[indexPath.row])
+            return cell
+        }
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: SkeletonCell.reuseID, for: indexPath) as! SkeletonCell
         return cell
     }
     
