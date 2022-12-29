@@ -82,7 +82,6 @@ class HomeViewController: UIViewController {
         let skeletonAccountsList = Array(repeating: row, count: 10)
         
         configureTableViewAccounts(response: skeletonAccountsList)
-//        configureTableCells(with: accountsList)
     }
     
     private func setupHeaderProfile() {

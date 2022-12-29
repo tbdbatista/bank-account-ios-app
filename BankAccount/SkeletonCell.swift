@@ -64,7 +64,7 @@ class SkeletonCell: UITableViewCell, SkeletonLoadable {
         typeLabel.text = "           "
                 
         underlineView.translatesAutoresizingMaskIntoConstraints = false
-        underlineView.backgroundColor = .secondaryGreen
+        underlineView.backgroundColor = .primaryGreen
 
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
@@ -139,8 +139,8 @@ class SkeletonCell: UITableViewCell, SkeletonLoadable {
             typeLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             underlineView.topAnchor.constraint(equalToSystemSpacingBelow: typeLabel.bottomAnchor, multiplier: 1),
             underlineView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
-            underlineView.widthAnchor.constraint(equalToConstant: 60),
-            underlineView.heightAnchor.constraint(equalToConstant: 4),
+            underlineView.widthAnchor.constraint(equalToConstant: 100),
+            underlineView.heightAnchor.constraint(equalToConstant: 2),
             nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 2),
             nameLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             balanceStackView.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 0),
