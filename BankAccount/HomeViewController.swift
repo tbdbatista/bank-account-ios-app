@@ -140,7 +140,8 @@ class HomeViewController: UIViewController {
     @objc private func refreshContent(sender: UIRefreshControl) {
         resetDetails()
         setupSkeletons()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+        tableView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             self.fetchHomeData()
             self.tableView.refreshControl?.endRefreshing()
         })
