@@ -166,6 +166,9 @@ class HomeViewController: UIViewController {
         self.group.enter()
         self.viewModel.getAccountProfileData(completion: { response, error in
             guard let response = response else {
+                DispatchQueue.main.async {
+                    self.showErrorAlert()
+                }
                 print(error ?? "Error getting Account Profile Data")
                 return
             }
@@ -188,6 +191,9 @@ class HomeViewController: UIViewController {
         self.group.enter()
         self.viewModel.getAccountsDetails { response, error in
             guard let response = response else {
+                DispatchQueue.main.async {
+                    self.showErrorAlert()
+                }
                 print(error ?? "Error getting Account Details Data")
                 return
             }
@@ -209,6 +215,16 @@ class HomeViewController: UIViewController {
                              dollars: dollarFormatter.formatDollar(dollarsPart: $0.amount),
                              cents: dollarFormatter.formatCents(extractCentsFrom: $0.amount))
         })
+    }
+    //MARK: - Handling errors
+    private func showErrorAlert() {
+        let alert = UIAlertController(title: "Erro de conexão",
+                                      message: "Por favor, verifique sua conexão antes de prosseguir.",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
     }
 }
 
