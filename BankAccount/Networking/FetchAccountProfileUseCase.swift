@@ -7,9 +7,18 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum NetworkError: String, Error {
     case serverError
     case decodingError
+    
+    var description: [String] {
+            switch self {
+            case .serverError:
+                return ["Erro de conexão", "Por favor, verifique sua conexão antes de prosseguir."]
+            case .decodingError:
+                return ["Erro no servidor", "Não foi possível processar sua solicitação. Por favor, tente novamente mais tarde."]
+            }
+        }
 }
 
 class FetchAccountProfileUseCase {

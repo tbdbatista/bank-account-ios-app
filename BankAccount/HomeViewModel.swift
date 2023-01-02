@@ -19,26 +19,26 @@ class HomeViewModel {
     private let fetchAccountProfileUseCase = FetchAccountProfileUseCase()
     private let fetchAccountDetailsUseCase = FetchAccountDetailsUseCase()
   
-    func getAccountsDetails(completion: @escaping ([AccountDetailsResponse]?, String?) -> Void) {
+    func getAccountsDetails(completion: @escaping ([AccountDetailsResponse]?, NetworkError?) -> Void) {
         let userID = String(Int.random(in: 1...3))
         fetchAccountDetailsUseCase.fetchAccountDetails(id: userID) { result in
             switch result {
             case .success(let accountDetails):
                 completion(accountDetails, nil)
             case .failure(let error):
-                completion(nil, error.localizedDescription)
+                completion(nil, error)
             }
         }
     }
     
-    func getAccountProfileData(completion: @escaping (AccountProfileResponse?, String?) -> Void) {
+    func getAccountProfileData(completion: @escaping (AccountProfileResponse?, NetworkError?) -> Void) {
         let userID = String(Int.random(in: 1...3))
         fetchAccountProfileUseCase.fetchProfile(id: userID, completion: { result in
             switch result {
             case .success(let profile):
                 completion(profile, nil)
             case .failure(let error):
-                completion(nil, error.localizedDescription)
+                completion(nil, error)
             }
         })
     }

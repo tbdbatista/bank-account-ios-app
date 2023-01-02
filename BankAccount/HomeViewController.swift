@@ -167,7 +167,7 @@ class HomeViewController: UIViewController {
         self.viewModel.getAccountProfileData(completion: { response, error in
             guard let response = response else {
                 DispatchQueue.main.async {
-                    self.showErrorAlert()
+                    self.showErrorAlert(error: error!)
                 }
                 print(error ?? "Error getting Account Profile Data")
                 return
@@ -192,7 +192,7 @@ class HomeViewController: UIViewController {
         self.viewModel.getAccountsDetails { response, error in
             guard let response = response else {
                 DispatchQueue.main.async {
-                    self.showErrorAlert()
+                    self.showErrorAlert(error: error!)
                 }
                 print(error ?? "Error getting Account Details Data")
                 return
@@ -217,10 +217,18 @@ class HomeViewController: UIViewController {
         })
     }
     //MARK: - Handling errors
-    private func showErrorAlert() {
-        let alert = UIAlertController(title: "Erro de conexão",
-                                      message: "Por favor, verifique sua conexão antes de prosseguir.",
-                                      preferredStyle: .alert)
+    private func showErrorAlert(error: NetworkError) {
+        var alert = UIAlertController()
+        switch error {
+        case .serverError:
+            alert = UIAlertController(title: error.description[0],
+                                      message: error.description[1],
+                                          preferredStyle: .alert)
+        case .decodingError:
+            alert = UIAlertController(title: error.description[0],
+                                      message: error.description[1],
+                                          preferredStyle: .alert)
+        }
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
