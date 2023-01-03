@@ -143,7 +143,7 @@ class HomeViewController: UIViewController {
         tableView.reloadData()
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             self.fetchHomeData()
-            self.tableView.refreshControl?.endRefreshing()
+            self.tableView.refreshControl?.endRefreshing() //TO DO - THIAGO: checar se precisa ficar dentro do dispatch
         })
     }
     

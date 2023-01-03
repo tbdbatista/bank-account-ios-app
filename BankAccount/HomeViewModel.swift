@@ -7,13 +7,6 @@
 
 import Foundation
 
-enum AccountType: String, Codable {
-    case Banking
-    case CreditCard
-    case Investment
-    case Cryptocurrency
-}
-
 class HomeViewModel {
 
     private let fetchAccountProfileUseCase: FetchAccountProfileUseCaseProtocol = FetchAccountProfileUseCase()

@@ -13,3 +13,10 @@ struct HomeAccountModel {
     let dollars: String
     let cents: String
 }
+
+enum AccountType: String, Codable {
+    case Banking
+    case CreditCard
+    case Investment
+    case Cryptocurrency
+}
