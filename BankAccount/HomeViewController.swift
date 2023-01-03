@@ -14,9 +14,6 @@ class HomeViewController: UIViewController {
     var homeHeaderProfile = HomeHeaderModel()
     var accountsList: [HomeAccountModel]?
 
-    //MARK: - Tools
-//    let group = DispatchGroup()
-
     //MARK: - UI Components
     var headerView = HomeHeaderView(frame: .zero)
     lazy var stackView = UIStackView()
@@ -34,8 +31,9 @@ class HomeViewController: UIViewController {
         setSelfSetup()
         setSelfView()
         setupViews()
-        self.fetchHomeData()
+        self.fetchHomeData(forceRefresh: false)
         self.setupRefreshControl()
+        self.registerForNotificationsToCheckCallServiceOnDismissOnboarding()
     }
     
     //MARK: - View Setup
@@ -142,15 +140,31 @@ class HomeViewController: UIViewController {
         setupSkeletons()
         tableView.reloadData()
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-            self.fetchHomeData()
+            self.fetchHomeData(forceRefresh: true)
             self.tableView.refreshControl?.endRefreshing() //TO DO - THIAGO: checar se precisa ficar dentro do dispatch
         })
     }
     
+    @objc private func callingDismissOnboarding() {
+        dismiss(animated: true, completion: nil)
+        resetDetails()
+        setupSkeletons()
+        tableView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+            self.fetchHomeData(forceRefresh: false)
+            self.tableView.refreshControl?.endRefreshing() //TO DO - THIAGO: checar se precisa ficar dentro do dispatch
+        })
+    }
+    
+    //MARK: - Notification Center Register
+    private func registerForNotificationsToCheckCallServiceOnDismissOnboarding() {
+        NotificationCenter.default.addObserver(self, selector: #selector(callingDismissOnboarding), name: .closeOnboarding, object: nil)
+    }
+    
     //MARK: - Group UI Loading from Networking data
-    private func fetchHomeData() {
+    private func fetchHomeData(forceRefresh: Bool) {
         self.loadNetworkDataHeader()
-        self.loadNetworkDataAccount()
+        self.loadNetworkDataAccount(forceRefresh: forceRefresh)
     }
 
     
@@ -177,8 +191,8 @@ class HomeViewController: UIViewController {
     }
     
     //MARK: - Load network data - Accounts
-    private func loadNetworkDataAccount() {
-        self.viewModel.getAccountsDetails { response, error in
+    private func loadNetworkDataAccount(forceRefresh: Bool) {
+        self.viewModel.getAccountsDetails(forceRefresh: forceRefresh) { response, error in
             guard let response = response else {
                 DispatchQueue.main.async {
                     self.showErrorAlert(error: error!)

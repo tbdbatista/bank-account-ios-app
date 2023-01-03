@@ -94,7 +94,8 @@ class OnboardingContainerViewController: UIViewController {
 
     //MARK: - Actions
     @objc private func closeButtonTapped() {
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: .closeOnboarding, object: nil)
     }
     
 }

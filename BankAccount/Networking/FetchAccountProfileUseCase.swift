@@ -27,7 +27,8 @@ protocol FetchAccountProfileUseCaseProtocol {
 
 class FetchAccountProfileUseCase: FetchAccountProfileUseCaseProtocol {
     func fetchProfile(id userId: String, completion: @escaping (Result<AccountProfileResponse, NetworkError>) -> Void) {
-        let url = URL(string: "https://fierce-retreat-36855.herokuapp.com/bankey/profile/\(userId)")!
+        var url = URL(string: "https://fierce-retreat-36855.herokuapp.com/bankey/profile/\(userId)")!
+        url.removeAllCachedResourceValues()
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {

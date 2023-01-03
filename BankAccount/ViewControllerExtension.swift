@@ -59,8 +59,9 @@ public enum NavigationType {
 //MARK: - Extension for configuring TabViewControllers
 extension UIViewController {
     func setStatusBar() {
-        let statusBarSize = UIApplication.shared.statusBarFrame.size
-        let frame = CGRect(origin: .zero, size: statusBarSize)
+//        let statusBarSize = UIApplication.shared.statusBarFrame.size
+        let size = CGSize(width: view.window?.windowScene?.statusBarManager?.statusBarFrame.width ?? 0, height: view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0)
+        let frame = CGRect(origin: .zero, size: size)
         let statusBarView = UIView(frame: frame)
 
         statusBarView.backgroundColor = .secondaryGreen

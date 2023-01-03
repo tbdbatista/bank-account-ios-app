@@ -6,16 +6,23 @@
 //
 
 import Foundation
+import Network
 
 protocol FetchAccountDetailsUseCaseProtocol {
-    func fetchAccountDetails(id: String, completion: @escaping (Result<[AccountDetailsResponse], NetworkError>) -> Void)
+    func fetchAccountDetails(id: String, forceRefresh: Bool, completion: @escaping (Result<[AccountDetailsResponse], NetworkError>) -> Void)
 }
 
 class FetchAccountDetailsUseCase: FetchAccountDetailsUseCaseProtocol {
-    func fetchAccountDetails(id: String, completion: @escaping (Result<[AccountDetailsResponse], NetworkError>) -> Void) {
+    func fetchAccountDetails(id: String, forceRefresh: Bool, completion: @escaping (Result<[AccountDetailsResponse], NetworkError>) -> Void) {
+        var urlSession: URLSession?
         let url = URL(string: "https://fierce-retreat-36855.herokuapp.com/bankey/profile/\(id)/accounts")!
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        if !connectedToNetwork() || forceRefresh {
+            urlSession = URLSession(configuration: .ephemeral)
+        } else {
+            urlSession = URLSession(configuration: .default)
+        }
+    
+        urlSession?.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
                 let error: Error? = error
                 print(error?.localizedDescription ?? "Error fetching data from URLSession")
