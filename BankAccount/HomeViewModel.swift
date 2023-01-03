@@ -16,8 +16,8 @@ enum AccountType: String, Codable {
 
 class HomeViewModel {
 
-    private let fetchAccountProfileUseCase = FetchAccountProfileUseCase()
-    private let fetchAccountDetailsUseCase = FetchAccountDetailsUseCase()
+    private let fetchAccountProfileUseCase: FetchAccountProfileUseCaseProtocol = FetchAccountProfileUseCase()
+    private let fetchAccountDetailsUseCase: FetchAccountDetailsUseCaseProtocol = FetchAccountDetailsUseCase()
   
     func getAccountsDetails(completion: @escaping ([AccountDetailsResponse]?, NetworkError?) -> Void) {
         let userID = String(Int.random(in: 1...3))

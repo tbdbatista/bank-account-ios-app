@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DF01BB662949F8C100C2F850 /* NotificationBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF01BB652949F8C100C2F850 /* NotificationBellView.swift */; };
 		DF0D25A62959C7D700461466 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D25A52959C7D600461466 /* SkeletonCell.swift */; };
+		DF0D25B62963533B00461466 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0D25B52963533B00461466 /* HomeViewControllerTests.swift */; };
 		DF0FFBC8292BE9E80053344D /* TextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0FFBC7292BE9E80053344D /* TextExtensions.swift */; };
 		DF24AF8B29085CA600930240 /* OnboardingContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */; };
 		DF24AF8E2908613100930240 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24AF8D2908613100930240 /* HomeViewController.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		DF01BB652949F8C100C2F850 /* NotificationBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBellView.swift; sourceTree = "<group>"; };
 		DF0D25A52959C7D600461466 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
+		DF0D25B52963533B00461466 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		DF0FFBC7292BE9E80053344D /* TextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensions.swift; sourceTree = "<group>"; };
 		DF24AF8A29085CA600930240 /* OnboardingContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewModel.swift; sourceTree = "<group>"; };
 		DF24AF8D2908613100930240 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF0D25B42963530100461466 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DF0D25B52963533B00461466 /* HomeViewControllerTests.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
 		DF24AF8929085C8A00930240 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +207,7 @@
 		DF2AF86C2927F2CB00F7E479 /* BankAccountUnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				DF0D25B42963530100461466 /* HomeViewController */,
 				DFB93BCB294FA80E004C4457 /* AccountDetail */,
 				DF820EE0292F9EF800A1DF8D /* UtilsTests */,
 				DF820EDD292F9B0A00A1DF8D /* CommonTests */,
@@ -530,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0D25B62963533B00461466 /* HomeViewControllerTests.swift in Sources */,
 				DF820EDF292F9B3000A1DF8D /* TextExtensionTests.swift in Sources */,
 				DFB93BCD294FB470004C4457 /* ProfileHomeHeaderTest.swift in Sources */,
 				DFB93BCF294FB80A004C4457 /* AccountDetailsTest.swift in Sources */,

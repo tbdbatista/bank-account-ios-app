@@ -7,7 +7,11 @@
 
 import Foundation
 
-class FetchAccountDetailsUseCase {
+protocol FetchAccountDetailsUseCaseProtocol {
+    func fetchAccountDetails(id: String, completion: @escaping (Result<[AccountDetailsResponse], NetworkError>) -> Void)
+}
+
+class FetchAccountDetailsUseCase: FetchAccountDetailsUseCaseProtocol {
     func fetchAccountDetails(id: String, completion: @escaping (Result<[AccountDetailsResponse], NetworkError>) -> Void) {
         let url = URL(string: "https://fierce-retreat-36855.herokuapp.com/bankey/profile/\(id)/accounts")!
         

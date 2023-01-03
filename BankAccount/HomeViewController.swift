@@ -176,7 +176,6 @@ class HomeViewController: UIViewController {
                 self.configureTableHeaderView(response: response)
                 self.tableView.tableHeaderView = self.headerView
                 self.group.leave()
-                // reloadData() => chamada pelo dispatchGroup depois das informações já terem sido retornadas
             }
         })
     }
@@ -200,7 +199,6 @@ class HomeViewController: UIViewController {
             DispatchQueue.main.async {
                 self.configureTableViewAccounts(response: response)
                 self.group.leave()
-                // reloadData() => chamada pelo dispatchGroup depois das informações já terem sido retornadas
             }
         }
     }
@@ -217,18 +215,26 @@ class HomeViewController: UIViewController {
         })
     }
     //MARK: - Handling errors
-    private func showErrorAlert(error: NetworkError) {
-        var alert = UIAlertController()
+    private func parseTitleAndMessageForError(error: NetworkError) -> (String, String){
+        let title: String
+        let message: String
         switch error {
         case .serverError:
-            alert = UIAlertController(title: error.description[0],
-                                      message: error.description[1],
-                                          preferredStyle: .alert)
+            title = error.description[0]
+            message = error.description[1]
         case .decodingError:
-            alert = UIAlertController(title: error.description[0],
-                                      message: error.description[1],
-                                          preferredStyle: .alert)
+            title = error.description[0]
+            message = error.description[1]
         }
+        return (title, message)
+    }
+    
+    private func showErrorAlert(error: NetworkError) {
+        let titleAndMessage = parseTitleAndMessageForError(error: error)
+        var alert = UIAlertController()
+        alert = UIAlertController(title: titleAndMessage.0,
+                                  message: titleAndMessage.1,
+                                          preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
@@ -261,4 +267,11 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected row: \(indexPath.row)")
     }
+}
+
+//MARK: - Extension - Unit Testing
+extension HomeViewController {
+    func showErrorAlertForTesting(error: NetworkError) -> (String, String){
+        return parseTitleAndMessageForError(error: error)
+    }    
 }

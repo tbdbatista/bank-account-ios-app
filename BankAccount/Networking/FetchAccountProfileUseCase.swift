@@ -21,7 +21,11 @@ enum NetworkError: String, Error {
         }
 }
 
-class FetchAccountProfileUseCase {
+protocol FetchAccountProfileUseCaseProtocol {
+    func fetchProfile(id userId: String, completion: @escaping (Result<AccountProfileResponse, NetworkError>) -> Void)
+}
+
+class FetchAccountProfileUseCase: FetchAccountProfileUseCaseProtocol {
     func fetchProfile(id userId: String, completion: @escaping (Result<AccountProfileResponse, NetworkError>) -> Void) {
         let url = URL(string: "https://fierce-retreat-36855.herokuapp.com/bankey/profile/\(userId)")!
         
