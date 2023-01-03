@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     var accountsList: [HomeAccountModel]?
 
     //MARK: - Tools
-    let group = DispatchGroup()
+//    let group = DispatchGroup()
 
     //MARK: - UI Components
     var headerView = HomeHeaderView(frame: .zero)
@@ -151,19 +151,11 @@ class HomeViewController: UIViewController {
     private func fetchHomeData() {
         self.loadNetworkDataHeader()
         self.loadNetworkDataAccount()
-        self.groupLoadingWithDispatchGroup()
     }
-    
-    private func groupLoadingWithDispatchGroup() {
-        self.group.notify(queue: .main) {
-            self.isDataLoaded = true
-            self.tableView.reloadData()
-        }
-    }
+
     
     //MARK: - Load network data - Header
     private func loadNetworkDataHeader() {
-        self.group.enter()
         self.viewModel.getAccountProfileData(completion: { response, error in
             guard let response = response else {
                 DispatchQueue.main.async {
@@ -175,7 +167,6 @@ class HomeViewController: UIViewController {
             DispatchQueue.main.async {
                 self.configureTableHeaderView(response: response)
                 self.tableView.tableHeaderView = self.headerView
-                self.group.leave()
             }
         })
     }
@@ -187,7 +178,6 @@ class HomeViewController: UIViewController {
     
     //MARK: - Load network data - Accounts
     private func loadNetworkDataAccount() {
-        self.group.enter()
         self.viewModel.getAccountsDetails { response, error in
             guard let response = response else {
                 DispatchQueue.main.async {
@@ -198,7 +188,8 @@ class HomeViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 self.configureTableViewAccounts(response: response)
-                self.group.leave()
+                self.tableView.reloadData()
+                self.isDataLoaded = true
             }
         }
     }
