@@ -189,8 +189,8 @@ extension LoginViewController: LoginViewModelDelegate {
     }
 }
 
-    //MARK: - Enums
-    enum ErrorWarningState {
+//MARK: - Enums
+enum ErrorWarningState {
     case emptyLoginInput
     case incorrectLoginInput
 }

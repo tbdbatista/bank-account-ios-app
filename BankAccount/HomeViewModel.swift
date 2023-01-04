@@ -9,8 +9,8 @@ import Foundation
 
 class HomeViewModel {
 
-    private let fetchAccountProfileUseCase: FetchAccountProfileUseCaseProtocol = FetchAccountProfileUseCase()
-    private let fetchAccountDetailsUseCase: FetchAccountDetailsUseCaseProtocol = FetchAccountDetailsUseCase()
+    var fetchAccountProfileUseCase: FetchAccountProfileUseCaseProtocol = FetchAccountProfileUseCase()
+    var fetchAccountDetailsUseCase: FetchAccountDetailsUseCaseProtocol = FetchAccountDetailsUseCase()
   
     func getAccountsDetails(forceRefresh: Bool, completion: @escaping ([AccountDetailsResponse]?, NetworkError?) -> Void) {
         let userID = String(Int.random(in: 1...3))

@@ -20,6 +20,11 @@ class HomeViewController: UIViewController {
     lazy var logoutButton = UIBarButtonItem()
     lazy var tableView = UITableView()
     lazy var refreshControl = UIRefreshControl()
+    lazy var errorAlert: UIAlertController = {
+        let alert =  UIAlertController(title: "", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        return alert
+    }()
     
     //MARK: - Variables
     var isDataLoaded: Bool = false
@@ -139,9 +144,8 @@ class HomeViewController: UIViewController {
         resetDetails()
         setupSkeletons()
         tableView.reloadData()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.fetchHomeData(forceRefresh: true)
-            self.tableView.refreshControl?.endRefreshing() //TO DO - THIAGO: checar se precisa ficar dentro do dispatch
         })
     }
     
@@ -150,9 +154,8 @@ class HomeViewController: UIViewController {
         resetDetails()
         setupSkeletons()
         tableView.reloadData()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.fetchHomeData(forceRefresh: false)
-            self.tableView.refreshControl?.endRefreshing() //TO DO - THIAGO: checar se precisa ficar dentro do dispatch
         })
     }
     
@@ -196,6 +199,7 @@ class HomeViewController: UIViewController {
             guard let response = response else {
                 DispatchQueue.main.async {
                     self.showErrorAlert(error: error!)
+                    self.tableView.refreshControl?.endRefreshing()
                 }
                 print(error ?? "Error getting Account Details Data")
                 return
@@ -203,6 +207,7 @@ class HomeViewController: UIViewController {
             DispatchQueue.main.async {
                 self.configureTableViewAccounts(response: response)
                 self.tableView.reloadData()
+                self.tableView.refreshControl?.endRefreshing()
                 self.isDataLoaded = true
             }
         }
@@ -224,7 +229,7 @@ class HomeViewController: UIViewController {
         let title: String
         let message: String
         switch error {
-        case .serverError:
+        case .networkError:
             title = error.description[0]
             message = error.description[1]
         case .decodingError:
@@ -236,14 +241,10 @@ class HomeViewController: UIViewController {
     
     private func showErrorAlert(error: NetworkError) {
         let titleAndMessage = parseTitleAndMessageForError(error: error)
-        var alert = UIAlertController()
-        alert = UIAlertController(title: titleAndMessage.0,
-                                  message: titleAndMessage.1,
-                                          preferredStyle: .alert)
+        errorAlert.title = titleAndMessage.0
+        errorAlert.message = titleAndMessage.1
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        
-        present(alert, animated: true, completion: nil)
+        present(errorAlert, animated: true, completion: nil)
     }
 }
 
@@ -278,5 +279,16 @@ extension HomeViewController: UITableViewDelegate {
 extension HomeViewController {
     func showErrorAlertForTesting(error: NetworkError) -> (String, String){
         return parseTitleAndMessageForError(error: error)
-    }    
+    }
+    
+    func fetchDataHeaderForTesting() {
+        self.viewModel.getAccountProfileData(completion: { response, error in
+            guard let response = response else {
+                self.showErrorAlert(error: error!)
+                return
+            }
+                self.configureTableHeaderView(response: response)
+                self.tableView.tableHeaderView = self.headerView
+        })
+    }
 }

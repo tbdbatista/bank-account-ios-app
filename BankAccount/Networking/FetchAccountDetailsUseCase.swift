@@ -26,7 +26,7 @@ class FetchAccountDetailsUseCase: FetchAccountDetailsUseCaseProtocol {
             guard let data = data, error == nil else {
                 let error: Error? = error
                 print(error?.localizedDescription ?? "Error fetching data from URLSession")
-                completion(.failure(.serverError))
+                completion(.failure(.networkError))
                 return
             }
             if let response: HTTPURLResponse = response as? HTTPURLResponse {
